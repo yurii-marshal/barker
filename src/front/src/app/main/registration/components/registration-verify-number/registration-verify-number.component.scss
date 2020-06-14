@@ -1,0 +1,174 @@
+:host {
+    align-self: self-start;
+
+    @media (min-width: 1024px) {
+        align-self: center;
+        width: 560px;
+    }
+
+    @media (min-width: 1440px) {
+    }
+}
+
+.registration-verify-number {
+    position: relative;
+
+    .img-container {
+        background: url("~assets/images/shape-heart.svg");
+        width: 70px;
+        height: 70px;
+        margin-left: -16px;
+
+        @media (min-width: 1024px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    .title-container {
+        position: relative;
+        margin-top: 20px;
+        font-size: 1.38rem;
+        line-height: 127%;
+
+        @media (min-width: 1024px) {
+            margin-top: 35px;
+        }
+
+        .title {
+            margin-bottom: 0;
+
+            @media (min-width: 1024px) {
+                font-size: 2rem;
+                line-height: 131%;
+                width: 62%;
+            }
+        }
+
+        .controls-container {
+            display: flex;
+            margin-top: 3px;
+
+            @media (min-width: 1024px) {
+                justify-content: space-between;
+                position: absolute;
+                bottom: 0;
+                left: 27%;
+            }
+
+            .phone {
+                display: flex;
+                max-width: 170px;
+
+                @media (min-width: 1024px) {
+                    max-width: none;
+                }
+
+                .phone-text {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+
+                    @media (min-width: 1024px) {
+                        font-size: 2rem;
+                        line-height: 131%;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .phone-input {
+                    border: 0;
+                    font-size: 1.38rem;
+                    width: 0;
+                    height: 0;
+                    font-family: "Twentytwelve";
+
+                    @media (min-width: 1024px) {
+                        font-size: 2rem;
+                        line-height: 131%;
+                    }
+
+                    &.show {
+                        width: 140px;
+                        height: 26px;
+                        margin-left: 5px;
+
+                        @media (min-width: 1024px) {
+                            height: 36px;
+                            width: 175px;
+                        }
+                    }
+                }
+            }
+
+            .controls {
+                bar-modal-button {
+                    padding-left: 20px;
+                }
+
+                @media (min-width: 1024px) {
+                    position: absolute;
+                    right: -30%;
+
+                    &.change-mode {
+                        right: -75%;
+                    }
+                }
+
+                @media (min-width: 1024px) {
+                    right: -55%;
+                }
+            }
+        }
+    }
+
+    .caption {
+        color: rgba(0, 0, 0, 0.5);
+
+        @media (min-width: 1024px) {
+            width: 42%;
+            margin-top: 10px;
+        }
+    }
+
+    ::ng-deep .code-input {
+        background: rgba(241, 241, 241, 0.6);
+        border-radius: 24px;
+        margin: 25px 0 10px;
+        background: transparent;
+
+        input {
+            margin: 22px 0 15px;
+            padding-left: 43px;
+
+            @media (min-width: 1024px) {
+                margin: 30px 0;
+                font-size: 1.38rem;
+            }
+        }
+    }
+
+    .resend-container {
+        @media (min-width: 1024px) {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .resend-text {
+            color: rgba(0, 0, 0, 0.5);
+            margin: 5px 0 0 0;
+        }
+        .resend-button {
+            ::ng-deep button h2 {
+                font-size: 0.88rem;
+            }
+
+            @media (min-width: 1024px) {
+                margin: 5px;
+            }
+        }
+        .checked-icon {
+            width: 14px;
+            height: 14px;
+            margin-left: 8px;
+        }
+    }
+}

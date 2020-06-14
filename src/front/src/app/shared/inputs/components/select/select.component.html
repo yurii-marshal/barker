@@ -1,0 +1,35 @@
+<div
+    class="selector-container"
+    [class.closed]="!isOpened"
+    (click)="isActiveInput ? null : toggle($event)"
+>
+    <div class="controls">
+        <input
+            #input
+            [value]="selected?.label"
+            [disabled]="!isActiveInput"
+            [placeholder]="placeholder"
+            [style.textAlign]="textAlign"
+            (input)="filterBy(input.value)"
+            (focus)="isOpened = true"
+            (keyup.enter)="selectFirst()"
+        />
+        <button (click)="toggle($event)">
+            <mat-icon
+                [class.up]="isOpened"
+                svgIcon="strict-arrow-down"
+            ></mat-icon>
+        </button>
+    </div>
+    <div class="dropdown" *ngIf="isOpened">
+        <ul>
+            <li
+                *ngFor="let option of filteredOptions; trackBy: trackByMethod"
+                (click)="selectItem($event, option)"
+                [style.textAlign]="textAlign"
+            >
+                {{ option.label }}
+            </li>
+        </ul>
+    </div>
+</div>

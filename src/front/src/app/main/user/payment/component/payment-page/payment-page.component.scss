@@ -1,0 +1,37 @@
+.payment-page-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (min-width: 1024px) {
+        flex-wrap: nowrap;
+        padding-bottom: 30px;
+    }
+
+    bar-subscription-tile {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 50%;
+        }
+
+        @media (min-width: 1440px) {
+            width: 40%;
+        }
+    }
+
+    .sub-pages-wrapper {
+        padding-bottom: 30px;
+        width: 100%;
+
+        @media (min-width: 1024px) {
+            padding: 0 0 32px 32px;
+            width: 85%;
+        }
+
+        @media (min-width: 1440px) {
+            width: 82%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="simple-expander-container">
+    <button (click)="isActive = !isActive">
+        <h2 class="question" [innerHTML]="header"></h2>
+        <mat-icon
+            class="arrow"
+            [class.active]="isActive"
+            svgIcon="fat-arrow-down"
+        ></mat-icon>
+    </button>
+    <div class="answer" *ngIf="isActive" @accordionEnterLeave>
+        <h4 [innerHTML]="body"></h4>
+    </div>
+</div>

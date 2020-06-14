@@ -1,0 +1,72 @@
+@import "~styles/variables.scss";
+
+:host {
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: block;
+    }
+}
+
+.footer-container {
+    height: $user-page-footer-height-ipad;
+    display: flex;
+    justify-content: space-between;
+
+    .link {
+        font-size: 0.88rem;
+        line-height: 150%;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+
+    .contacts {
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .switch-language {
+            cursor: pointer;
+            position: relative;
+
+            .label {
+                .check-icon {
+                    width: 8px;
+                    height: 4px;
+                    transform: rotate(90deg);
+
+                    &.opened {
+                        transform: rotate(0);
+                    }
+                }
+            }
+
+            .lang-list {
+                display: none;
+                position: absolute;
+
+                &.opened {
+                    display: block;
+                }
+
+                .item {
+                    margin-left: 35px;
+                }
+
+                .item-container {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .main-controls {
+        .link {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.registration-birth-date-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding-top: 35px;
+
+    @media (min-width: 1024px) {
+        padding-top: 0;
+    }
+
+    .info {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .secondary-info {
+        font-size: 11px;
+        line-height: 17px;
+        color: #acacac;
+    }
+
+    .error-container {
+        display: flex;
+        justify-content: space-between;
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        .error-message {
+            color: #e0632b;
+            font-size: 11px;
+        }
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+    .next-button {
+        margin-top: 50px;
+    }
+}

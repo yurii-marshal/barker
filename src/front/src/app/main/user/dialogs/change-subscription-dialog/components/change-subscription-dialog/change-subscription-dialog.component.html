@@ -1,0 +1,52 @@
+<div mat-dialog-content>
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <div class="change-subscription-container" [formGroup]="changeSubscriptionFormGroup">
+        <div class="bar-input-wrapper">
+            <bar-input
+                [hasErrors]="
+                    !changeSubscriptionFormGroup.controls.address.pristine &&
+                    changeSubscriptionFormGroup.controls.address.invalid
+                "
+                formControlName="address"
+                placeholder="Адресс"
+            ></bar-input>
+            <div
+                class="caption error"
+                *ngIf="
+                    !changeSubscriptionFormGroup.controls.address.pristine &&
+                    changeSubscriptionFormGroup.controls.address.getError(
+                        'required'
+                    )
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="timepicker-slider-container">
+            <bar-timepicker-list
+                [date]="userData?.subscriptionDate"
+                (chooseInterval)="setTimeRestart($event)"
+                formControlName="day"
+            ></bar-timepicker-list>
+        </div>
+
+        <div class="control-container">
+            <bar-action-button
+                [arrow]="true"
+                [disabled]="changeSubscriptionFormGroup.invalid"
+                (clickHandler)="saveSubscription(changeSubscriptionFormGroup)"
+            >
+                Сохранить
+            </bar-action-button>
+        </div>
+    </div>
+</div>

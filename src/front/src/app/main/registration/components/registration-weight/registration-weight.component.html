@@ -1,0 +1,82 @@
+<div
+    class="registration-weight"
+    @baseThemeTransition
+    [class.tonus-group-active]="isTonusBtnActive"
+>
+    <form [formGroup]="weightForm">
+        <div class="form-inner-wrapper">
+            <div class="text-inputs">
+                <div class="input-container">
+                    <div class="label-text">Его вес сейчас</div>
+                    <div class="input-with-label">
+                        <bar-input
+                            [styleInput]="styleWeightInputObj"
+                            type="number"
+                            formControlName="weight"
+                        ></bar-input>
+                        <div class="label-text">кг</div>
+                    </div>
+                </div>
+                <div
+                    class="input-container"
+                    [class.disabled]="isTonusBtnActive"
+                >
+                    <div class="label-text">а идеальный вес</div>
+                    <div class="input-with-label">
+                        <bar-input
+                            [styleInput]="styleWeightInputObj"
+                            type="number"
+                            formControlName="perfectWeight"
+                        ></bar-input>
+                        <div class="label-text">кг</div>
+                    </div>
+                </div>
+            </div>
+            <bar-modal-button
+                class="tonus-button"
+                @baseThemeTransition
+                [class.active]="isTonusBtnActive"
+                (clickHandler)="toggleTonusButton()"
+            >
+                Не уверен
+            </bar-modal-button>
+        </div>
+        <div
+            *ngIf="isTonusBtnActive"
+            class="tonus-group-container"
+            [class.active]="isTonusBtnActive"
+        >
+            <div class="tonus">
+                <div class="tonus-header">
+                    {{ petName || 'Питомец' }} сейчас скорее
+                </div>
+                <div class="radio-group">
+                    <div
+                        *ngFor="let tonus of tonusList; let i = index"
+                        class="bar-radio-button with-image content-above"
+                    >
+                        <input
+                            [id]="'tonus-' + i"
+                            [value]="tonus.id"
+                            type="radio"
+                            formControlName="petSize"
+                        />
+                        <label [for]="'tonus-' + i">
+                            <img [src]="tonus.imgSrc" alt="" />
+                            {{ tonus.name }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="control-container">
+        <bar-action-button
+            [arrow]="true"
+            (clickHandler)="nextStep()"
+            [disabled]="weightForm.invalid"
+        >
+            Дальше
+        </bar-action-button>
+    </div>
+</div>

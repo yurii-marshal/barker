@@ -1,0 +1,11 @@
+<button
+    class="btn ref-button"
+    [class.primary]="primary"
+    (click)="onClick($event)"
+    [disabled]="disabled"
+    [type]="type"
+>
+    <div class="arrow-right" *ngIf="arrow"></div>
+    <h2 [style]="customStyles" class="content"><ng-content></ng-content></h2>
+    <div class="underline" @baseThemeTransition></div>
+</button>

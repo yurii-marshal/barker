@@ -1,0 +1,33 @@
+<div class="footer-container">
+    <div class="contacts">
+        <a class="link" href="mailto:help@barker.com">help@barker.com</a>
+        <a class="link" href="tel:+380123456789">+38 012 345 67 89</a>
+        <a class="link" href="http://instagram/barker">Instagram</a>
+        <a class="link" href="http://facebook/barker">Facebook</a>
+        <div class="switch-language link">
+            <div class="label" (click)="isLangListOpened = !isLangListOpened">
+                {{ (localizationService.languageState$ | async)?.label }}
+                <mat-icon
+                    class="check-icon"
+                    [class.opened]="isLangListOpened"
+                    svgIcon="check-right"
+                ></mat-icon>
+            </div>
+            <div class="lang-list" [class.opened]="isLangListOpened">
+                <div
+                    class="item-container"
+                    *ngFor="let item of localizationService?.langList"
+                >
+                    <div class="item" (click)="switchLanguage(item)">
+                        {{ item.label }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-controls">
+        <div class="link" routerLink="dashboard">На главную</div>
+        <div class="link" (click)="logout()">Выйти</div>
+    </div>
+</div>

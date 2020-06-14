@@ -1,0 +1,88 @@
+@import "~styles/variables.scss";
+
+.header {
+    height: $user-page-header-height-mobile;
+    margin: 0 (-$user-page-side-offset-mobile);
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @media (min-width: 1024px) {
+        justify-content: flex-start;
+        height: $user-page-header-height-ipad;
+    }
+
+    @media (min-width: 1440px) {
+        height: $user-page-header-height;
+    }
+
+    .logo-container {
+        margin-left: 30px;
+        cursor: pointer;
+
+        @media (min-width: 1024px) {
+            // margin-left: 60px;
+        }
+
+        img {
+            @media (min-width: 1024px) {
+                width: 107px;
+            }
+        }
+    }
+
+    .routes {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            margin-left: 17px;
+        }
+
+        @media (min-width: 1440px) {
+            margin-left: 50px;
+        }
+
+        .route {
+            cursor: pointer;
+            position: relative;
+            font-size: 0.93rem;
+            line-height: 150%;
+            color: #000000;
+            text-decoration: none;
+
+            &:hover::after,
+            &.active::after {
+                content: "";
+                position: absolute;
+                background: url("~assets/images/underline.svg") no-repeat;
+                height: 2px;
+                width: 100%;
+                bottom: -10px;
+                left: 0;
+            }
+
+            @media (min-width: 1024px) {
+                margin: 0 16px 2px;
+            }
+
+            @media (min-width: 1440px) {
+                margin: 0 21px 2px;
+            }
+        }
+    }
+
+    .menu-control {
+        width: 30px;
+        height: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 25px;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+}

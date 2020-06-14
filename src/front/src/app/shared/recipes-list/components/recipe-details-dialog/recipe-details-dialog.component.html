@@ -1,0 +1,85 @@
+<div mat-dialog-content style="height: 100%;">
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <ngu-carousel
+        class="slider"
+        #recipeSlider
+        [inputs]="carouselConfig"
+        [dataSource]="slides"
+        (carouselLoad)="sliderLoaded()"
+    >
+        <div *nguCarouselDef="let recipe" class="item">
+            <div class="tile">
+                <div class="top-section">
+                    <h2 class="title mobile">{{ recipe.name }}</h2>
+                    <h1 class="title desktop">{{ recipe.name }}</h1>
+                    <div
+                        class="recipe-img-container"
+                        [style.backgroundImage]="'url(' + recipe.imgSrc + ')'"
+                    ></div>
+                    <div class="nutritional-values">
+                        <h3 class="sub-title">
+                            Пищевая ценность на 100г:
+                        </h3>
+                        <div
+                            class="line"
+                            *ngFor="let item of recipe.nutritionList"
+                        >
+                            <h4 class="name">{{ item.name }}</h4>
+                            <h4 class="value">{{ item.value }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="ingredients">
+                        <h3 class="sub-title">
+                            Ингредиенты
+                        </h3>
+                        <div class="container">
+                            <div
+                                class="ingredient"
+                                (mouseover)="
+                                    currentIngredientDescription =
+                                        ingredient.description
+                                "
+                                (mouseout)="currentIngredientDescription = ''"
+                                *ngFor="let ingredient of recipe.ingredientList"
+                            >
+                                <img
+                                    [src]="ingredient.imgSrc"
+                                    [alt]="ingredient.name"
+                                />
+                                <div class="label">{{ ingredient.name }}</div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            {{ currentIngredientDescription }}
+                        </div>
+                    </div>
+                </div>
+                <div class="control-container">
+                    <bar-action-button
+                        [arrow]="true"
+                        (clickHandler)="chooseOption(recipe.id)"
+                    >
+                        Беру
+                    </bar-action-button>
+                </div>
+            </div>
+        </div>
+
+        <button NguCarouselNext class="slider-btn-right btn desktop">
+            <mat-icon svgIcon="check"></mat-icon>
+        </button>
+        <button NguCarouselPrev class="slider-btn-left btn desktop">
+            <mat-icon svgIcon="check"></mat-icon>
+        </button>
+    </ngu-carousel>
+</div>

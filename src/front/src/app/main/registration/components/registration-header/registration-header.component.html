@@ -1,0 +1,23 @@
+<div class="registration-header">
+    <div class="back-button-wrapper">
+        <bar-back-button
+            @enterLeave
+            *ngIf="state?.step > steps.MainInfo"
+            (click)="back()"
+        ></bar-back-button>
+    </div>
+    <div class="progress-bar-wrapper" [class.show]="state?.progress > 0">
+        <bar-registration-progress-bar
+            [percent]="state?.progress"
+        ></bar-registration-progress-bar>
+    </div>
+    <div class="close-wrapper">
+        <a routerLink="/">
+            <mat-icon
+                @baseThemeTransition
+                svgIcon="close"
+                class="close-icon"
+            ></mat-icon>
+        </a>
+    </div>
+</div>

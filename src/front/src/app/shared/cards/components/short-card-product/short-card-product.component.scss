@@ -1,0 +1,34 @@
+.short-card-product-container {
+    &.short {
+        @media (min-width: 1440px) {
+            display: flex;
+            margin-right: 97px;
+        }
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+        margin-left: -5px;
+
+        @media (min-width: 1024px) {
+            width: 100px;
+            height: 100px;
+            margin-left: -20px;
+        }
+    }
+
+    .details {
+        @media (min-width: 1440px) {
+            display: block;
+        }
+    }
+
+    .label {
+        padding-bottom: 5px;
+
+        @media (min-width: 1024px) {
+            padding-bottom: 10px;
+        }
+    }
+}

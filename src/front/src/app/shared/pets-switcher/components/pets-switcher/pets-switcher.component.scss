@@ -1,0 +1,39 @@
+.pet-switcher-container {
+    display: flex;
+    height: 115px;
+
+    .pet {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-right: 50px;
+
+        &.selected {
+            order: -1;
+            cursor: default;
+            .avatar-container {
+                width: 87px;
+                height: 87px;
+            }
+        }
+
+        .avatar-container {
+            margin: 0 auto;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .pet-name {
+            font-size: 18px;
+            margin: 0 auto;
+        }
+    }
+}

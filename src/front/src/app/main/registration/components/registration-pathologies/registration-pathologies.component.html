@@ -1,0 +1,56 @@
+<div
+    class="registration-pathologies"
+    @baseThemeTransition
+    [class.pathologies-group-active]="hasPathology"
+>
+    <form>
+        <h3 class="name-container">
+            Патологии
+        </h3>
+        <div class="has-pathology">
+            <div class="bar-radio-button">
+                <input
+                    id="yes"
+                    [value]="true"
+                    type="radio"
+                    name="yes"
+                    [(ngModel)]="hasPathology"
+                />
+                <label for="yes">Есть</label>
+            </div>
+
+            <div class="bar-radio-button">
+                <input
+                    id="no"
+                    [value]="false"
+                    type="radio"
+                    name="no"
+                    [(ngModel)]="hasPathology"
+                />
+                <label for="no">Нет</label>
+            </div>
+        </div>
+    </form>
+    <div class="pathologies-list" *ngIf="hasPathology">
+        <div
+            class="list-item"
+            *ngFor="let pathology of pathologiesList; let i = index"
+        >
+            <bar-list-box-item
+                [id]="pathology.id"
+                [(ngModel)]="pathology.value"
+            >
+                {{ pathology.name }}
+            </bar-list-box-item>
+        </div>
+    </div>
+    <div class="control-container">
+        <bar-action-button
+            [arrow]="true"
+            (clickHandler)="nextStep()"
+            [disabled]="!valid"
+        >
+            Дальше
+        </bar-action-button>
+    </div>
+</div>

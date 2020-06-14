@@ -1,0 +1,215 @@
+@import "~styles/variables.scss";
+
+.dashboard-container {
+    padding: 15px 0;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        padding: 0;
+        min-height: calc(
+            100vh -
+                (
+                    #{$user-page-header-height-ipad +
+                        $user-page-footer-height-ipad}
+                )
+        );
+    }
+
+    .first-section {
+        @media (min-width: 1024px) {
+            width: 60%;
+            margin-right: 36px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 1440px) {
+            margin-top: 60px;
+            margin-right: 62px;
+            width: 57%;
+        }
+    }
+
+    .tile {
+        background: rgba(241, 241, 241, 0.6);
+        border-radius: 40px;
+        padding: 32px;
+
+        @media (min-width: 1440px) {
+            padding: 40px 32px;
+        }
+    }
+
+    .main-btns {
+        @media (min-width: 1024px) {
+            display: flex;
+        }
+
+        @media (min-width: 1440px) {
+            margin-bottom: 66px;
+        }
+
+        button {
+            margin-top: 16px;
+            border-radius: 50px;
+            width: 100%;
+            height: 96px;
+
+            @media (min-width: 1024px) {
+                font-size: 1.38rem;
+                line-height: 127%;
+                height: 128px;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                margin-top: 26px;
+            }
+        }
+
+        .feedback {
+            background: url("~assets/images/success-btn-bgrd.svg") no-repeat;
+            background-size: cover;
+        }
+
+        .details {
+            background: rgba(241, 241, 241, 0.6);
+        }
+    }
+
+    .pets-container {
+        margin: 16px 0 20px;
+        position: relative;
+        height: 455px;
+
+        ::ng-deep ngu-carousel {
+            position: absolute;
+            width: calc(
+                100vw - #{$user-page-side-offset-mobile +
+                    $user-page-side-offset-mobile}
+            );
+
+            .ngucarousel {
+                overflow: visible;
+
+                @media (min-width: 1024px) {
+                    width: 260px;
+                }
+            }
+        }
+    }
+
+    .pet-item {
+        @media (min-width: 1024px) {
+            margin-top: 40px;
+        }
+
+        @media (min-width: 1440px) {
+            margin-top: 60px;
+        }
+
+        .tile {
+            margin-right: 16px;
+
+            @media (min-width: 1024px) {
+                margin: 0;
+                background: transparent;
+            }
+
+            .img-container {
+                width: 184px;
+                height: 184px;
+                border-radius: 50%;
+                overflow: hidden;
+                position: relative;
+
+                @media (min-width: 1024px) {
+                    width: 196px;
+                    height: 196px;
+                }
+
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .name {
+                margin: 30px 0 10px;
+            }
+
+            .brief {
+                h4 {
+                    @media (min-width: 1024px) {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .controls {
+                margin-top: 15px;
+            }
+
+            ::ng-deep bar-ref-button {
+                &:hover {
+                    .underline {
+                        display: block;
+                    }
+                }
+
+                .arrow-right {
+                    background-size: 18px;
+                    top: 30%;
+
+                    @media (min-width: 1024px) {
+                        top: 48%;
+                    }
+                }
+
+                .content {
+                    font-size: 1.13rem;
+                    line-height: 144%;
+                    margin-top: 10px;
+
+                    @media (min-width: 1024px) {
+                        font-size: 1.38rem;
+                        line-height: 127%;
+                        margin-top: 25px;
+                    }
+                }
+
+                .underline {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .paralax-dashboard {
+        display: none;
+        position: fixed;
+
+        @media (min-width: 1024px) {
+            display: block;
+            bottom: 0;
+            right: 0;
+            width: 448px;
+            height: 1000px;
+            z-index: -1;
+            background: url("~assets/images/parallax-dashboard-2.svg") no-repeat;
+        }
+
+        @media (min-width: 1440px) {
+            top: 0;
+            right: 0;
+            width: 960px;
+            height: 900px;
+            background: url("~assets/images/parallax-dashboard-1.svg") no-repeat;
+        }
+    }
+}

@@ -1,0 +1,455 @@
+<div class="main-container">
+    <div class="container">
+        <div class="header">
+            <h1>Типографика</h1>
+        </div>
+        <section>
+            <h1>H1 / Twentytwelve 44pt</h1>
+            <h1 class="h1_smaller">H1' / Twentytwelve 32pt</h1>
+            <h2>H2 / Twentytwelve 22pt</h2>
+            <h3>H3 / Twentytwelve 18pt</h3>
+            <h4 class="h4_mobile">H4_mobile / Twentytwelve 16pt</h4>
+            <h4>H4 / Twentytwelve 14pt</h4>
+            <div class="caption">Caption / Twentytwelve 11pt</div>
+        </section>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Кнопки</h1>
+        </div>
+        <section>
+            <div class="table">
+                <div class="row">
+                    <div class="cell header-item"></div>
+                    <div class="cell header-item">basic</div>
+                    <div class="cell header-item">hovered</div>
+                    <div class="cell header-item">pssed</div>
+                    <div class="cell header-item">unactive</div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Главная кнопка - используется для выполнения целевого
+                        действия
+                    </div>
+                    <div class="cell">
+                        <bar-main-button>bar-main-button</bar-main-button>
+                    </div>
+                    <div class="cell">
+                        <bar-main-button
+                            >long text long text long text</bar-main-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-main-button>short</bar-main-button>
+                    </div>
+                    <div class="cell">
+                        <bar-main-button [disabled]="true"
+                            >bar-main-button</bar-main-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Используется как второстепенная кнопка, когда при клике
+                        идет переход на другую страницу
+                    </div>
+                    <div class="cell">
+                        <bar-ref-button>bar-ref-button</bar-ref-button>
+                    </div>
+                    <div class="cell">
+                        <bar-ref-button
+                            >long text long text long text</bar-ref-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-ref-button>short</bar-ref-button>
+                    </div>
+                    <div class="cell">
+                        <bar-ref-button [disabled]="true"
+                            >bar-ref-button</bar-ref-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Используется как второстепенная кнопка, когда при клике
+                        открывается попап, переход между табами
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button>bar-modal-button</bar-modal-button>
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button
+                            >long text long text long text</bar-modal-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button>short</bar-modal-button>
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button [disabled]="true"
+                            >bar-modal-button</bar-modal-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        50% прозрачности используется когда кнопка не ключевой
+                        элемент на странице
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button [secondary]="true"
+                            >bar-modal-button</bar-modal-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button [secondary]="true"
+                            >long text long text long text</bar-modal-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button [secondary]="true"
+                            >short</bar-modal-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-modal-button [secondary]="true" [disabled]="true"
+                            >bar-modal-button</bar-modal-button
+                        >
+                    </div>
+                </div>
+                <div class="row grey">
+                    <div class="cell">
+                        Второстепенная функциональная кнопка - используется для
+                        выполнения действия
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button [darkMode]="true"
+                            >bar-flat-button</bar-flat-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button [darkMode]="true"
+                            >long text long text long text</bar-flat-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button [darkMode]="true"
+                            >short</bar-flat-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button [darkMode]="true" [disabled]="true"
+                            >bar-flat-button</bar-flat-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        для фона FFFFFF
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button>bar-flat-button</bar-flat-button>
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button
+                            >long text long text long text</bar-flat-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button>short</bar-flat-button>
+                    </div>
+                    <div class="cell">
+                        <bar-flat-button [disabled]="true"
+                            >bar-flat-button</bar-flat-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Главная кнопка - используется для выполнения действия
+                    </div>
+                    <div class="cell">
+                        <bar-action-button>bar-action-button</bar-action-button>
+                    </div>
+                    <div class="cell">
+                        <bar-action-button
+                            >long text long text long text</bar-action-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-action-button>short</bar-action-button>
+                    </div>
+                    <div class="cell">
+                        <bar-action-button [disabled]="true"
+                            >bar-action-button</bar-action-button
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell">
+                        Главная кнопка - используется для выполнения действия,
+                        при клике осуществляется переход на другую страницу
+                    </div>
+                    <div class="cell">
+                        <bar-action-button [arrow]="true"
+                            >bar-action-button</bar-action-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-action-button [arrow]="true"
+                            >long text long text long text</bar-action-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-action-button [arrow]="true"
+                            >short</bar-action-button
+                        >
+                    </div>
+                    <div class="cell">
+                        <bar-action-button [arrow]="true" [disabled]="true"
+                            >bar-action-button</bar-action-button
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Выбор из списка</h1>
+        </div>
+        <section class="list">
+            <form
+                [formGroup]="ordersForm"
+                (submit)="submitListBoxItemes(ordersForm.value)"
+            >
+                <h3>Reactive Form</h3>
+                <div
+                    class="list-item"
+                    *ngFor="let order of orders; let i = index"
+                >
+                    <bar-list-box-item
+                        [id]="ordersData[i].id"
+                        [formControl]="order"
+                        >{{ ordersData[i].name }}</bar-list-box-item
+                    >
+                </div>
+                <div class="controls">
+                    <bar-action-button [arrow]="true" type="submit"
+                        >Submit</bar-action-button
+                    >
+                </div>
+            </form>
+        </section>
+        <section class="list">
+            <div
+                class="list-item"
+                *ngFor="let order of chosenListBoxItemes; let i = index"
+            >
+                {{ order }}
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Элементы управления + иконки</h1>
+        </div>
+        <section class="col-2">
+            <h2>Иконки</h2>
+            <div class="element-block">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </div>
+            <div class="element-block">
+                <mat-icon svgIcon="check" class="check-icon"></mat-icon>
+            </div>
+            <div class="element-block">
+                <mat-icon
+                    class="check-right-icon"
+                    svgIcon="check-right"
+                ></mat-icon>
+            </div>
+            <div class="element-block">
+                <mat-icon class="vote-icon" svgIcon="dislike-grey"></mat-icon>
+            </div>
+            <div class="element-block">
+                <mat-icon class="vote-icon" svgIcon="dislike"></mat-icon>
+            </div>
+            <div class="element-block">
+                <mat-icon class="vote-icon" svgIcon="like"></mat-icon>
+            </div>
+            <div class="element-block">
+                <img
+                    class="note-icon"
+                    src="../../../assets/images/success.png"
+                    alt=""
+                />
+            </div>
+            <div class="element-block">
+                <img
+                    class="note-icon"
+                    src="../../../assets/images/warning.png"
+                    alt=""
+                />
+            </div>
+        </section>
+        <section class="col-2">
+            <h2>Элементы управления</h2>
+            <div class="element-block">
+                <bar-back-button></bar-back-button>
+            </div>
+            <div class="element-block">
+                <bar-hamburger-button></bar-hamburger-button>
+            </div>
+            <div class="element-block">
+                <bar-card-avatar
+                    [image]="imgSrc1"
+                    [text]="avatarName"
+                ></bar-card-avatar>
+                <bar-card-avatar
+                    [image]="imgSrc2"
+                    [text]="'Персик'"
+                    [small]="true"
+                ></bar-card-avatar>
+            </div>
+            <div class="element-block">
+                <bar-shopping-cart
+                    [count]="cartCount"
+                    [price]="cartPrice"
+                ></bar-shopping-cart>
+            </div>
+            <div class="element-block">
+                <bar-shopping-cart [count]="0" [price]="0"></bar-shopping-cart>
+            </div>
+            <div class="element-block">
+                <bar-flat-button [rounded]="true"
+                    >Детали подписки</bar-flat-button
+                >
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Контролы</h1>
+        </div>
+        <section class="col-2">
+            <div class="element-block">
+                <h3>Checkbox</h3>
+                <form
+                    [formGroup]="ordersForm"
+                    (submit)="submitCheckboxes(ordersForm.value)"
+                >
+                    <div
+                        class="list-item"
+                        *ngFor="let order of orders; let i = index"
+                    >
+                        <bar-checkbox [formControl]="order">
+                            {{ ordersData[i].name }}
+                        </bar-checkbox>
+                    </div>
+                    <div class="controls">
+                        <bar-action-button [arrow]="true" type="submit"
+                            >Submit</bar-action-button
+                        >
+                    </div>
+                    Selected: {{ chosenCheckboxes | json }}
+                </form>
+            </div>
+            <div class="element-block">
+                <form [formGroup]="inputsForm">
+                    <h3>Basic input</h3>
+                    <div class="bar-input-wrapper">
+                        <bar-input
+                            required
+                            name="customInput"
+                            [placeholder]="'Твое имя'"
+                            formControlName="inputValue"
+                        ></bar-input>
+                        <div
+                            class="caption error"
+                            *ngIf="
+                                !inputsForm.controls.inputValue.pristine &&
+                                inputsForm.controls.inputValue.getError(
+                                    'required'
+                                )
+                            "
+                        >
+                            Input is required!
+                        </div>
+                    </div>
+                    <p>Valid: {{ inputsForm.get('inputValue').valid }}</p>
+                    <p>Value: {{ inputsForm.get('inputValue').value }}</p>
+                    <h3>Textarea</h3>
+                    <div class="bar-input-wrapper">
+                        <bar-textarea
+                            required
+                            name="customTextarea"
+                            [placeholder]="'Детали'"
+                            formControlName="textareaValue"
+                        ></bar-textarea>
+                        <div
+                            class="caption error"
+                            *ngIf="
+                                !inputsForm.controls.textareaValue.pristine &&
+                                inputsForm.controls.textareaValue.getError(
+                                    'required'
+                                )
+                            "
+                        >
+                            Textarea is required!
+                        </div>
+                    </div>
+                    <p>Valid: {{ inputsForm.get('textareaValue').valid }}</p>
+                    <p>Value: {{ inputsForm.get('textareaValue').value }}</p>
+                    <h3>Selector</h3>
+                    <div class="bar-input-wrapper number">
+                        <bar-select
+                            placeholder="Опция"
+                            [options]="selectItems"
+                            [formControl]="selectControl"
+                        ></bar-select>
+                        <ng-template #optionTpl let-option>
+                            <div class="select-template-item">
+                                {{ option.label }}
+                            </div>
+                        </ng-template>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="col-2">
+            <div class="element-block">
+                <h3>Radio Group</h3>
+                <form [formGroup]="radioGroup">
+                    <div class="radio-group">
+                        <div class="bar-radio-button content-above">
+                            <input
+                                id="male"
+                                value="male"
+                                type="radio"
+                                formControlName="gender"
+                            />
+                            <label for="male">Он</label>
+                        </div>
+
+                        <div class="bar-radio-button content-above">
+                            <input
+                                id="female"
+                                value="female"
+                                type="radio"
+                                formControlName="gender"
+                            />
+                            <label for="female">Онa</label>
+                        </div>
+                    </div>
+
+                    Selected: {{ radioGroup.value | json }}
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

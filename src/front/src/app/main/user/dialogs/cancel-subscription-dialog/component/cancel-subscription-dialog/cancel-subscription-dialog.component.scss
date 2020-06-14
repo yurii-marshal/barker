@@ -1,0 +1,155 @@
+::ng-deep
+    .cdk-overlay-container
+    .cdk-overlay-pane.cancel-subscription-dialog-container {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+
+    .mat-dialog-container {
+        border-radius: 0;
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            padding: 56px 64px;
+            border-radius: 0;
+        }
+
+        ::ng-deep .back-btn-container {
+            .arrow-back-icon {
+                top: 15px;
+                width: 24px !important;
+            }
+
+            .back-btn {
+                padding-left: 35px !important;
+                font-size: 2rem !important;
+                line-height: 169% !important;
+            }
+        }
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -16px;
+
+    @media (min-width: 1024px) {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .back-button-wrapper {
+        width: 70px;
+    }
+
+    .close-wrapper {
+        cursor: pointer;
+
+        a {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 24px;
+        }
+        mat-icon {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+
+            @media (min-width: 1024px) {
+                width: 16px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.cancel-subscription-container {
+    padding-top: 45px;
+
+    @media (min-width: 1024px) {
+        width: 58%;
+        margin: auto;
+        padding-top: 86px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 35px;
+        width: 47%;
+    }
+
+    .img-container {
+        background: url("~assets/images/dog-with-heart.svg") no-repeat;
+        background-size: contain;
+        width: auto;
+        height: 81px;
+        margin-left: -10px;
+
+        @media (min-width: 1024px) {
+            height: 116px;
+        }
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 127%;
+        padding: 15px 0;
+        width: 80%;
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            font-size: 32px;
+            line-height: 87%;
+        }
+    }
+
+    .sub-title {
+        padding-bottom: 80px;
+
+        @media (min-width: 1024px) {
+            font-size: 1.13rem;
+            line-height: 144%;
+            padding: 10px 0 40px;
+        }
+    }
+
+    .controls {
+        @media (min-width: 1024px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 84%;
+        }
+
+        ::ng-deep .back-btn-container {
+            .arrow-back-icon {
+                @media (min-width: 1024px) {
+                    top: 14px;
+                    width: 28px !important;
+                }
+            }
+
+            .back-btn {
+                padding-left: 35px !important;
+                font-size: 2rem !important;
+                line-height: 169% !important;
+
+                @media (min-width: 1024px) {
+                    padding-left: 40px !important;
+                    font-size: 2.5rem !important;
+                    line-height: 123% !important;
+                }
+            }
+        }
+
+        ::ng-deep .cancel-button {
+            .content {
+                font-size: 0.93rem;
+                line-height: 150%;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}

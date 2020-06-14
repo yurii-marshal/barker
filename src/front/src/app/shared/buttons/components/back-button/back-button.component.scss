@@ -1,0 +1,29 @@
+@import '~styles/mixins.scss';
+
+.back-btn-container {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+
+    .arrow-back-icon {
+        position: absolute;
+        width: 16px;
+        transform: rotate(180deg);
+        transform: scale(-1, 1);
+        left: 0;
+    }
+
+    .back-btn {
+        padding-left: 25px;
+        font-size: 14px;
+    }
+
+    &:hover {
+        .arrow-back-icon {
+            left: -3px;
+        }
+        .back-btn {
+            margin-left: 2px;
+        }
+    }
+}

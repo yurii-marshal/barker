@@ -1,0 +1,64 @@
+<div class="choose-subscription-container" [formGroup]="subscriptionForm">
+    <div class="header-container">
+        <div class="back-button-wrapper">
+            <bar-back-button
+                @enterLeave
+                (click)="backToRecipesList()"
+            ></bar-back-button>
+        </div>
+        <div class="close-wrapper mobile">
+            <a (click)="closeDialog()">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </a>
+        </div>
+        <bar-action-button
+            class="desktop"
+            [arrow]="true"
+            *ngIf="!isSubscriptionPaused"
+            (clickHandler)="chooseSubscription()"
+        >
+            Сохранить
+        </bar-action-button>
+
+        <div class="notification-container" *ngIf="isSubscriptionPaused">
+            <div class="caption">
+                При возобновлении подписки нужно будет заново ввести платежную
+                карту. Но оплата будет списана {{subscription.date}} после {{subscription.time}}
+            </div>
+        </div>
+    </div>
+
+    <div class="paused-text-container" *ngIf="isSubscriptionPaused">
+        <h2 class="title">
+            Подписка была остановлена
+        </h2>
+        <h4 class="sub-title">
+            Возобновите подписку, чтобы продолжить допользоваться сервисом
+        </h4>
+    </div>
+
+    <bar-subscription-list
+        formControlName="subscriptionId"
+        (chooseSubscription)="chooseSubscription()"
+    ></bar-subscription-list>
+
+    <bar-action-button
+        class="mobile"
+        [arrow]="true"
+        (clickHandler)="chooseSubscription()"
+    >
+        Сохранить
+    </bar-action-button>
+    <bar-action-button
+        class="desktop"
+        [arrow]="true"
+        *ngIf="isSubscriptionPaused"
+        (clickHandler)="chooseSubscription()"
+    >
+        Далее
+    </bar-action-button>
+</div>

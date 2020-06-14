@@ -1,0 +1,128 @@
+:host {
+    padding-top: 24px;
+    max-width: 300px;
+    @media (min-width: 768px) {
+        display: flex;
+    }
+}
+
+.pet-avatar {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    border-radius: 40px;
+    min-height: 141px;
+    margin-top: 12px;
+
+    display: flex;
+    justify-content: space-between;
+
+    ::ng-deep .ngucarousel {
+        height: auto;
+        width: 100%;
+
+        .ngu-touch-container {
+            height: 100%;
+
+            .ngucarousel-items {
+                display: -webkit-box;
+                display: -moz-box;
+                width: 100%;
+            }
+        }
+    }
+
+    .avatar-container {
+        display: flex;
+        width: 100%;
+
+        .tile {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            img {
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+
+    .avatar-slider-btn {
+        background-color: transparent;
+        border: none;
+        padding: 0 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:active {
+            padding-top: 2px;
+        }
+
+        mat-icon {
+            width: 10px;
+        }
+    }
+
+    .left-button.avatar-slider-btn {
+        left: 0;
+    }
+
+    .right-button.avatar-slider-btn {
+        right: 0;
+    }
+
+    @media (min-width: 768px) {
+        width: 184px;
+    }
+}
+
+.add-photo {
+    width: 100%;
+    text-align: center;
+
+    button {
+        font-family: Twentytwelve;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.info {
+    font-size: 18px;
+    line-height: 26px;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+.secondary-info {
+    font-size: 11px;
+    line-height: 17px;
+    color: #acacac;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.right-side {
+    display: none;
+
+    .info,
+    .secondary-info {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 32px;
+    }
+}

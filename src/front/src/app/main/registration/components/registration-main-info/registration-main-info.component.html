@@ -1,0 +1,54 @@
+<div class="registration-main-info">
+    <div class="img-container"></div>
+    <form [formGroup]="mainForm">
+        <div class="name-container">
+            <div class="label-text">Мою собаку зовут</div>
+            <bar-input formControlName="name" placeholder="Имя"></bar-input>
+        </div>
+        <div class="breed-container">
+            <div class="gender">
+                <div class="radio-group">
+                    <div class="bar-radio-button">
+                        <input
+                            id="male"
+                            value="0"
+                            type="radio"
+                            formControlName="gender"
+                        />
+                        <label for="male">Его</label>
+                    </div>
+
+                    <div class="bar-radio-button">
+                        <input
+                            id="female"
+                            value="1"
+                            type="radio"
+                            formControlName="gender"
+                        />
+                        <label for="female">Ее</label>
+                    </div>
+                </div>
+
+                <div class="label-text">
+                    порода
+                </div>
+            </div>
+            <bar-select
+                formControlName="breedId"
+                [placeholder]="''"
+                [options]="breedList"
+            ></bar-select>
+        </div>
+    </form>
+    <div class="caption">
+        У тебя не одна собака? <br />
+        В конце анкеты будет возможность подобрать рацион для второго любимца
+    </div>
+    <bar-action-button
+        [arrow]="true"
+        (clickHandler)="nextStep()"
+        [disabled]="mainForm.invalid"
+    >
+        Дальше
+    </bar-action-button>
+</div>

@@ -1,0 +1,67 @@
+<div class="timepicker-container">
+    <ngu-carousel
+        class="slider mobile"
+        style="height: 100%;"
+        #timepickerSlider
+        [inputs]="carouselConfig"
+        [dataSource]="dateList"
+    >
+        <div *nguCarouselDef="let item" class="item">
+            <div class="slide">
+                <div class="header">
+                    <h3 class="weekday">
+                        {{ item.date | date: 'EEEE' }}
+                    </h3>
+                    <h3 class="date">
+                        {{ item.date | date: 'd MMMM' }}
+                    </h3>
+                </div>
+                <div class="options">
+                    <div
+                        class="time-interval"
+                        *ngFor="let interval of item.timeList"
+                    >
+                        <bar-list-box-item
+                            [darkMode]="true"
+                            [disabled]="interval.disabled"
+                            (changeHandler)="emitDateAndTime(item, interval)"
+                            [(ngModel)]="interval.value"
+                        >
+                            {{ interval.label }}
+                        </bar-list-box-item>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngu-carousel>
+
+    <div class="list-container desktop">
+        <div class="item" *ngFor="let item of dateList; let last = last">
+            <div class="slide" [class.last]="last">
+                <div class="header">
+                    <h3 class="weekday">
+                        {{ item.date | date: 'EEEE' }}
+                    </h3>
+                    <h3 class="date">
+                        {{ item.date | date: 'd MMMM' }}
+                    </h3>
+                </div>
+                <div class="options">
+                    <div
+                        class="time-interval"
+                        *ngFor="let interval of item.timeList"
+                    >
+                        <bar-list-box-item
+                            [darkMode]="true"
+                            [disabled]="interval.disabled"
+                            (changeHandler)="emitDateAndTime(item, interval)"
+                            [(ngModel)]="interval.value"
+                        >
+                            {{ interval.label }}
+                        </bar-list-box-item>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

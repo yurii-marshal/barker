@@ -1,0 +1,79 @@
+::ng-deep
+    .cdk-overlay-container
+    .cdk-overlay-pane.orders-history-dialog-container {
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 85%;
+    }
+
+    .mat-dialog-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @media (min-width: 1024px) {
+            height: auto;
+            padding: 35px 48px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 35px 136px;
+        }
+    }
+}
+
+.dialog-container {
+    height: 100%;
+    overflow-y: auto;
+
+    .close-wrapper {
+        z-index: 9;
+        position: absolute;
+        right: 38px;
+        top: 20px;
+    
+        @media (min-width: 1024px) {
+            top: 45px;
+            right: 90px;
+        }
+    
+        mat-icon {
+            width: 10px;
+            height: 10px;
+    
+            @media (min-width: 1024px) {
+                width: 16px;
+                height: 18px;
+            }
+        }
+    }
+    
+    ::ng-deep bar-pets-switcher {
+        margin-top: 0;
+
+        @media (min-width: 1024px) {
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+    }
+    
+    .title {
+        margin: 30px 0 24px;
+    }
+    
+    .history-items-container {
+        ::ng-deep bar-history-item {
+            .history-item-container {
+                margin-bottom: 24px;
+
+                @media (min-width: 1024px) {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }    
+}

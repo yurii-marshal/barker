@@ -1,0 +1,51 @@
+.title-container {
+    padding-top: 32px;
+
+    @media (min-width: 1024px) {
+        padding-top: 65px;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .title {
+        font-size: 1.38rem;
+        line-height: 127%;
+
+        @media (min-width: 1024px) {
+            font-size: 44px;
+            line-height: 123%;
+        }
+    }
+
+    .sub-title {
+        color: rgba(0, 0, 0, 0.5);
+        margin: 10px 0 20px;
+
+        @media (min-width: 1024px) {
+            text-align: right;
+            width: 315px;
+        }
+    }
+}
+
+.sub-pages-container {
+    @media (min-width: 1440px) {
+        min-height: 80vh;
+    }
+    
+    ::ng-deep bar-card-available-product {
+        .available-product-card {
+            margin-bottom: 12px;
+
+            @media (min-width: 1024px) {
+                width: 160px;
+            }
+
+            @media (min-width: 1440px) {
+                padding: 32px 62px;
+            }
+        }
+    }
+}

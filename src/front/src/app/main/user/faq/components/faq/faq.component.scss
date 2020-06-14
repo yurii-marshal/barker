@@ -1,0 +1,108 @@
+.faq-container {
+    position: relative;
+
+    @media (min-width: 1024px) {
+        padding: 32px 0;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 72px 0 0 0;
+    }
+
+    section {
+        padding: 32px 0 0;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            margin-right: 10%;
+        }
+
+        @media (min-width: 1440px) {
+            margin: 0 175px 132px;
+            padding: 0;
+        }
+
+        .title-container {
+            position: relative;
+            padding-bottom: 10px;
+
+            @media (min-width: 1024px) {
+                width: 25%;
+            }
+
+            @media (min-width: 1440px) {
+                width: 30%;
+            }
+
+            .title {
+                font-size: 1.66rem;
+                line-height: 131%;
+
+                @media (min-width: 1024px) {
+                    font-size: 2rem;
+                }
+            }
+
+            .title-img {
+                display: none;
+
+                @media (min-width: 1024px) {
+                    display: block;
+                    margin-left: -16px;
+                }
+            }
+
+            .section-img {
+                @media (min-width: 1024px) {
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                @media (min-width: 1024px) {
+                    bottom: -10%;
+                }
+            }
+        }
+
+        .questions-container {
+            @media (min-width: 1024px) {
+                width: 75%;
+            }
+
+            @media (min-width: 1440px) {
+                width: 70%;
+            }
+
+            .item {
+                @media (min-width: 1440px) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .parallax-faq {
+        display: none;
+
+        @media (min-width: 1440px) {
+            display: block;
+            position: absolute;
+            z-index: -1;
+
+            &.first {
+                top: 74vh;
+                left: -10%;
+            }
+
+            &.second {
+                top: 200vh;
+                right: -9%;
+            }
+
+            &.third {
+                top: 805vh;
+                left: -9%;
+            }
+        }
+    }
+}

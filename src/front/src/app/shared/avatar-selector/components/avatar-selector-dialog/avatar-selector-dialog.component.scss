@@ -1,0 +1,174 @@
+::ng-deep .cdk-overlay-container .cdk-overlay-pane {
+    width: 100%;
+    position: relative;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mat-dialog-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @media (min-width: 1024px) {
+            height: auto;
+            padding: 35px 81px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 54px 208px;
+        }
+    }
+}
+
+.close-wrapper {
+    z-index: 9;
+    position: absolute;
+    right: 38px;
+    top: 28px;
+
+    @media (min-width: 1024px) {
+        top: 45px;
+        right: 90px;
+    }
+
+    mat-icon {
+        width: 10px;
+        height: 10px;
+
+        @media (min-width: 1024px) {
+            width: 16px;
+            height: 18px;
+        }
+    }
+}
+
+.change-photo-label {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 1024px) {
+        cursor: pointer;
+        font-size: 1.13rem;
+        top: 10%;
+    }
+}
+
+.avatar-selector-container {
+    padding-top: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        min-height: 40vh;
+    }
+
+    .image-container {
+        width: 100%;
+        height: calc(100vw - 64px);
+        background: rgba(241, 241, 241, 0.6);
+        border-radius: 40px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 1024px) {
+            width: 368px;
+            height: 368px;
+        }
+
+        .uploading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .drag-and-drop-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .options-container {
+                ::ng-deep bar-flat-button {
+                    @media (min-width: 1024px) {
+
+                        .flat-wrapper {
+                            margin-bottom: 40px;
+
+                            button {
+                                width: 216px;
+                                height: 68px;
+                                border-radius: 24px;
+    
+                                .content {
+                                    font-size: 1rem;
+                                    line-height: 144%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .label {
+                    width: 100%;
+                    font-size: 0.93rem;
+                    color: rgba(0, 0, 0, 0.6);
+                    text-align: center;
+                    margin: 14px 0;
+
+                    @media (min-width: 1024px) {
+                        font-size: 1.13rem;
+                        line-height: 144%;
+                    }
+                }
+            }
+        }
+
+        .pet-avatar {
+            height: 100%;
+        }
+
+        &.with-avatar {
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 100%;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0px 0px 0px 2000px rgba(241, 241, 241, 0.6);
+            }
+        }
+
+        &.droppable-zone {
+            opacity: 0.5;
+            border: 3px dotted rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .control-container {
+        padding-top: 30px;
+
+        @media (min-width: 1024px) {
+            padding-top: 35px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

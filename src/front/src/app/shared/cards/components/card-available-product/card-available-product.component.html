@@ -1,0 +1,18 @@
+<div class="available-product-card">
+    <div (click)="clickOutside(value)">
+        <img [src]="value?.imgSrc" [alt]="value?.imgSrc" />
+        <h3 class="name">{{ value?.name }}</h3>
+        <h3 class="additional">{{ value?.description }}</h3>
+        <h3 class="price">{{ value?.price | currencyUA }}</h3>
+    </div>
+    
+    <div class="controls">
+        <bar-counter [(value)]="value.count"></bar-counter>
+
+        <div class="action-control">
+            <bar-action-button (clickHandler)="addToDelivery(value)">
+                Беру
+            </bar-action-button>
+        </div>
+    </div>
+</div>

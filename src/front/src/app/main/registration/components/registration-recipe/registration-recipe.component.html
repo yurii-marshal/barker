@@ -1,0 +1,18 @@
+<div class="registration-recipe" [formGroup]="recipeForm">
+    <h2 class="title">Выбери рецепт</h2>
+    <div class="subtitle caption">Ты сможешь изменить рецепт в профайле</div>
+
+    <bar-recipes-list
+        (chooseRecipe)="nextStep($event)"
+        formControlName="recipeId"
+    ></bar-recipes-list>
+
+    <div class="controls-container">
+        <bar-action-button [arrow]="true" (clickHandler)="nextStep(recipeForm)">
+            Беру
+        </bar-action-button>
+        <bar-modal-button disabled (clickHandler)="openFaqDialog()">
+            Есть вопрос
+        </bar-modal-button>
+    </div>
+</div>

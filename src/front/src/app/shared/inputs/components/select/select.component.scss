@@ -1,0 +1,103 @@
+$itemLineHeight: 26px;
+$baseColor: #f1f1f1;
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.selector-container {
+    background: $baseColor;
+    width: calc(100% - 30px);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    position: relative;
+    height: auto;
+
+    &.closed {
+        border-radius: 60px;
+    }
+
+    .controls {
+        display: inline-flex;
+        input,
+        button {
+            background-color: transparent;
+            border: none;
+        }
+
+        input {
+            @extend .base-text;
+            width: 100%;
+            font-size: 14px;
+            line-height: 0;
+            margin-left: -8px;
+            font-family: "Twentytwelve";
+
+            @media (min-width: 1024px) {
+                margin-left: 0;
+                font-size: 18px;
+            }
+
+            @media (min-width: 1440px) {
+                line-height: 32px;
+            }
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            margin-right: -10px;
+
+            @media (max-width: 1023px) {
+                padding: 2px;
+            }
+
+            @media (min-width: 1024px) {
+                margin-right: 0;
+            }
+
+            mat-icon {
+                width: 10px;
+                height: auto;
+                cursor: pointer;
+
+                &.up {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        z-index: 1000;
+        background: $baseColor;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        position: absolute;
+        width: calc(100% - 30px);
+        top: 36px;
+        left: 0;
+        padding: 0 15px 10px 15px;
+
+        ul {
+            padding: 0;
+            list-style: none;
+            max-height: $itemLineHeight * 8 - 8;
+            overflow-y: auto;
+            overflow-x: hidden;
+            li {
+                @extend .base-text;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
+    }
+    .base-text {
+        // line-height: $itemLineHeight;
+        color: #666666;
+    }
+}

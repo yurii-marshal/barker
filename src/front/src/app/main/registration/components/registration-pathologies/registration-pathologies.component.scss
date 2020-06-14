@@ -1,0 +1,64 @@
+:host {
+    width: 100%;
+}
+
+.registration-pathologies {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    form {
+        .name-container {
+            margin: 0 auto 22px;
+        }
+
+        .has-pathology {
+            display: flex;
+
+            .bar-radio-button {
+                &:first-child {
+                    margin-right: 18px;
+                }
+
+                label {
+                    font-size: 1.14rem;
+                    line-height: 144%;
+                }
+            }
+        }
+    }
+
+    .pathologies-list {
+        margin: 35px 0 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .list-item {
+            display: flex;
+            max-width: 140px;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+    }
+
+    .control-container {
+        margin-top: 30px;
+
+        @media (min-width: 1024px) {
+            margin-top: 80px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        width: 430px;
+        padding-left: 100px;
+
+        .pathologies-list {
+            .list-item {
+                min-width: 156px;
+                max-width: 217px;
+            }
+        }
+    }
+}

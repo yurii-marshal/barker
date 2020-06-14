@@ -1,0 +1,88 @@
+<div mat-dialog-content>
+    <div class="close-wrapper">
+        <a (click)="close()">
+            <mat-icon
+                @baseThemeTransition
+                svgIcon="close"
+                class="close-icon"
+            ></mat-icon>
+        </a>
+    </div>
+
+    <input
+        [multiple]="false"
+        #avatarInput
+        type="file"
+        accept="image/*"
+        id="avatarInput"
+        name="avatarInput"
+        style="display: none;"
+        (change)="uploadPhoto($event)"
+    />
+
+    <div
+        *ngIf="imageSrc"
+        class="change-photo-label"
+        (click)="avatarInput.click()"
+    >
+        Изменить фото
+    </div>
+
+    <div class="avatar-selector-container">
+        <div
+            class="image-container"
+            [class.droppable-zone]="isDroppable"
+            [class.with-avatar]="imageSrc && !isUploading"
+        >
+            <img
+                class="uploading"
+                *ngIf="isUploading"
+                src="assets/images/animations/upload-animation.svg"
+                alt="uploading"
+            />
+
+            <div
+                *ngIf="!imageSrc && !isUploading"
+                class="drag-and-drop-container"
+                (dragover)="dragOver($event)"
+                (dragleave)="dragLeave($event)"
+                (drop)="getFileOnDrop($event)"
+            >
+                <div class="options-container" *ngIf="!imageSrc">
+                    <bar-flat-button
+                        (click)="avatarInput.click()"
+                        [darkMode]="true"
+                        class="image-button"
+                    >
+                        Выбери фото
+                    </bar-flat-button>
+
+                    <div class="label desktop">
+                        или
+                    </div>
+
+                    <div class="label desktop">
+                        Перетащи изображение сюда
+                    </div>
+                </div>
+            </div>
+
+            <img
+                *ngIf="imageSrc && !isUploading"
+                [src]="imageSrc"
+                alt="avatar"
+                class="pet-avatar"
+            />
+        </div>
+
+        <div class="control-container">
+            <bar-action-button
+                [disabled]="!imageSrc || isUploading"
+                [arrow]="true"
+                (clickHandler)="saveAvatar()"
+            >
+                Сохранить
+            </bar-action-button>
+        </div>
+    </div>
+</div>

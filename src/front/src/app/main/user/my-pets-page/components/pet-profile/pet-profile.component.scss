@@ -1,0 +1,530 @@
+.pet-profile-container {
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        padding-bottom: 30px;
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            padding-bottom: 70px;
+        }
+
+        .bar-input-wrapper {
+            position: relative;
+            padding-top: 16px;
+
+            ::ng-deep {
+                bar-input {
+                    input {
+                        font-size: 1rem;
+                        background: rgba(241, 241, 241, 0.6);
+                        border-radius: 24px;
+
+                        @media (min-width: 1024px) {
+                            text-align: right;
+                            padding-right: 53px;
+                            padding-left: 146px;
+                            font-size: 1.13rem;
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+
+                        @media (min-width: 1440px) {
+                            padding-right: 62px;
+                        }
+                    }
+                }
+
+                bar-select {
+                    .selector-container {
+                        background: rgba(241, 241, 241, 0.6);
+                        border-radius: 24px;
+                        padding: 14px 15px;
+
+                        @media (min-width: 1440px) {
+                            padding-right: 62px;
+                        }
+
+                        .controls {
+                            input {
+                                color: #000000;
+                                font-family: "Twentytwelve";
+                                @media (min-width: 1024px) {
+                                    text-align: right !important;
+                                    font-size: 1.13rem;
+
+                                    &::placeholder {
+                                        color: transparent;
+                                    }
+                                }
+                            }
+                        }
+
+                        button {
+                            padding-right: 7px;
+                        }
+
+                        .dropdown {
+                            background: #f7f7f7;
+
+                            ul li {
+                                @media (min-width: 1024px) {
+                                    text-align: right !important;
+                                    font-size: 1.13rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.name {
+                &:first-child {
+                    @media (min-width: 1024px) {
+                        padding-top: 0;
+
+                        .fixed-placeholder {
+                            @media (min-width: 1024px) {
+                                top: 28%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.breed {
+                ::ng-deep bar-select {
+                    input {
+                        padding-left: 14px;
+                    }
+
+                    .selector-container {
+                        @media (min-width: 1440px) {
+                            padding-right: 15px;
+                        }
+
+                        .controls {
+                            @media (min-width: 1440px) {
+                                padding-right: 42px;
+                            }
+                        }
+
+                        .dropdown ul li {
+                            @media (min-width: 1440px) {
+                                padding-right: 66px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.birthdate {
+                padding-top: 0;
+                margin-top: 16px;
+                border-radius: 24px;
+
+                @media (min-width: 1024px) {
+                    background: rgba(241, 241, 241, 0.6);
+                }
+
+                @media (min-width: 1440px) {
+                    padding-right: 42px;
+                }
+
+                ::ng-deep bar-date-selector {
+                    .container {
+                        @media (min-width: 1024px) {
+                            margin-left: auto;
+
+                            bar-select {
+                                .selector-container {
+                                    background: transparent;
+
+                                    .controls {
+                                        input {
+                                            font-size: 1.13rem;
+
+                                            &::placeholder {
+                                                color: rgba(0, 0, 0, 0.3);
+                                            }
+                                        }
+                                    }
+
+                                    .dropdown {
+                                        @media (min-width: 1440px) {
+                                            right: 72px;
+                                            left: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .fixed-placeholder {
+                    @media (min-width: 1024px) {
+                        top: 30%;
+                        font-size: 1.13rem;
+                    }
+                }
+            }
+        }
+
+        .fixed-placeholder {
+            position: absolute;
+            top: 46%;
+            left: 52px;
+            font-size: 1rem;
+            line-height: 162%;
+            color: rgba(0, 0, 0, 0.3);
+            display: none;
+
+            @media (min-width: 1024px) {
+                display: block;
+                font-size: 1.13rem;
+                top: 44%;
+            }
+
+            @media (min-width: 1024px) {
+                left: 62px;
+            }
+        }
+
+        .weight-container {
+            padding-top: 16px;
+
+            .bar-input-wrapper {
+                display: inline-block;
+                position: relative;
+                padding-top: 0;
+                width: calc(50% - 8px);
+
+                &:first-child {
+                    padding-right: 8px;
+                }
+
+                &:not(:first-child) {
+                    padding-left: 8px;
+                }
+
+                ::ng-deep bar-input {
+                    input {
+                        padding-right: 48%;
+                        text-align: right;
+
+                        @media (min-width: 1024px) {
+                            padding-right: 28%;
+                            font-size: 1.13rem;
+                        }
+                    }
+                }
+
+                .perfect-weight {
+                    ::ng-deep bar-input {
+                        input {
+                            @media (min-width: 1024px) {
+                                padding-right: 22%;
+                            }
+
+                            @media (min-width: 1440px) {
+                                padding-right: 27%;
+                            }
+                        }
+                    }
+                }
+
+                .input-label {
+                    &.perfect {
+                        left: 58%;
+
+                        @media (min-width: 1024px) {
+                            left: auto;
+                            right: 10%;
+                            font-size: 1.13rem;
+                        }
+
+                        @media (min-width: 1024px) {
+                            right: 15%;
+                        }
+                    }
+
+                    position: absolute;
+                    top: 52%;
+                    left: 52%;
+
+                    @media (min-width: 1024px) {
+                        font-size: 1.13rem;
+                        top: 26%;
+                        right: 18%;
+                        left: auto;
+                    }
+                }
+
+                .fixed-placeholder {
+                    font-size: 1rem;
+                    display: inline;
+                    position: relative;
+                    left: 0;
+
+                    @media (min-width: 1024px) {
+                        font-size: 1.13rem;
+                        position: absolute;
+                        top: 25%;
+                        left: 52px;
+                    }
+
+                    @media (min-width: 1024px) {
+                        left: 62px;
+                    }
+                }
+            }
+        }
+
+        .avatar-container {
+            background: rgba(241, 241, 241, 0.6);
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px;
+            margin-top: 16px;
+
+            @media (min-width: 1024px) {
+                padding: 32px 52px;
+            }
+
+            @media (min-width: 1440px) {
+                padding: 32px 62px;
+            }
+
+            .avatar {
+                width: 106px;
+                height: 106px;
+
+                @media (min-width: 1024px) {
+                    width: 142px;
+                    height: 142px;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 50%;
+                }
+            }
+
+            .control {
+                display: flex;
+                justify-content: center;
+
+                @media (min-width: 1024px) {
+                    justify-content: flex-end;
+                }
+
+                ::ng-deep bar-modal-button {
+                    .content {
+                        @media (min-width: 1024px) {
+                            font-size: 1.13rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .activity-container {
+            padding-top: 16px;
+            position: relative;
+
+            ::ng-deep bar-select {
+                .selector-container {
+                    background: rgba(241, 241, 241, 0.6);
+                    border-radius: 24px;
+                    padding: 14px 15px;
+
+                    input {
+                        @media (min-width: 1024px) {
+                            text-align: right !important;
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+                    }
+
+                    .dropdown {
+                        background: #f7f7f7;
+                    }
+
+                    .controls {
+                        @media (min-width: 1440px) {
+                            padding-right: 42px;
+                        }
+                    }
+
+                    .dropdown ul li {
+                        @media (min-width: 1440px) {
+                            padding-right: 66px;
+                        }
+                    }
+                }
+
+                button {
+                    padding-right: 7px;
+                }
+            }
+
+            .fixed-placeholder {
+                display: none;
+
+                @media (min-width: 1024px) {
+                    display: block;
+                    top: 42%;
+                }
+            }
+        }
+
+        .pathologies-container {
+            .prefers-list {
+                .list-item {
+                    @media (min-width: 1024px) {
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+
+        .pathologies-container,
+        .prefers-container {
+            background: rgba(241, 241, 241, 0.6);
+            border-radius: 24px;
+            padding: 15px 30px;
+            margin-top: 16px;
+
+            @media (min-width: 1024px) {
+                padding: 15px 48px 15px 62px;
+            }
+
+            @media (min-width: 1024px) {
+                padding: 15px 62px;
+            }
+
+            .label {
+                font-size: 1rem;
+                line-height: 162%;
+                color: rgba(0, 0, 0, 0.3);
+
+                @media (min-width: 1024px) {
+                    font-size: 1.13rem;
+                }
+            }
+
+            .prefers-list {
+                @media (min-width: 1024px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .list-item {
+                    margin: 15px 0;
+
+                    @media (min-width: 1024px) {
+                        margin-right: 32px;
+                        margin-bottom: 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 10px;
+                    }
+
+                    ::ng-deep {
+                        bar-checkbox {
+                            span {
+                                font-size: 1rem;
+
+                                @media (min-width: 1024px) {
+                                    font-size: 1.13rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .pathologies-container {
+            margin-bottom: 20px;
+
+            @media (min-width: 1024px) {
+                margin-bottom: 30px;
+            }
+
+            .has-pathology {
+                display: flex;
+                padding-top: 8px;
+
+                @media (min-width: 1024px) {
+                    padding-top: 4px;
+                    margin-right: -25px;
+                }
+
+                @media (min-width: 1440px) {
+                    margin-right: -30px;
+                }
+
+                .bar-radio-button {
+                    margin-right: 30px;
+
+                    label {
+                        font-size: 1rem;
+
+                        @media (min-width: 1024px) {
+                            font-size: 1.13rem;
+                        }
+                    }
+                }
+            }
+
+            .header {
+                @media (min-width: 1024px) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+.notification-container {
+    position: fixed;
+    width: 95%;
+    margin: 0 auto;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 44px;
+    line-height: 123%;
+    border-radius: 40px;
+    background-position: bottom;
+    background: url("~assets/images/notification-success-bgrd.svg");
+
+    .close-container {
+        position: absolute;
+        top: 5px;
+        right: 32px;
+
+        mat-icon {
+            width: 12px;
+            height: 14px;
+        }
+    }
+
+    .message {
+        padding-left: 64px;
+    }
+}

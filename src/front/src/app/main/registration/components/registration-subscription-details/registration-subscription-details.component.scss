@@ -1,0 +1,127 @@
+:host {
+    align-self: flex-start;
+
+    @media (min-width: 1024px) {
+        width: 544px;
+    }
+}
+
+.registration-subscription-details {
+    position: relative;
+
+    .title {
+        margin-bottom: 17px;
+
+        @media (min-width: 1024px) {
+            margin-bottom: 52px;
+        }
+    }
+    .sub-title {
+        margin: 10px 0;
+
+        @media (min-width: 1024px) {
+            margin: 32px 0 16px;
+        }
+    }
+
+    .input-container {
+        padding-bottom: 12px;
+
+        @media (min-width: 1024px) {
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        ::ng-deep {
+            bar-input input,
+            bar-textarea textarea,
+            bar-select .selector-container {
+                font-size: 1.05rem;
+                border-radius: 24px;
+            }
+
+            bar-input input,
+            bar-textarea textarea {
+                padding: 14px 30px;
+
+                @media (min-width: 1024px) {
+                    min-height: 56px;
+                }
+            }
+        }
+
+        bar-input,
+        bar-textarea,
+        bar-select {
+            @media (min-width: 1024px) {
+                // width: 80%;
+            }
+        }
+
+        .input-label {
+            color: rgba(0, 0, 0, 0.5);
+
+            @media (min-width: 1024px) {
+                position: absolute;
+                right: -145px;
+                width: 128px;
+                top: 40%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .control-container {
+        margin-bottom: 40px;
+
+        @media (min-width: 1024px) {
+            margin-top: 34px;
+        }
+
+        @media (min-width: 1024px) {
+            margin-top: 64px;
+        }
+    }
+
+    .img-container-1 {
+        display: none;
+        position: absolute;
+        background: url("~assets/images/sub-details-img-1.svg") no-repeat;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 272px;
+            height: 239px;
+            left: -235px;
+            top: -60px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 346px;
+            height: 304px;
+            left: -300px;
+            top: -95px;
+        }
+    }
+
+    .img-container-2 {
+        display: none;
+        position: absolute;
+        background: url("~assets/images/sub-details-img-2.svg") no-repeat;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 405px;
+            height: 317px;
+            bottom: -170px;
+            right: -220px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 558px;
+            height: 476px;
+            bottom: -210px;
+            right: -495px;
+        }
+    }
+}

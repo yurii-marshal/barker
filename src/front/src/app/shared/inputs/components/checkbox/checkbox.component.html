@@ -1,0 +1,14 @@
+<div class="bar-checkbox">
+    <label>
+        <input
+            type="checkbox"
+            [(ngModel)]="value"
+            [disabled]="disabled"
+            [attr.name]="name"
+            [attr.id]="id"
+        />
+        <span>
+            <ng-content></ng-content>
+        </span>
+    </label>
+</div>

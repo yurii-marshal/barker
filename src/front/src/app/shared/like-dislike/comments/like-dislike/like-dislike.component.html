@@ -1,0 +1,11 @@
+<bar-like
+    (click)="setLikeOrDislike(false)"
+    [isActive]="isLiked === false"
+    [type]="'dislike'"
+></bar-like>
+
+<bar-like
+    (click)="setLikeOrDislike(true)"
+    [isActive]="isLiked === true"
+    [type]="'like'"
+></bar-like>

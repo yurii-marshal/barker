@@ -1,0 +1,226 @@
+::ng-deep
+    .cdk-overlay-container
+    .cdk-overlay-pane.recipe-details-dialog-container {
+    width: 100%;
+    top: 32px;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+    }
+
+    .mat-dialog-container {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            padding: 32px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 47px 112px;
+        }
+    }
+}
+
+.close-wrapper {
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: 40px;
+        right: 70px;
+    }
+
+    mat-icon {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.slider {
+    .item {
+        @media (min-width: 1024px) {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 550px;
+        }
+
+        @media (min-width: 1440px) {
+            height: 75vh;
+        }
+
+        .tile {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            @media (min-width: 1024px) {
+                width: 85%;
+                height: 100%;
+            }
+
+            .top-section {
+                position: relative;
+
+                .title.mobile {
+                    margin-top: 10px;
+                }
+
+                .nutritional-values {
+                    @media (min-width: 1024px) {
+                        width: 42%;
+                    }
+
+                    .line {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .name,
+                        .value {
+                            display: inline;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .recipe-img-container {
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 169px;
+                    height: 169px;
+
+                    @media (min-width: 1024px) {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 256px;
+                        height: 256px;
+                    }
+                }
+            }
+
+            .bottom-section {
+                .ingredients {
+                    width: 100%;
+
+                    .sub-title {
+                        margin-top: 40px;
+                    }
+
+                    .container {
+                        display: flex;
+                        overflow-x: auto;
+
+                        .ingredient {
+                            background: rgba(241, 241, 241, 0.3);
+                            border-radius: 32px;
+                            margin-right: 10px;
+                            width: 110px;
+                            height: 148px;
+
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+
+                            &:hover {
+                                background: rgba(241, 241, 241, 0.6);
+                            }
+
+                            @media (min-width: 1024px) {
+                                cursor: pointer;
+                                margin-right: 0;
+                                background-color: transparent;
+                                border-radius: 40px;
+                                height: 140px;
+                                width: 124px;
+
+                                &:hover {
+                                    background-color: #f7f7f7;
+                                }
+                            }
+
+                            img {
+                                width: 86px;
+                                max-height: 40px;
+
+                                @media (min-width: 1024px) {
+                                    width: auto;
+                                    max-height: 60px;
+                                }
+                            }
+
+                            .label {
+                                width: 100%;
+                                text-align: center;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+
+                    .description {
+                        margin: 15px 0 10px;
+                        width: 100%;
+                        font-size: 0.88rem;
+                        line-height: 150%;
+
+                        @media (min-width: 1024px) {
+                            font-size: 1rem;
+                            margin: 10px 15px;
+                            width: 75%;
+                            margin: 10px 15px;
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+
+            .sub-title {
+                margin-bottom: 10px;
+            }
+        }
+
+        .control-container {
+            margin: 20px 0 30px;
+
+            @media (min-width: 1024px) {
+                margin: 0;
+            }
+
+            bar-action-button {
+                position: relative;
+
+                @media (min-width: 1024px) {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .slider-btn-left,
+    .slider-btn-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .slider-btn-left {
+        transform: rotate(90deg) scale(-1, 1);
+        left: 0;
+    }
+
+    .slider-btn-right {
+        transform: rotate(-90deg);
+        right: 0;
+    }
+}

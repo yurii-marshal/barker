@@ -1,0 +1,13 @@
+<div class="flat-wrapper" [class.rounded]="rounded">
+    <button
+        class="btn flat-btn"
+        (click)="onClick($event)"
+        [disabled]="disabled"
+        [class.dark]="darkMode"
+        [class.rounded]="rounded"
+        [type]="type"
+        @baseThemeTransition
+    >
+        <h4 class="content"><ng-content></ng-content></h4>
+    </button>
+</div>

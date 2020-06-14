@@ -1,0 +1,102 @@
+.timepicker-container {
+    ngu-carousel {
+        height: 340px;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .slide {
+        height: 100%;
+        background: rgba(241, 241, 241, 0.6);
+        border-radius: 24px;
+        margin-right: 10px;
+
+        @media (min-width: 1024px) {
+            margin-right: 0;
+            background: rgba(241, 241, 241, 0.6);
+            border-radius: 40px;
+            height: 100%;
+            width: 210px;
+
+            &.last {
+                margin-right: 0;
+            }
+        }
+
+        .header {
+            text-align: center;
+            padding: 15px 0 12px;
+
+            @media (min-width: 1024px) {
+                padding: 20px 0 10px;
+            }
+
+            .weekday {
+                text-transform: capitalize;
+            }
+
+            .weekday,
+            .date {
+                margin: 0;
+            }
+        }
+
+        .options {
+            padding-bottom: 15px;
+
+            .time-interval {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 48px 8px;
+
+                @media (min-width: 1024px) {
+                    padding: 0 25px 8px;
+                }
+
+                ::ng-deep bar-list-box-item {
+                    width: 100%;
+
+                    .list-box-item-inner {
+                        width: 100%;
+
+                        .unset-option-btn {
+                            background-color: #ffffff;
+                            border-radius: 11px;
+                            max-width: 100%;
+                            width: 100%;
+                            height: 50px;
+
+                            &:disabled {
+                                background-color: transparent;
+                                opacity: 0.5;
+                            }
+
+                            @media (min-width: 1024px) {
+                                margin: 0 0 2px;
+                            }
+                        }
+                    }
+
+                    .main-button {
+                        width: 100%;
+                        height: 50px;
+
+                        @media (min-width: 1024px) {
+                            margin: 0 0 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .list-container {
+        @media (min-width: 1024px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+<form [formGroup]="recipesFormGroup">
+    <div class="recipes-container mobile">
+        <ngu-carousel
+            class="slider"
+            style="height: 100%;"
+            #recipesSlider
+            [inputs]="carouselConfig"
+            [dataSource]="recipesList"
+        >
+            <div *nguCarouselDef="let item" class="item">
+                <div class="slide">
+                    <div class="slide-content radio-group">
+                        <div class="bar-radio-button">
+                            <input
+                                [id]="item.id"
+                                [value]="item.id"
+                                type="radio"
+                                formControlName="recipeId"
+                            />
+                            <label [for]="item.id">
+                                <div class="recipe-container">
+                                    <img
+                                        class="recipe-img"
+                                        [src]="item.imgSrc"
+                                        alt=""
+                                    />
+
+                                    <div class="recipe-text">
+                                        <h3 class="header">
+                                            {{ item.name }}
+                                        </h3>
+                                        <div class="ingredients">
+                                            <div
+                                                class="option"
+                                                *ngFor="
+                                                    let option of item.description
+                                                "
+                                            >
+                                                {{ option }}
+                                            </div>
+                                        </div>
+
+                                        <div class="control-container">
+                                            <bar-modal-button
+                                                (clickHandler)="
+                                                    openDetailsDialog(item.id)
+                                                "
+                                            >
+                                                Подробнее
+                                            </bar-modal-button>
+
+                                            <bar-action-button
+                                                [arrow]="true"
+                                                (clickHandler)="
+                                                    chooseOption(item.id)
+                                                "
+                                            >
+                                                Беру
+                                            </bar-action-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ngu-carousel>
+    </div>
+
+    <div class="recipes-container desktop">
+        <div class="item" *ngFor="let item of recipesList">
+            <div class="slide" [class.desktop-view]="desktopView">
+                <div class="slide-content radio-group">
+                    <div class="bar-radio-button">
+                        <input
+                            [id]="item.id"
+                            [value]="item.id"
+                            type="radio"
+                            formControlName="recipeId"
+                        />
+                        <label [for]="item.id">
+                            <div class="recipe-container">
+                                <img
+                                    class="recipe-img"
+                                    [src]="item.imgSrc"
+                                    alt=""
+                                />
+
+                                <div class="recipe-text">
+                                    <h3 class="header">{{ item.name }}</h3>
+                                    <div class="ingredients">
+                                        <div
+                                            class="option"
+                                            *ngFor="
+                                                let option of item.description
+                                            "
+                                        >
+                                            {{ option }}
+                                        </div>
+                                    </div>
+
+                                    <div class="control-container">
+                                        <bar-modal-button
+                                            class="desktop"
+                                            (clickHandler)="
+                                                openDetailsDialog(item.id)
+                                            "
+                                        >
+                                            Подробнее
+                                        </bar-modal-button>
+
+                                        <bar-action-button
+                                            [arrow]="true"
+                                            (clickHandler)="
+                                                chooseOption(item.id)
+                                            "
+                                        >
+                                            Беру
+                                        </bar-action-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

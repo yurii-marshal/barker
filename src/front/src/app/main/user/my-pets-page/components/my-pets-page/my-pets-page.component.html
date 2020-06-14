@@ -1,0 +1,19 @@
+<bar-pets-switcher
+    [pets]="pets"
+    [(selected)]="selectedPet"
+    (selectedChange)="onSelectedChange($event)"
+></bar-pets-switcher>
+<bar-pets-page-sub-header></bar-pets-page-sub-header>
+
+<div class="pet-page-wrapper">
+    <bar-card-current-recipe
+        [id]="pets[0]?.id"
+        [value]="recipe"
+        (changeRecipe)="openRecipeDialog(pets[0]?.id)"
+    ></bar-card-current-recipe>
+
+    <div class="sub-page-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

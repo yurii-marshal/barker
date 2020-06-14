@@ -1,0 +1,114 @@
+:host {
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.menu-container {
+    position: absolute;
+    top: -4px;
+    left: -2px;
+    width: calc(100vw - 60px);
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    padding: 38px 30px 36px;
+    z-index: 1000;
+
+    .heading {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .bucket-container {
+            position: relative;
+            width: 80px;
+            height: 45px;
+            background: rgba(241, 241, 241, 0.6);
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .plate-icon {
+                margin: 0 auto;
+                width: 30px;
+                height: 18px;
+            }
+
+            .count {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 25px;
+                color: #ffffff;
+                background-color: #000000;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 1.8;
+            }
+        }
+
+        .close-wrapper {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            .close-icon {
+                width: 11px;
+                height: 11px;
+            }
+        }
+    }
+
+    .routes {
+        padding-top: 5px;
+
+        .route {
+            line-height: 100%;
+        }
+    }
+
+    .link {
+        font-size: 1rem;
+        display: block;
+    }
+
+    .contacts {
+        padding: 20px 0 25px;
+
+        a {
+            color: #000000;
+            text-decoration: none;
+            padding-bottom: 4px;
+        }
+
+        .switch-language {
+            .label {
+                .check-icon {
+                    width: 8px;
+                    height: 4px;
+                    transform: rotate(90deg);
+
+                    &.opened {
+                        transform: rotate(0);
+                    }
+                }
+            }
+
+            .lang-list {
+                display: none;
+
+                &.opened {
+                    display: block;
+                }
+
+                .item {
+                    padding-left: 35px;
+                }
+            }
+        }
+    }
+}

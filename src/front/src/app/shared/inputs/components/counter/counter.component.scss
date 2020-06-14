@@ -1,0 +1,30 @@
+.counter {
+    display: flex;
+    width: 124px;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 11px;
+
+    font-size: 1.38rem;
+    line-height: 127%;
+
+    @media (min-width: 1024px) {
+        width: 136px;
+    }
+
+    .decrease-btn,
+    .increase-btn {
+        width: 25%;
+
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+
+    .counter-value {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

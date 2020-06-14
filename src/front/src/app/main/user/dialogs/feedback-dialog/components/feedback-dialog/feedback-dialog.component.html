@@ -1,0 +1,47 @@
+<div mat-dialog-content>
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <div class="feedback-container" [formGroup]="feedbackForm">
+        <h3 class="sub-title mobile">
+            Выбери заказ, к которому оставляешь отзыв
+        </h3>
+
+        <h2 class="sub-title desktop" *ngIf="!feedbackForm?.controls?.orderId?.value">
+            Выбери заказ, к которому оставляешь отзыв
+        </h2>
+
+        <bar-select
+            placeholder="Заказ"
+            formControlName="orderId"
+            [options]="ordersList"
+            textAlign="left"
+        ></bar-select>
+
+        <bar-checkbox formControlName="common">
+            Не привязывать отзыв к отдельному заказу
+        </bar-checkbox>
+
+        <bar-textarea
+            [rows]="5"
+            formControlName="message"
+            placeholder="Твой комментарий"
+        ></bar-textarea>
+
+        <div class="control-container">
+            <bar-action-button
+                [disabled]="feedbackForm.invalid"
+                [arrow]="true"
+                (clickHandler)="sendFeedback(feedbackForm)"
+            >
+                Отправить
+            </bar-action-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="back-btn-container">
+    <mat-icon
+        @baseThemeTransition
+        class="arrow-back-icon"
+        svgIcon="arrow"
+    ></mat-icon>
+    <a
+        @baseThemeTransition
+        [type]="type"
+        class="btn back-btn"
+        (click)="onClick($event)"
+    >
+        {{ name }}
+    </a>
+</div>

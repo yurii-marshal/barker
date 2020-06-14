@@ -1,0 +1,45 @@
+.registration-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-wrapper {
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: none;
+}
+
+.back-button-wrapper {
+    width: 70px;
+}
+
+.close-wrapper {
+    cursor: pointer;
+
+    a {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 24px;
+    }
+    mat-icon {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .close-wrapper {
+        mat-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .progress-bar-wrapper {
+        display: block;
+        &.show {
+            opacity: 1;
+        }
+    }
+}

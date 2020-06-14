@@ -1,0 +1,60 @@
+<div class="dashboard-container">
+    <div class="first-section">
+        <bar-delivery-tile [pet]="currentPet"></bar-delivery-tile>
+
+        <div class="main-btns">
+            <button (click)="openFeedbackDialog()" class="feedback btn">
+                Оставить отзыв
+            </button>
+            <button [routerLink]="['user', currentPet?.subscriptionId, 'delivery']" class="details btn">
+                Детали подписки
+            </button>
+        </div>
+    </div>
+
+    <div class="pets-container">
+        <ngu-carousel
+            class="slider"
+            #petsSlider
+            [inputs]="carouselConfig"
+            [dataSource]="petsList"
+            (onMove)="updatePetData($event)"
+        >
+            <div *nguCarouselDef="let item" class="pet-item">
+                <div class="tile">
+                    <div class="img-container">
+                        <img [src]="item.image" [alt]="item.image" />
+                    </div>
+                    <h2 class="name">{{ item.name }}</h2>
+                    <div class="brief">
+                        <div class="caption">
+                            {{ item.age }} месяцев, {{ item.weight }} кг
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <bar-ref-button
+                            (clickHandler)="moveToHistory(item.id)"
+                            class="pet-control btn"
+                        >
+                            История заказов
+                        </bar-ref-button>
+                        <bar-ref-button
+                            (clickHandler)="openRecipeDialog(item.id)"
+                            class="pet-control btn"
+                        >
+                            Смена рецептов
+                        </bar-ref-button>
+                        <bar-ref-button
+                            (clickHandler)="moveToPetProfile(item.id)"
+                            class="pet-control btn"
+                        >
+                            Анкета любимца
+                        </bar-ref-button>
+                    </div>
+                </div>
+            </div>
+        </ngu-carousel>
+    </div>
+  
+    <div class="paralax-dashboard"></div>
+</div>

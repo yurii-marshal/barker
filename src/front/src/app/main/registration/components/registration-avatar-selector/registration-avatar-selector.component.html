@@ -1,0 +1,49 @@
+<span class="info">и вот как {{ gender | byGender: "он":"она" }} выглядит</span>
+<div>
+    <ngu-carousel
+        class="pet-avatar"
+        style="height: 100%;"
+        #avatarSlider
+        [inputs]="carouselConfig"
+        [dataSource]="avatars"
+    >
+        <div *nguCarouselDef="let activeAvatar" class="avatar-container">
+            <div class="tile">
+                <img [src]="activeAvatar" [alt]="activeAvatar" />
+            </div>
+        </div>
+
+        <button NguCarouselPrev class="left-button avatar-slider-btn">
+            <mat-icon svgIcon="avatar-arrow-left"></mat-icon>
+        </button>
+
+        <button NguCarouselNext class="right-button avatar-slider-btn">
+            <mat-icon
+                style="transform: rotate(180deg);"
+                svgIcon="avatar-arrow-left"
+            ></mat-icon>
+        </button>
+    </ngu-carousel>
+
+    <div class="add-photo">
+        <button (click)="openSelect()">+ добавить фото</button>
+    </div>
+</div>
+<span class="secondary-info"
+    >Добавь аватар и мы сохраним его в профиле {{ dogName || "Pet" }}</span
+>
+<div class="right-side">
+    <span class="info"
+        >и&nbsp;вот&nbsp;как&nbsp;{{
+            gender | byGender: "он":"она"
+        }}&nbsp;выглядит</span
+    >
+    <span class="secondary-info"
+        >Добавь аватар и мы сохраним его в профиле {{ dogName || "Pet" }}</span
+    >
+</div>
+<!-- <form action="/upload_avatar">
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*" />
+    <input type="submit" />
+</form> -->

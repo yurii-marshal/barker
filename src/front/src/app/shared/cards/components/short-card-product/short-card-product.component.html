@@ -1,0 +1,10 @@
+<div class="short-card-product-container" [class.short]="isShort">
+    <img [src]="item?.imgSrc" [alt]="item?.imgSrc" />
+    <div class="details">
+        <div class="label head-title">{{ item?.name }}</div>
+        <div class="count caption">{{ item?.count }}</div>
+        <div class="price caption">
+            {{ item?.price | currencyUA }}
+        </div>
+    </div>
+</div>

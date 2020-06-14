@@ -1,0 +1,53 @@
+<div mat-dialog-content style="height: 100%;">
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <div class="product-description">
+        <div class="title-container">
+            <h1 class="title">{{ currentItem?.name }}</h1>
+            <div class="description" *ngFor="let item of currentItem?.details">
+                {{ item }}
+            </div>
+        </div>
+        <div class="counter-control">
+            <h2 class="price">
+                {{ currentItem?.price | currencyUA }}
+            </h2>
+            <bar-counter [value]="currentItem?.count"></bar-counter>
+        </div>
+    </div>
+
+    <ngu-carousel
+        class="slider"
+        #slider
+        [inputs]="carouselConfig"
+        [dataSource]="items"
+        (onMove)="onmoveFn($event)"
+    >
+        <div *nguCarouselDef="let slide" class="item">
+            <div
+                class="img-container"
+                [style.backgroundImage]="'url(' + slide?.imgSrc + ')'"
+            ></div>
+        </div>
+
+        <button NguCarouselNext class="slider-btn-right btn">
+            <mat-icon svgIcon="check"></mat-icon>
+        </button>
+        <button NguCarouselPrev class="slider-btn-left btn">
+            <mat-icon svgIcon="check"></mat-icon>
+        </button>
+    </ngu-carousel>
+
+    <div class="control-container">
+        <bar-action-button [arrow]="true" (clickHandler)="chooseOption(currentItem)">
+            Беру
+        </bar-action-button>
+    </div>
+</div>

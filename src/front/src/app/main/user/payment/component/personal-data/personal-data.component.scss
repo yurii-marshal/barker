@@ -1,0 +1,148 @@
+.user-profile-container {
+    @media (min-width: 1024px) {
+        display: flex;
+        justify-content: center;
+    }
+
+    form {
+        padding: 20px 0;
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            padding: 0;
+        }
+
+        .title {
+            margin: 16px 0;
+            font-size: 1.13rem;
+
+            @media (min-width: 1024px) {
+                font-size: 1.38rem;
+                margin: 20px 0;
+            }
+
+            @media (min-width: 1024px) {
+                margin: 25px 0;
+            }
+        }
+
+        .bar-input-wrapper {
+            position: relative;
+            padding-bottom: 16px;
+
+            ::ng-deep {
+                bar-input {
+                    input {
+                        font-size: 1rem;
+                        background: rgba(241, 241, 241, 0.6);
+                        border-radius: 24px;
+
+                        @media (min-width: 1024px) {
+                            text-align: right;
+                            padding-right: 53px;
+                            padding-left: 146px;
+                            font-size: 1.13rem;
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+
+                        @media (min-width: 1440px) {
+                            padding-right: 62px;
+                        }
+                    }
+                }
+
+                bar-select {
+                    .selector-container {
+                        background: rgba(241, 241, 241, 0.6);
+                        border-radius: 24px;
+                        padding: 14px 15px;
+
+                        .controls {
+                            input {
+                                text-align: left !important;
+                                padding: 0 12px;
+                                color: #000000;
+                                font-family: "Twentytwelve";
+                                font-size: 1rem;
+                                line-height: 131%;
+
+                                &::placeholder {
+                                    color: rgba(0, 0, 0, 0.3);
+                                }
+
+                                @media (min-width: 1024px) {
+                                    text-align: right !important;
+                                    font-size: 1.13rem;
+
+                                    &::placeholder {
+                                        color: transparent;
+                                    }
+                                }
+                            }
+                        }
+
+                        button {
+                            padding: 7px;
+                        }
+
+                        .dropdown {
+                            background: #f7f7f7;
+
+                            ul li {
+                                @media (min-width: 1024px) {
+                                    text-align: right !important;
+                                    font-size: 1.13rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ::ng-deep bar-textarea {
+                    textarea {
+                        padding: 20px;
+                        font-size: 1rem;
+                        line-height: 131%;
+
+                        @media (min-width: 1024px) {
+                            font-size: 1.13rem;
+                            padding: 16px 52px;
+                            text-align: right;
+
+                            &::placeholder {
+                                color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .fixed-placeholder {
+            position: absolute;
+            left: 52px;
+            font-size: 1rem;
+            line-height: 162%;
+            color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            display: none;
+
+            @media (min-width: 1024px) {
+                display: block;
+                font-size: 1.13rem;
+                top: 20%;
+
+                &.details {
+                    top: 10%;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                left: 62px;
+            }
+        }
+    }
+}

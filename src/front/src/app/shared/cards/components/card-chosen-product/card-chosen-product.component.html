@@ -1,0 +1,24 @@
+<div class="chosen-product-card">
+    <div class="close-container">
+        <mat-icon
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+            (click)="deleteChosenProduct(value?.id)"
+        ></mat-icon>
+    </div>
+    <img [src]="value?.imgSrc" [alt]="value?.imgSrc" />
+    <div class="description-container">
+        <div class="description">
+            <div class="header">
+                {{ value?.name }}
+            </div>
+            <div class="price">
+                {{ value?.price | currencyUA }}
+            </div>
+        </div>
+        <div class="control">
+            <bar-counter [(value)]="value.count"></bar-counter>
+        </div>
+    </div>
+</div>

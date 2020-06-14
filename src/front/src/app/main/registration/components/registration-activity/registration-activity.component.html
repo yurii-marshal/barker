@@ -1,0 +1,32 @@
+<div class="registration-activity">
+    <h3 class="activity-header">{{ petData?.name || 'Питомец' }} скорее</h3>
+    <div class="activity-group-container">
+        <form [formGroup]="activityForm" class="radio-group">
+            <div
+                *ngFor="let activity of activityList; let i = index"
+                class="bar-radio-button with-image content-above"
+            >
+                <input
+                    [id]="'activity-' + i"
+                    [value]="activity.id"
+                    type="radio"
+                    formControlName="activity"
+                />
+                <label [for]="'activity-' + i">
+                    <img [src]="activity.imgSrc" alt="" />
+                    {{ activity.name }}
+                </label>
+            </div>
+        </form>
+    </div>
+
+    <div class="control-container">
+        <bar-action-button
+            [arrow]="true"
+            (clickHandler)="nextStep()"
+            [disabled]="activityForm.invalid"
+        >
+            Дальше
+        </bar-action-button>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="registration-check-up">
+    <div class="img-container "></div>
+    <h2 class="check-up-header">Почти готово!</h2>
+
+    <div class="references-container">
+        <div class="reference-item">
+            <h4 class="label">Имя</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.MainInfo)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ petName }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Порода</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.MainInfo)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ breedName }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Дата рождения</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.DateOfBirth)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ savedData?.dateOfBirth }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Вес сейчас</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.Weight)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ this.savedData?.weight }} кг
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Идеальный вес</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.Weight)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{
+                    this.savedData?.perfectWeight
+                        ? this.savedData?.perfectWeight + ' кг'
+                        : 'Не указано'
+                }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Активность</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.Activity)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ activityName }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Патологии</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.Pathologies)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ pathologies || 'None' }}
+            </bar-modal-button>
+        </div>
+        <div class="reference-item">
+            <h4 class="label">Привычный корм</h4>
+            <bar-modal-button
+                (clickHandler)="openStepDialog(steps.Prefers)"
+                [secondary]="true"
+                class="data-btn"
+            >
+                {{ prefers }}
+            </bar-modal-button>
+        </div>
+    </div>
+
+    <div class="preferences-label">
+        <div class="img-container"></div>
+        <div class="plain-text">
+            А теперь давай выберем, <br />
+            что придется Чарли по вкусу
+        </div>
+    </div>
+
+    <div class="control-container">
+        <bar-action-button [arrow]="true" (clickHandler)="nextStep()">
+            Дальше
+        </bar-action-button>
+    </div>
+</div>

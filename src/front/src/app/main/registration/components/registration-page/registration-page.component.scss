@@ -1,0 +1,31 @@
+@import "~styles/variables.scss";
+
+:host {
+    padding: 32px;
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: $registration-page-height-mobile;
+
+    .registration-page-container {
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            padding-top: 50px;
+            height: 100%;
+        }
+
+        .flex-shell {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        height: $registration-page-height;
+        padding: 55px 65px;
+    }
+}

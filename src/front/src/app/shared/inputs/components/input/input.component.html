@@ -1,0 +1,13 @@
+<input
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [(ngModel)]="value"
+    [type]="type"
+    [ngStyle]="styleInput"
+    [barMaxLength]="maxLength"
+    barOnlyNumbers="type === 'number'"
+    class="bar-input"
+    (keyup.enter)="eventEnter()"
+/>
+
+<mat-icon svgIcon="warning" class="error-icon" *ngIf="hasErrors"></mat-icon>

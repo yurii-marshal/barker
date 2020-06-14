@@ -1,0 +1,40 @@
+.shopping-cart {
+    position: relative;
+    background-color: rgba(241, 241, 241, 0.6);
+    min-height: 45px;
+    border-radius: 24px;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0 21px;
+
+    .count {
+        position: absolute;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        left: -8px;
+        color: #ffffff;
+        background-color: #000000;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .plate-icon {
+            width: 30px;
+            height: auto;
+        }
+
+        .price {
+            padding: 19px 5px 19px 10px;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(193, 193, 193, 0.6);
+    }
+}

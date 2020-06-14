@@ -1,0 +1,123 @@
+<div class="delivery-container">
+    <div class="head-container">
+        <div class="title-container">
+            <div class="title">
+                <h2 class="mobile">Ближайшая доставка</h2>
+                <h1 class="desktop">Ближайшая доставка</h1>
+
+                <div class="history-control desktop">
+                    <bar-modal-button (clickHandler)="deliveryHistory()"
+                        >История заказов</bar-modal-button
+                    >
+                </div>
+            </div>
+            <div class="address">
+                <div class="text">
+                    по адресу <br class="mobile" />
+                    {{ subscription?.delivery.address }} {{ dictionariesService?.weekDaysBy[subscription?.delivery.date.getDay()] }},
+                    {{ subscription?.delivery.date | date: 'dd/MMMM' }}
+                    с {{ subscription?.delivery.timeFrom }} до {{ subscription?.delivery.timeTo }}
+                </div>
+                <div class="edit-control">
+                    <bar-ref-button
+                        [arrow]="false"
+                        [primary]="false"
+                        (clickHandler)="editDeliveryAddress()"
+                        >Изменить</bar-ref-button
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="price-list">
+            <h2 class="general-price mobile">
+                {{ subscription?.delivery.totalAmount | currencyUA }}
+            </h2>
+            <h1 class="general-price desktop">
+                {{ subscription?.delivery.totalAmount | currencyUA }}
+            </h1>
+            <div class="disposal-date caption">
+                будут списаны {{ subscription?.delivery.disposalDate | date: 'dd/MMMM' }} с
+                {{ subscription?.delivery.disposalTimeFrom }} до {{ subscription?.delivery.disposalTimeTo }}
+            </div>
+            <div class="ration-container">
+                <div class="ration">
+                    <h4 class="label">Основной рацион</h4>
+                    <h4 class="line"></h4>
+                    <h4 class="price">
+                        {{ subscription?.delivery.mainRationPrice | currencyUA }}
+                    </h4>
+                </div>
+                <div class="ration">
+                    <h4 class="label">Дополнительно</h4>
+                    <h4 class="line"></h4>
+                    <h4 class="price">
+                        {{ subscription?.delivery.additionalRationPrice | currencyUA }}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tiles-container">
+        <bar-card-current-recipe
+            [pet]="currentPet"
+            [value]="recipe"
+        ></bar-card-current-recipe>
+
+        <div class="additional-goods">
+            <div class="item" *ngFor="let item of goodsList">
+                <bar-card-chosen-product
+                    (removeItem)="removeFromGoodsList($event)"
+                    [value]="item"
+                ></bar-card-chosen-product>
+            </div>
+        </div>
+    </div>
+    <div class="suggestions-container">
+        <h2 class="title">Добавь к заказу</h2>
+        <div class="sub-title caption">
+            Товары добавленные после {{ subscription?.delivery.productsAddedTimeFrom }}
+            {{ subscription?.delivery.productsAddedWeekdayFrom }} привезем со следующей
+            доставкой
+        </div>
+        <div class="suggestions-list">
+            <div class="item" *ngFor="let item of suggestionList">
+                <bar-card-available-product
+                    (chooseItem)="addToGoodsList($event)"
+                    [value]="item"
+                ></bar-card-available-product>
+            </div>
+
+            <ngu-carousel
+                class="available-goods-slider"
+                #availableProductsSlider
+                [inputs]="carouselConfig"
+                [dataSource]="suggestionList"
+            >
+                <div *nguCarouselDef="let item" class="slide">
+                    <bar-card-available-product
+                        (chooseItem)="addToGoodsList($event)"
+                        [value]="item"
+                    ></bar-card-available-product>
+                </div>
+
+                <button NguCarouselNext class="slider-btn-right btn">
+                    <mat-icon svgIcon="check"></mat-icon>
+                </button>
+                <button NguCarouselPrev class="slider-btn-left btn">
+                    <mat-icon svgIcon="check"></mat-icon>
+                </button>
+            </ngu-carousel>
+        </div>
+    </div>
+
+    <img
+        class="paralax-delivery-1"
+        src="assets/images/parallax-delivery-1.svg"
+        alt="parallax-1"
+    />
+    <img
+        class="paralax-delivery-2"
+        src="assets/images/parallax-delivery-2.svg"
+        alt="parallax-2"
+    />
+</div>

@@ -1,0 +1,17 @@
+<button
+    class="btn action-btn"
+    (click)="onClick($event)"
+    [type]="type"
+    [disabled]="disabled"
+    [class.with-arrow]="arrow"
+    @baseThemeTransition
+>
+    <h1 class="content"><ng-content></ng-content></h1>
+    <div class="arrow-right-container" *ngIf="arrow">
+        <mat-icon
+            @customThemeTransition
+            class="arrow-icon"
+            svgIcon="arrow"
+        ></mat-icon>
+    </div>
+</button>

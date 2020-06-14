@@ -1,0 +1,168 @@
+<div class="pet-profile-container">
+    <form [formGroup]="petProfileForm">
+        <div class="bar-input-wrapper name">
+            <bar-input [placeholder]="'Имя'" formControlName="name"></bar-input>
+
+            <div class="fixed-placeholder">
+                Имя
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper breed">
+            <bar-select
+                formControlName="breedId"
+                [placeholder]="'Порода'"
+                [options]="breedList"
+            ></bar-select>
+
+            <div class="fixed-placeholder">
+                Порода
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper birthdate">
+            <bar-date-selector
+                formControlName="dateOfBirth"
+            ></bar-date-selector>
+
+            <div class="fixed-placeholder">
+                Родился
+            </div>
+        </div>
+
+        <div class="weight-container">
+            <div class="bar-input-wrapper">
+                <div class="fixed-placeholder">
+                    Вес сейчас
+                </div>
+                <div class="actual-weight">
+                    <bar-input
+                        [maxLength]="3"
+                        type="number"
+                        formControlName="weight"
+                    ></bar-input>
+                    <div class="input-label">кг</div>
+                </div>
+            </div>
+
+            <div class="bar-input-wrapper">
+                <div class="fixed-placeholder">
+                    Идеальный вес
+                </div>
+                <div class="perfect-weight">
+                    <bar-input
+                        type="number"
+                        [maxLength]="3"
+                        formControlName="perfectWeight"
+                    ></bar-input>
+                    <div class="input-label perfect">кг</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="avatar-container">
+            <div class="avatar">
+                <img [src]="savedData?.image" [alt]="savedData?.image" />
+            </div>
+            <div class="control">
+                <bar-modal-button (clickHandler)="changePhoto()">
+                    Изменить
+                </bar-modal-button>
+            </div>
+        </div>
+
+        <div class="activity-container">
+            <bar-select
+                placeholder="Активность"
+                formControlName="activity"
+                [options]="activityList"
+                textAlign="center"
+            ></bar-select>
+
+            <div class="fixed-placeholder">
+                Активность
+            </div>
+        </div>
+
+        <div class="prefers-container">
+            <div class="label">Чаще всего он ест</div>
+            <div class="prefers-list">
+                <div
+                    class="list-item"
+                    *ngFor="let prefer of prefersList; let i = index"
+                    formArrayName="prefers"
+                >
+                    <bar-checkbox [id]="prefer.id" [formControlName]="i">
+                        {{ prefersList[i].name }}
+                    </bar-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="pathologies-container">
+            <div class="header">
+                <div class="label">Патологии</div>
+                <div class="has-pathology">
+                    <div class="bar-radio-button">
+                        <input
+                            id="yes"
+                            [value]="true"
+                            type="radio"
+                            name="hasPathology"
+                            formControlName="hasPathology"
+                        />
+                        <label for="yes">Есть</label>
+                    </div>
+
+                    <div class="bar-radio-button">
+                        <input
+                            id="no"
+                            [value]="false"
+                            type="radio"
+                            name="hasPathology"
+                            formControlName="hasPathology"
+                        />
+                        <label for="no">Нет</label>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="prefers-list"
+                *ngIf="petProfileForm.get('hasPathology').value"
+            >
+                <div
+                    class="list-item"
+                    *ngFor="let pathology of pathologiesList; let i = index"
+                    formArrayName="pathologies"
+                >
+                    <bar-checkbox [id]="i" [formControlName]="i">
+                        {{ pathologiesList[i].name }}
+                    </bar-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <bar-action-button
+            [arrow]="false"
+            (clickHandler)="savePetProfile(petProfileForm)"
+            [disabled]="petProfileForm.invalid"
+        >
+            Сохранить
+        </bar-action-button>
+    </form>
+</div>
+
+<div class="notification-container" *ngIf="showNotification">
+    <div class="close-container">
+        <mat-icon
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+            (click)="showNotification = false"
+        ></mat-icon>
+    </div>
+    <h1 class="message">
+        Изменения сохранены
+    </h1>
+</div>

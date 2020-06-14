@@ -1,0 +1,82 @@
+.payment-details-container {
+    .message-container {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+
+        @media (min-width: 1024px) {
+            margin-bottom: 25px;
+            padding: 34px 60px;
+            display: flex;
+            align-items: flex-end;
+
+            font-size: 1.13rem;
+            line-height: 144%;
+        }
+
+        @media (min-width: 1440px) {
+            margin-bottom: 57px;
+            justify-content: space-between;
+            padding-left: 104px;
+        }
+
+        &.info {
+            // height: 116px;
+            background: url("~assets/images/payment-message-info-bgrd.png");
+            background-size: 100% 100%;
+        }
+
+        &.warning {
+            background: url("~assets/images/payment-message-warning-bgrd.png");
+            background-size: 100% 100%;
+
+            .text {
+                color: #e0632b;
+            }
+        }
+
+        .text {
+            line-height: 144%;
+            padding-bottom: 10px;
+            width: 85%;
+
+            @media (min-width: 1024px) {
+                width: 64%;
+                padding-right: 33px;
+            }
+
+            @media (min-width: 1024px) {
+                width: 60%;
+            }
+        }
+
+        bar-modal-button {
+            @media (min-width: 1024px) {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    bar-subscription-tile {
+        display: block;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .title {
+        padding: 35px 0 10px;
+        font-size: 1.66rem;
+        line-height: 127%;
+
+        @media (min-width: 1024px) {
+            padding: 0 0 20px;
+            font-size: 2rem;
+            line-height: 87%;
+        }
+
+        @media (min-width: 1024px) {
+            padding: 0 0 25px;
+        }
+    }
+}

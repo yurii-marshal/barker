@@ -1,0 +1,173 @@
+::ng-deep .cdk-overlay-container .cdk-overlay-pane.feedback-dialog-container {
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mat-dialog-container {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @media (min-width: 1024px) {
+            height: auto;
+            padding: 35px 81px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 54px 208px;
+        }
+    }
+}
+
+::ng-deep bar-select {
+    .selector-container {
+        margin-bottom: 15px !important;
+        line-height: 139%;
+
+        @media (min-width: 1024px) {
+            height: 48px !important;
+            border-radius: 24px !important;
+        }
+
+        .controls {
+            width: 80%;
+            margin: auto;
+
+            @media (min-width: 1024px) {
+                width: 93%;
+            }
+
+            button {
+                mat-icon {
+                    @media (min-width: 1024px) {
+                        width: 14px !important;
+                    }
+                }
+            }
+        }
+
+        input {
+            font-size: 0.93rem !important;
+
+            @media (min-width: 1024px) {
+                &::placeholder {
+                    color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+::ng-deep bar-checkbox {
+    @media (min-width: 1024px) {
+        margin-left: 48px;
+    }
+
+    .bar-checkbox {
+        font-size: 1rem;
+        line-height: 144%;
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    span {
+        margin-left: 30px !important;
+    }
+}
+
+::ng-deep .bar-textarea {
+    margin: 15px 0 8px;
+    padding: 30px !important;
+    font-size: 1rem !important;
+
+    @media (min-width: 1024px) {
+        border-radius: 40px !important;
+        padding: 40px 48px !important;
+        margin-bottom: 25px;
+    }
+
+    @media (min-width: 1440px) {
+        margin: 35px 0;
+    }
+}
+
+.close-wrapper {
+    z-index: 9;
+    position: absolute;
+    right: 38px;
+    top: 28px;
+
+    @media (min-width: 1024px) {
+        top: 45px;
+        right: 90px;
+    }
+
+    mat-icon {
+        width: 10px;
+        height: 10px;
+
+        @media (min-width: 1024px) {
+            width: 16px;
+            height: 18px;
+        }
+    }
+}
+
+.feedback-container {
+    position: relative;
+
+    @media (min-width: 1024px) {
+        padding-top: 80px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 60px;
+    }
+
+    .sub-title {
+        padding: 30px 0 10px;
+        margin: 0;
+
+        @media (min-width: 1024px) {
+            padding: 0;
+            margin-top: 21px;
+            position: absolute;
+            z-index: 9;
+            left: 48px;
+        }
+    }
+
+    .select-placeholder {
+        position: absolute;
+        color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        top: 22.5%;
+        left: 30px;
+    }
+
+    .control-container {
+        @media (min-width: 1024px) {
+            margin: 0;
+            bottom: 40px;
+            right: 90px;
+        }
+
+        @media (min-width: 1440px) {
+            bottom: 8%;
+            right: 12%;
+        }
+
+        ::ng-deep bar-action-button {
+            position: relative;
+
+            button {
+                @media (min-width: 1024px) {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

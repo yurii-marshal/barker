@@ -1,0 +1,36 @@
+<div class="registration-birth-date-container" [formGroup]="form">
+    <span class="info">
+        {{ dogName || 'Pet' }}
+        {{ savedData?.gender | byGender: 'родился':'родилась' }}</span
+    >
+    <div
+        class="error-container"
+        [class.show]="
+            form?.controls?.dateOfBirth?.errors?.future &&
+            (form.dirty || form.touched)
+        "
+    >
+        <span class="error-message">Дата в будущем не может быть выбрана</span>
+        <mat-icon svgIcon="warning"></mat-icon>
+    </div>
+
+    <bar-date-selector
+        formControlName="dateOfBirth"
+    ></bar-date-selector>
+    <span class="secondary-info"
+        >Хотим вместе праздновать
+        {{ savedData?.gender | byGender: 'его':'её' }} День рождения</span
+    >
+    <bar-registration-avatar-selector
+        [dogName]="savedData?.name"
+        [gender]="savedData?.gender"
+    ></bar-registration-avatar-selector>
+    <bar-action-button
+        class="next-button"
+        [arrow]="true"
+        (clickHandler)="nextStep()"
+        [disabled]="form?.invalid"
+    >
+        Дальше
+    </bar-action-button>
+</div>

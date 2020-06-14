@@ -1,0 +1,84 @@
+:host {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @media (min-width: 1024px) {
+        height: auto;
+        width: 417px;
+    }
+}
+
+.registration-check-up {
+    position: absolute;
+    top: 0;
+
+    @media (min-width: 1024px) {
+        position: relative;
+        padding-top: 200px;
+    }
+
+    .check-up-header {
+        margin-bottom: 23px;
+    }
+
+    .references-container {
+        .reference-item {
+            display: flex;
+            margin-bottom: 8px;
+
+            .label {
+                color: rgba(0, 0, 0, 0.4);
+                width: 52%;
+                margin: 0;
+            }
+        }
+    }
+
+    .preferences-label {
+        .img-container {
+            width: 130px;
+            height: 135px;
+            display: flex;
+            margin: 0 0 0 auto;
+            background: url('~assets/images/registration-check-img.svg')
+                no-repeat;
+        }
+
+        .plain-text {
+            font-size: 1.14rem;
+            line-height: 144%;
+        }
+    }
+
+    .control-container {
+        margin: 20px 0 50px;
+
+        @media (min-width: 1024px) {
+            margin: 50px 0 0 0;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        padding-top: 0;
+
+        .check-up-header {
+            font-size: 32px;
+            line-height: 131%;
+            margin-bottom: 23px;
+        }
+
+        .preferences-label {
+            .img-container {
+                position: absolute;
+                top: -65px;
+                right: 30px;
+            }
+
+            .plain-text {
+                padding-top: 56px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

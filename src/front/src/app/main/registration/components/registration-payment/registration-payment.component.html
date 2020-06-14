@@ -1,0 +1,143 @@
+<div class="registration-payment">
+    <div class="title-container">
+        <h2 class="title">Оформить подписку</h2>
+        <div class="price description">
+            Ваш заказ - {{ savedData?.price }} грн.
+        </div>
+        <div class="date description">
+            Оплата будет списана
+            {{ savedData?.orderDeliveryDay }} после
+            {{ savedData?.orderDeliveryTime }}
+        </div>
+    </div>
+
+    <div class="card-btn-container" *ngIf="!showCardForm">
+        <bar-flat-button
+            class="apple-pay-btn"
+            (clickHandler)="redirectToApplePay()"
+        >
+            <mat-icon svgIcon="apple-pay-icon"></mat-icon>
+        </bar-flat-button>
+
+        <div class="divider">или</div>
+
+        <bar-flat-button
+            class="visa-btn prime"
+            (clickHandler)="openCardForm('prime')"
+        >
+            <div>** 4579</div>
+            <div>10/21</div>
+        </bar-flat-button>
+        <bar-flat-button
+            class="visa-btn master-card"
+            (clickHandler)="openCardForm('master-card')"
+        >
+            <div class="mobile">Другая карта</div>
+            <div class="desktop">Другая платежная карта</div>
+        </bar-flat-button>
+    </div>
+
+    <div class="card-form-container" *ngIf="showCardForm">
+        <form [formGroup]="paymentForm" (submit)="sandPaymentForm(paymentForm)">
+            <div class="bar-input-wrapper">
+                <bar-input
+                    class="card-number"
+                    [type]="'number'"
+                    [maxLength]="16"
+                    [class.invalid]="invalidCardNumber"
+                    [placeholder]="'Введите номер карты'"
+                    formControlName="cardNumber"
+                ></bar-input>
+
+                <div
+                    *ngIf="invalidCardNumber"
+                    class="input-label caption error"
+                >
+                    Неверный номер карты
+                </div>
+
+                <div class="card-icons-container">
+                    <mat-icon
+                        class="master-card"
+                        *ngIf="isMasterCardNumber"
+                        svgIcon="master-card"
+                    ></mat-icon>
+                    <mat-icon
+                        class="visa-card"
+                        *ngIf="isVisaCardNumber"
+                        svgIcon="visa-card"
+                    ></mat-icon>
+                </div>
+
+                <!-- <div
+                    class="caption error"
+                    *ngIf="
+                        !inputsForm.controls.inputValue.pristine &&
+                        inputsForm.controls.inputValue.getError(
+                            'required'
+                        )
+                    "
+                >
+                    Input is required!
+                </div> -->
+            </div>
+
+            <div class="expire-cvv">
+                <div class="bar-input-wrapper expire">
+                    <bar-input
+                        [maxLength]="4"
+                        [placeholder]="'ММ/ГГ'"
+                        formControlName="expireDate"
+                    ></bar-input>
+
+                    <div class="fixed-placeholder">
+                        Срок до
+                    </div>
+                </div>
+
+                <div class="bar-input-wrapper cvv">
+                    <bar-input
+                        [maxLength]="3"
+                        [type]="'password'"
+                        [placeholder]="'***'"
+                        formControlName="cvv"
+                    ></bar-input>
+
+                    <div class="fixed-placeholder">
+                        CVV
+                    </div>
+
+                    <div class="input-label desktop caption">
+                        Последние три цифры на обратной стороне карты
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-input-wrapper">
+                <bar-input
+                    [type]="'email'"
+                    [placeholder]="'Введите email'"
+                    formControlName="paymentEmail"
+                ></bar-input>
+
+                <div class="fixed-placeholder">
+                    Email
+                </div>
+
+                <div class="input-label caption">
+                    Счет будет отправлен на этот адрес
+                </div>
+            </div>
+
+            <div class="control-container">
+                <bar-action-button
+                    [disabled]="paymentForm.invalid || invalidCardNumber"
+                    [arrow]="false"
+                    [type]="'submit'"
+                >
+                    Оплатить
+                </bar-action-button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+@import "~styles/variables.scss";
+
+:host {
+    width: 100%;
+    position: relative;
+
+    @media (min-width: 1024px) {
+        width: 90%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 850px;
+    }
+}
+
+.bar-radio-button label {
+    padding-left: 0;
+    cursor: default;
+}
+
+.registration-recipe {
+
+    .title {
+        margin: 0;
+    }
+
+    .subtitle {
+        margin: 0;
+        color: rgba(0, 0, 0, 0.5);
+        padding-bottom: 10px;
+
+        @media (min-width: 1024px) {
+            font-size: 1rem;
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 10px 0 30px;
+        }
+    }
+
+    .controls-container {
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: 1024px) {
+            padding-top: 48px;
+        }
+
+        @media (min-width: 1440px) {
+            padding-top: 40px;
+        }
+
+        bar-action-button {
+            @media (min-width: 1024px) {
+                position: absolute;
+                top: -8px;
+                right: -15px;
+            }
+
+            @media (min-width: 1440px) {
+                display: none;
+            }
+        }
+    }
+}

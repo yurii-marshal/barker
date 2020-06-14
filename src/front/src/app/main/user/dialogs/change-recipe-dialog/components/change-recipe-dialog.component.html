@@ -1,0 +1,57 @@
+<div class="change-recipe-container" [formGroup]="recipesForm">
+    <div class="header-container">
+        <div class="back-button-wrapper">
+            <bar-back-button
+                @enterLeave
+                (click)="closeDialog()"
+            ></bar-back-button>
+        </div>
+        <div class="close-wrapper mobile">
+            <a (click)="closeDialog()">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </a>
+        </div>
+        <bar-action-button
+            class="desktop"
+            [arrow]="true"
+            *ngIf="!isSubscriptionPaused"
+            (clickHandler)="saveRecipe()"
+        >
+            Сохранить
+        </bar-action-button>
+    </div>
+
+    <div class="body-container">
+        <bar-recipes-list
+            [desktopView]="false"
+            (chooseRecipe)="saveRecipe()"
+            formControlName="recipeId"
+        ></bar-recipes-list>
+
+        <div class="control">
+            <div class="tip">
+                Стоимость подписки для всех рецептов одинаковая
+            </div>
+            <bar-action-button
+                class="mobile"
+                *ngIf="!isSubscriptionPaused"
+                [arrow]="true"
+                (clickHandler)="saveRecipe()"
+            >
+                Сохранить
+            </bar-action-button>
+            <bar-action-button
+                class="renew-btn"
+                *ngIf="isSubscriptionPaused"
+                [arrow]="false"
+                (clickHandler)="renewSubscription()"
+            >
+                Возобновить подписку
+            </bar-action-button>
+        </div>
+    </div>
+</div>

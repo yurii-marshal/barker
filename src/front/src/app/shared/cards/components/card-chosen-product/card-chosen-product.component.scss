@@ -1,0 +1,91 @@
+@import "~styles/mixins.scss";
+
+.chosen-product-card {
+    background: rgba(241, 241, 241, 0.6);
+    border-radius: 40px;
+    padding: 45px 16px 45px 5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+        padding: 38px 84px 48px 33px;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 27px 45px 50px 15px;
+
+        &:hover {
+            .close-container {
+                display: block;
+            }
+        }
+    }
+
+    .close-container {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+
+        @media (min-width: 1024px) {
+            top: 24px;
+        }
+
+        @media (min-width: 1440px) {
+            display: none;
+        }
+
+        mat-icon {
+            width: 12px;
+            height: 12px;
+
+            @media (min-width: 1024px) {
+                width: 16px;
+                height: 18px;
+            }
+        }
+    }
+
+    img {
+        width: auto;
+        height: 145px;
+    }
+
+    .description-container {
+        width: 55%;
+        margin-bottom: -25px;
+
+        @media (min-width: 1440px) {
+            width: 65%;
+        }
+
+        .description {
+            .header {
+                max-height: 40px;
+                font-size: 0.88rem;
+                line-height: 150%;
+                @include text-overflow-2();
+
+                @media (min-width: 1024px) {
+                    font-size: 1.13rem;
+                    line-height: 144%;
+                    max-height: 48px;
+                }
+            }
+
+            .price {
+                padding: 10px 0 15px;
+
+                @media (min-width: 1024px) {
+                    font-size: 1.13rem;
+                    line-height: 144%;
+                }
+            }
+        }
+
+        .control {
+            position: relative;
+        }
+    }
+}

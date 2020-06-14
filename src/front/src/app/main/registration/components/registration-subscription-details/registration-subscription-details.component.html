@@ -1,0 +1,229 @@
+<div class="registration-subscription-details">
+    <form [formGroup]="subscriptionDetailsForm">
+        <h2 class="title mobile">Оформить подписку</h2>
+        <h1 class="title desktop">Оформить подписку</h1>
+        <div class="take-subscription-container">
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-input
+                        [hasErrors]="
+                            !subscriptionDetailsForm.controls.name.pristine &&
+                            subscriptionDetailsForm.controls.name.invalid
+                        "
+                        formControlName="name"
+                        placeholder="Твое имя"
+                    ></bar-input>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.name.pristine &&
+                            subscriptionDetailsForm.controls.name.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption"></div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-input
+                        [hasErrors]="
+                            !subscriptionDetailsForm.controls.phone.pristine &&
+                            subscriptionDetailsForm.controls.phone.invalid
+                        "
+                        formControlName="phone"
+                        placeholder="Телефон"
+                    ></bar-input>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.phone.pristine &&
+                            subscriptionDetailsForm.controls.phone.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption">
+                    Мы отправим на него пароль
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-input
+                        [hasErrors]="
+                            !subscriptionDetailsForm.controls.email.pristine &&
+                            subscriptionDetailsForm.controls.email.invalid
+                        "
+                        formControlName="email"
+                        placeholder="Email"
+                    ></bar-input>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.email.pristine &&
+                            subscriptionDetailsForm.controls.email.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption">
+                    Как резервный логин и для самых важных новостей
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sub-title mobile">Детали доставки</h3>
+        <h2 class="sub-title desktop">Детали доставки</h2>
+
+        <div class="take-subscription-container">
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-select
+                        style="flex-shrink: 1.1;"
+                        placeholder="Город"
+                        formControlName="city"
+                        [options]="citiesList"
+                        textAlign="right"
+                    ></bar-select>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.city.pristine &&
+                            subscriptionDetailsForm.controls.city.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption">
+                    Мы доставляем по Киеву или в радиусе 15 км от Киева
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-input
+                        [hasErrors]="
+                            !subscriptionDetailsForm.controls.street.pristine &&
+                            subscriptionDetailsForm.controls.street.invalid
+                        "
+                        formControlName="street"
+                        placeholder="Улица"
+                    ></bar-input>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.street.pristine &&
+                            subscriptionDetailsForm.controls.street.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption"></div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-textarea
+                        [hasErrors]="
+                            !subscriptionDetailsForm.controls.addressDetails.pristine &&
+                            subscriptionDetailsForm.controls.addressDetails
+                                .invalid
+                        "
+                        formControlName="addressDetails"
+                        placeholder="Детали"
+                    ></bar-textarea>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.addressDetails
+                                .pristine &&
+                            subscriptionDetailsForm.controls.addressDetails.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption">
+                    Например, подъезд, этаж, код для входа или кодовое слово
+                    охране :)
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-select
+                        style="flex-shrink: 1.1;"
+                        placeholder="День доставки"
+                        formControlName="orderDeliveryDay"
+                        [options]="daysList"
+                        textAlign="right"
+                    ></bar-select>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.orderDeliveryDay
+                                .pristine &&
+                            subscriptionDetailsForm.controls.orderDeliveryDay.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption"></div>
+            </div>
+            <div class="input-container">
+                <div class="bar-input-wrapper">
+                    <bar-select
+                        style="flex-shrink: 1.1;"
+                        placeholder="Время доставки"
+                        formControlName="orderDeliveryTime"
+                        [options]="timeList"
+                        textAlign="right"
+                    ></bar-select>
+                    <div
+                        class="caption error"
+                        *ngIf="
+                            !subscriptionDetailsForm.controls.orderDeliveryTime
+                                .pristine &&
+                            subscriptionDetailsForm.controls.orderDeliveryTime.getError(
+                                'required'
+                            )
+                        "
+                    >
+                        Поле не может быть пустым
+                    </div>
+                </div>
+                <div class="input-label caption"></div>
+            </div>
+        </div>
+    </form>
+
+    <div class="control-container">
+        <bar-action-button
+            [arrow]="true"
+            (clickHandler)="nextStep()"
+            [disabled]="subscriptionDetailsForm.invalid"
+        >
+            Дальше
+        </bar-action-button>
+    </div>
+
+    <div class="img-container-1"></div>
+    <div class="img-container-2"></div>
+</div>

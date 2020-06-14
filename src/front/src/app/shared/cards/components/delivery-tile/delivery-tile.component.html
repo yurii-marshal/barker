@@ -1,0 +1,63 @@
+<div class="delivery tile" *ngIf="!subscription?.paused">
+    <div class="head-title">
+        Ближайшая доставка
+    </div>
+
+    <div class="delivery-description">
+        <div class="date">
+            <div class="delivery-date">{{ dictionariesService?.weekDaysBy[subscription?.delivery.date.getDay()] }}</div>
+            <div class="delivery-date">{{ subscription?.delivery.date | date: 'd MMMM' }}</div>
+            <div class="delivery-date">с {{ subscription?.delivery.timeFrom }} до {{ subscription?.delivery.timeTo }}</div>
+        </div>
+
+        <div class="price">
+            <div class="delivery-price">
+                {{ subscription?.delivery.totalAmount | currencyUA }}
+            </div>
+
+            <div class="payment-details caption">
+                будут списаны с карты {{ subscription?.delivery.paymentCard }}
+                {{ dictionariesService?.weekDaysBy[subscription?.delivery.disposalDate.getDay()] }} {{ subscription?.delivery.disposalDate | date: 'dd.MM' }} после
+                {{ subscription?.delivery.disposalTimeFrom }}
+            </div>
+        </div>
+    </div>
+
+    <div class="goods-container">
+        <div class="item" *ngFor="let item of subscription?.productsList">
+            <bar-short-card-product [item]="item"></bar-short-card-product>
+        </div>
+    </div>
+</div>
+
+<div class="paused tile" *ngIf="subscription?.paused">
+    <div class="head-title">
+        Ваша подписка остановлена
+    </div>
+    
+    <div class="description">
+        <div class="card">
+            Оплата с карты {{ subscription?.delivery.paymentCard }} не списывается
+        </div>
+        <div class="plain">
+            Но мы сохранили ваш профиль и у вас есть возможность возобновить
+            подписку в любой момент
+        </div>
+    </div>
+    
+    <div class="paused-controls">
+        <div class="control">
+            <bar-main-button (clickHandler)="renewSubscription()">
+                Возобновить подписку
+            </bar-main-button>
+        </div>
+        <div class="control">
+            <bar-modal-button
+                [secondary]="true"
+                (clickHandler)="deleteAccount()"
+            >
+                Удалить аккаунт
+            </bar-modal-button>
+        </div>
+    </div>
+</div>

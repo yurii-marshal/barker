@@ -1,0 +1,43 @@
+<div mat-dialog-content>
+    <div class="header">
+        <div class="back-button-wrapper mobile">
+            <bar-back-button @enterLeave (click)="close()"></bar-back-button>
+        </div>
+        <div class="close-wrapper">
+            <a (click)="close()">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </a>
+        </div>
+    </div>
+
+    <div class="cancel-subscription-container">
+        <div class="img-container"></div>
+        <div class="title">
+            {{ userData?.name }}, нам уже тебя не хватает :(
+        </div>
+        <div class="sub-title">
+            Но если ты и правда решила отменить подписку - сможешь восстановить
+            ее в любой момент
+        </div>
+        <div class="controls">
+            <div class="back-button-wrapper desktop">
+                <bar-back-button
+                    @enterLeave
+                    (click)="close()"
+                ></bar-back-button>
+            </div>
+            <bar-ref-button
+                [arrow]="false"
+                [primary]="false"
+                class="cancel-button"
+                (clickHandler)="cancelSubscription()"
+            >
+                Отменить подписку
+            </bar-ref-button>
+        </div>
+    </div>
+</div>

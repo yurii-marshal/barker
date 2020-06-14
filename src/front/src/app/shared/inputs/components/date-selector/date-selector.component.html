@@ -1,0 +1,26 @@
+<div class="container" [formGroup]="birth">
+    <bar-select
+        *ngIf="parsedFormat[0] === 'dd'"
+        style="flex-shrink: 1.1;"
+        placeholder="число"
+        formControlName="day"
+        [options]="days"
+        textAlign="center"
+    ></bar-select>
+    <bar-select
+        *ngIf="parsedFormat[1] === 'MM'"
+        style="flex-shrink: 1;"
+        placeholder="месяц"
+        formControlName="month"
+        [options]="months"
+        textAlign="center"
+    ></bar-select>
+    <bar-select
+        *ngIf="parsedFormat[2] === 'yyyy'"
+        style="flex-shrink: 1.1;"
+        placeholder="год"
+        formControlName="year"
+        [options]="years"
+        textAlign="center"
+    ></bar-select>
+</div>

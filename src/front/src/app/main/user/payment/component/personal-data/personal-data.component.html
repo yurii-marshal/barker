@@ -1,0 +1,170 @@
+<div class="user-profile-container">
+    <form [formGroup]="personalDataForm">
+        <div class="bar-input-wrapper name">
+            <bar-input [placeholder]="'Имя'" formControlName="name"></bar-input>
+
+            <div class="fixed-placeholder">
+                Ваше имя
+            </div>
+
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.name.pristine &&
+                    personalDataForm.controls.name.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <bar-input
+                [placeholder]="'Телефон'"
+                formControlName="phone"
+            ></bar-input>
+
+            <div class="fixed-placeholder">
+                Телефон
+            </div>
+
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.phone.pristine &&
+                    personalDataForm.controls.phone.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <bar-input
+                [type]="'email'"
+                [placeholder]="'Email'"
+                formControlName="email"
+            ></bar-input>
+
+            <div class="fixed-placeholder">
+                Email
+            </div>
+
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.email.pristine &&
+                    personalDataForm.controls.email.getError('email')
+                "
+            >
+                Проверьте правильность ввода email
+            </div>
+        </div>
+
+        <h2 class="title">
+            Детали доставки
+        </h2>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder">
+                Город
+            </div>
+
+            <bar-select
+                placeholder="Город"
+                formControlName="city"
+                [options]="citiesList"
+                textAlign="right"
+            ></bar-select>
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.city.pristine &&
+                    personalDataForm.controls.city.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder">
+                Адресс
+            </div>
+
+            <bar-input
+                [hasErrors]="
+                    !personalDataForm.controls.address.pristine &&
+                    personalDataForm.controls.address.invalid
+                "
+                formControlName="address"
+                placeholder="Адресс"
+            ></bar-input>
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.address.pristine &&
+                    personalDataForm.controls.address.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder details">
+                Детали
+            </div>
+
+            <bar-textarea
+                [rows]="3"
+                formControlName="details"
+                placeholder="Детали"
+            ></bar-textarea>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder">
+                День доставки
+            </div>
+
+            <bar-select
+                placeholder="День доставки"
+                formControlName="deliveryDay"
+                [options]="daysList"
+                textAlign="right"
+            ></bar-select>
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.deliveryDay.pristine &&
+                    personalDataForm.controls.deliveryDay.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder">
+                Время доставки
+            </div>
+
+            <bar-select
+                placeholder="Время доставки"
+                formControlName="deliveryTime"
+                [options]="timeList"
+                textAlign="right"
+            ></bar-select>
+            <div
+                class="caption error"
+                *ngIf="
+                    !personalDataForm.controls.deliveryTime.pristine &&
+                    personalDataForm.controls.deliveryTime.getError('required')
+                "
+            >
+                Поле не может быть пустым
+            </div>
+        </div>
+    </form>
+</div>

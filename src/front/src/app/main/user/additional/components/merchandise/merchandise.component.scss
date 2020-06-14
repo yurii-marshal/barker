@@ -1,0 +1,12 @@
+.merchandise-container {
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 88%;
+        margin: auto;
+    }
+
+    @media (min-width: 1440px) {
+        width: 95%;
+    }
+}

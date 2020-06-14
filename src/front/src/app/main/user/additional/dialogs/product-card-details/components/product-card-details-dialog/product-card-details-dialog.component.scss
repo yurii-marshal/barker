@@ -1,0 +1,194 @@
+::ng-deep
+    .cdk-overlay-container
+    .cdk-overlay-pane.product-details-dialog-container {
+    width: 100%;
+    top: 0;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mat-dialog-container {
+        height: 100%;
+        border-radius: 0;
+
+        @media (min-width: 1024px) {
+            padding: 40px 80px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 54px 94px;
+            height: 80vh;
+        }
+    }
+}
+
+.close-wrapper {
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: 45px;
+        right: 84px;
+    }
+
+    mat-icon {
+        width: 10px;
+        height: 10px;
+
+        @media (min-width: 1024px) {
+            width: 16px;
+            height: 18px;
+        }
+    }
+}
+
+.product-description {
+    @media (min-width: 1024px) {
+        display: flex;
+        padding-top: 30px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 20px;
+    }
+
+    .title-container {
+        @media (min-width: 1024px) {
+            width: 60%;
+            padding-right: 30px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 65%;
+            padding-left: 30px;
+        }
+
+        .title {
+            margin-bottom: 12px;
+
+            @media (min-width: 1024px) {
+                font-size: 2rem;
+                margin-top: 0;
+            }
+        }
+        .description {
+            font-size: 0.88rem;
+            line-height: 150%;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    .counter-control {
+        margin-bottom: 20px;
+
+        .price {
+            margin: 8px 0px 12px;
+            font-size: 1.38rem;
+            line-height: 144%;
+
+            @media (min-width: 1024px) {
+                font-size: 1.66rem;
+                line-height: 127%;
+            }
+        }
+        ::ng-deep bar-counter {
+            .counter {
+                background-color: #f7f7f7;
+                border-radius: 11px;
+
+                @media (min-width: 1024px) {
+                    width: 160px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+.slider {
+    .item {
+        @media (min-width: 1024px) {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 550px;
+        }
+
+        @media (min-width: 1440px) {
+            height: 330px;
+        }
+
+        .img-container {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: auto;
+            height: 195px;
+
+            @media (min-width: 1024px) {
+                position: absolute;
+                height: 330px;
+                min-width: 544px;
+            }
+        }
+    }
+
+    .slider-btn-left,
+    .slider-btn-right {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+
+        mat-icon {
+            width: 11px;
+            height: 11px;
+
+            @media (min-width: 1024px) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .slider-btn-left {
+        transform: rotate(90deg) scale(-1, 1);
+        left: 0;
+    }
+
+    .slider-btn-right {
+        transform: rotate(-90deg);
+        right: 0;
+    }
+}
+
+.control-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    @media (min-width: 1024px) {
+        margin: 0;
+        bottom: 40px;
+        right: 90px;
+    }
+
+    @media (min-width: 1440px) {
+        bottom: 8%;
+        right: 12%;
+    }
+
+    bar-action-button {
+        position: relative;
+
+        @media (min-width: 1024px) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.list-box-item-layout {
+    position: relative;
+
+    .list-box-item-inner {
+        display: inline-block;
+
+        .unset-option-btn {
+            font: 'Twentytwelve';
+            padding: 0 8px;
+            margin: 0;
+            background-color: #efefef;
+            border-radius: 30px;
+            height: 56px;
+            min-width: 96px;
+            max-width: 152px;
+            overflow: hidden;
+            line-height: 129%;
+
+            &:hover {
+                background-color: #d6d6d6;
+            }
+
+            @media (min-width: 1024px) {
+                text-align: left;
+                max-width: 218px;
+                padding: 8px 30px;
+                margin: 5px 0;
+            }
+        }
+    }
+
+    .list-box-item-label {
+        [type='checkbox'] {
+            display: none;
+        }
+    }
+}

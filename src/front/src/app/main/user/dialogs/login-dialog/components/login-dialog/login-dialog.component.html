@@ -1,0 +1,179 @@
+<div mat-dialog-content>
+    <div class="header">
+        <div class="close-wrapper">
+            <a (click)="close()">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </a>
+        </div>
+    </div>
+
+    <div
+        [formGroup]="phoneForm"
+        class="login-container phone"
+        *ngIf="byPhone && loginState === 'method'"
+    >
+        <div class="img-container"></div>
+        <div class="title">
+            Мы любим простоту и удобство
+        </div>
+        <div class="sub-title">
+            Для логина тебе нужно ввести только номер телефона. Уникальный
+            пароль прийдет тебе в мессенджер
+        </div>
+
+        <div class="bar-input-wrapper">
+            <div class="fixed-placeholder">
+                +38
+            </div>
+            <bar-input
+                class="phone-number"
+                [type]="'number'"
+                [maxLength]="10"
+                [placeholder]=""
+                formControlName="phone"
+                (keyEnter)="sendLogin(phoneForm)"
+            ></bar-input>
+            <div
+                class="caption error"
+                *ngIf="
+                    !phoneForm.controls.phone.pristine &&
+                    phoneForm.controls.phone.getError('required')
+                "
+            >
+                Это поле обязательно
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="label">
+                Нет доступа к телефону?
+            </div>
+            <bar-ref-button
+                [arrow]="false"
+                [primary]="true"
+                class="switch-button"
+                (clickHandler)="byPhone = false"
+            >
+                Войти через Email
+            </bar-ref-button>
+        </div>
+    </div>
+
+    <div
+        [formGroup]="emailForm"
+        class="login-container email"
+        *ngIf="!byPhone && loginState === 'method'"
+    >
+        <div class="img-container"></div>
+        <div class="title">
+            Введи свой e-mail
+        </div>
+        <div class="sub-title">
+            На него прийдет ссылка для логина
+        </div>
+
+        <div class="bar-input-wrapper">
+            <bar-input
+                class="user-email"
+                [type]="'email'"
+                [placeholder]="'Email'"
+                formControlName="email"
+                (keyEnter)="sendLogin(emailForm)"
+            ></bar-input>
+            <div
+                class="caption error"
+                *ngIf="
+                    !emailForm.controls.email.pristine &&
+                    emailForm.controls.email.getError('required') &&
+                    !emailForm.controls.email.getError('email')
+                "
+            >
+                Это поле обязательно
+            </div>
+            <div
+                class="caption error"
+                *ngIf="
+                    !emailForm.controls.email.pristine &&
+                    !emailForm.controls.email.getError('required') &&
+                    emailForm.controls.email.getError('email')
+                "
+            >
+                Проверьте правильность ввода e-mail
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="label">
+                Хочешь быстрее?
+            </div>
+            <bar-ref-button
+                [arrow]="false"
+                [primary]="true"
+                class="switch-button"
+                (clickHandler)="byPhone = true"
+            >
+                Войти по номеру телефона
+            </bar-ref-button>
+        </div>
+    </div>
+
+    <div
+        [formGroup]="confirmForm"
+        class="login-container"
+        [class]="byPhone ? 'phone' : 'email'"
+        *ngIf="loginState === 'confirmation'"
+    >
+        <div class="img-container"></div>
+        <div class="title">
+            Мы отправили пароль для входа <br />
+            <div *ngIf="byPhone">
+                на номер +38 {{ phoneForm.controls.phone.value }}
+            </div>
+            <div *ngIf="!byPhone">
+                по e-mail {{ emailForm.controls.email.value }}
+            </div>
+        </div>
+        <div class="sub-title">
+            Для логина тебе нужно ввести только номер телефона. Уникальный
+            пароль прийдет тебе в мессенджер
+        </div>
+
+        <div class="bar-input-wrapper">
+            <bar-input
+                class="password"
+                [type]="'password'"
+                [maxLength]="10"
+                [placeholder]="'пароль'"
+                formControlName="password"
+                (keyEnter)="sendPassword(confirmForm)"
+            ></bar-input>
+            <div
+                class="caption error"
+                *ngIf="
+                    !confirmForm.controls.password.pristine &&
+                    confirmForm.controls.password.getError('required')
+                "
+            >
+                Это поле обязательно
+            </div>
+        </div>
+
+        <div class="controls" *ngIf="canSendPassword">
+            <div class="label">
+                Если прошло уже 30 секунд и ничего не пришло, 
+            </div>
+            <bar-ref-button
+                [arrow]="false"
+                [primary]="true"
+                class="switch-button"
+                (clickHandler)="sendPassword(confirmForm)"
+            >
+                нажми тут
+            </bar-ref-button>
+        </div>
+    </div>
+</div>

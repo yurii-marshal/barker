@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="logo-container" routerLink="dashboard">
+        <img src="../../../../../assets/images/barker-logo.svg" alt="logo" />
+    </div>
+
+    <div class="routes">
+        <a class="route" routerLink="details" routerLinkActive="active">Детали подписки</a>
+        <a class="route" routerLink="my-pets" routerLinkActive="active">Мои любимцы</a>
+        <a class="route" routerLink="additional/snacks" routerLinkActive="active">Снэки</a>
+        <a class="route" routerLink="additional/merchandise" routerLinkActive="active">Мерч</a>
+        <a class="route" routerLink="faq" routerLinkActive="active">Вопросы</a>
+    </div>
+
+    <bar-hamburger-button
+        class="menu-control mobile"
+        (clickHandler)="openMobileMenu()"
+    ></bar-hamburger-button>
+</div>

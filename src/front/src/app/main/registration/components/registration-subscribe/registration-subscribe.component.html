@@ -1,0 +1,33 @@
+<div class="registration-subscribe">
+    <div class="notification caption">
+        <div class="text">
+            При оформлении подписки нужно будет ввести платежную карту. <br />
+            Но оплата будет списана {{ payment.date || "19.02" }} после
+            {{ payment.hours || "16:00" }}
+        </div>
+    </div>
+
+    <h2 class="title desktop">Выберите вариант подписки</h2>
+    <h2 class="title mobile">Выбери вариант подписки</h2>
+    <div class="subtitle caption">
+        После регистрации ты сможешь изменить свой выбор в личном профайле
+    </div>
+
+    <bar-subscription-list
+        (chooseSubscription)="subscribeId = $event"
+    ></bar-subscription-list>
+
+    <div class="controls-container">
+        <bar-action-button [arrow]="true" (clickHandler)="nextStep()">
+            <span class="mobile">Беру</span>
+            <span class="desktop">Выбрать</span>
+        </bar-action-button>
+        <bar-ref-button
+            [primary]="false"
+            [customStyles]="{ 'font-size': '1rem' }"
+            (clickHandler)="chooseSecondPetRecipe()"
+        >
+            Подобрать рацион для второго любимца
+        </bar-ref-button>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.hamburger-btn {
+    min-width: 18px;
+    min-height: 15px;
+    position: relative;
+
+    .icon-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .top,
+        .bottom,
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 3px;
+            line-height: 0;
+            margin: auto;
+        }
+
+        .top {
+            top: -5px;
+        }
+
+        .bottom {
+            top: 5px;
+        }
+
+        .hamburger-icon {
+            width: 18px;
+            height: 3px;
+        }
+    }
+
+    &:hover {
+        .icon-container {
+            .top {
+                top: -6px;
+            }
+
+            .bottom {
+                top: 6px;
+            }
+        }
+    }
+}

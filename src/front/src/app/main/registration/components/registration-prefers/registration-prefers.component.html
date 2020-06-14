@@ -1,0 +1,26 @@
+<div class="registration-prefers">
+    <h3 class="name-container">
+        Чаще всего {{ petName }} ест <br />
+        (можно выбрать несколько)
+    </h3>
+
+    <div class="prefers-list">
+        <div
+            class="list-item"
+            *ngFor="let prefer of prefersList; let i = index"
+        >
+            <bar-list-box-item [id]="prefer.id" [(ngModel)]="prefer.value">
+                {{ prefer.name }}
+            </bar-list-box-item>
+        </div>
+    </div>
+    <div class="control-container">
+        <bar-action-button
+            [arrow]="true"
+            (clickHandler)="nextStep()"
+            [disabled]="!valid"
+        >
+            Дальше
+        </bar-action-button>
+    </div>
+</div>

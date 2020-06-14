@@ -1,0 +1,101 @@
+<div class="subscribes-container" [formGroup]="subscriptionFormGroup">
+    <ngu-carousel
+        class="slider mobile"
+        style="height: 100%;"
+        #subscribeSlider
+        [inputs]="carouselConfig"
+        [dataSource]="subscribesList"
+    >
+        <div *nguCarouselDef="let item" class="item">
+            <div class="slide">
+                <div class="slide-content radio-group">
+                    <div class="bar-radio-button">
+                        <input
+                            [id]="item.id"
+                            [value]="item.id"
+                            type="radio"
+                            formControlName="subscriptionId"
+                        />
+                        <label [for]="item.id">
+                            <div class="subscribe-container">
+                                <img
+                                    class="subscribe-img"
+                                    [src]="item.imgSrc"
+                                    alt=""
+                                />
+
+                                <div class="subscribe-text">
+                                    <h3 class="header">{{ item.name }}</h3>
+
+                                    <div class="description caption">
+                                        {{ item.description }}
+                                    </div>
+
+                                    <h4 class="price">{{ item.priceCount }}</h4>
+
+                                    <div class="control-container">
+                                        <bar-action-button
+                                            [arrow]="true"
+                                            (clickHandler)="
+                                                chooseOption(item.id)
+                                            "
+                                        >
+                                            Выбрать
+                                        </bar-action-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngu-carousel>
+
+    <div class="list-container desktop">
+        <div class="item" *ngFor="let item of subscribesList">
+            <div class="slide">
+                <div class="slide-content radio-group">
+                    <div class="bar-radio-button">
+                        <input
+                            [id]="item.id"
+                            [value]="item.id"
+                            type="radio"
+                            formControlName="subscriptionId"
+                        />
+                        <label [for]="item.id">
+                            <div class="subscribe-container">
+                                <img
+                                    class="subscribe-img"
+                                    [src]="item.imgSrc"
+                                    alt=""
+                                />
+
+                                <div class="subscribe-text">
+                                    <h3 class="header">{{ item.name }}</h3>
+
+                                    <div class="description caption">
+                                        {{ item.description }}
+                                    </div>
+
+                                    <h4 class="price">{{ item.priceCount }}</h4>
+
+                                    <div class="control-container">
+                                        <bar-action-button
+                                            [arrow]="true"
+                                            (clickHandler)="
+                                                chooseOption(item.id)
+                                            "
+                                        >
+                                            Выбрать
+                                        </bar-action-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

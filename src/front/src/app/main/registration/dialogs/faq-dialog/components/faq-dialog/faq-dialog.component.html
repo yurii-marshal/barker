@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <div class="question-item" *ngFor="let item of questionsList">
+        <bar-simple-expander [item]="item"></bar-simple-expander>
+    </div>
+</div>

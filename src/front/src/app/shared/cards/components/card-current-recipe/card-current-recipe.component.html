@@ -1,0 +1,39 @@
+<div class="recipe-container">
+    <div class="active-subscription" *ngIf="subscriptionService.isActiveSubscription">
+        <h2 class="title">
+            Текущий рецепт
+        </h2>
+        <div class="img-container">
+            <img [src]="value?.imgSrc" [alt]="value?.imgSrc" />
+        </div>
+        <div class="description-container">
+            <h2 class="name">{{ value?.name }}</h2>
+            <h2 class="price">{{ value?.price | currencyUA }}</h2>
+            <h4 class="portion">
+                {{ value?.portionCount }} порций по {{ value?.portionWeight }} г
+            </h4>
+            <div class="controls">
+                <bar-flat-button
+                    class="change-btn"
+                    [darkMode]="true"
+                    (clickHandler)="recipeChange()"
+                    >Cменить рецепт</bar-flat-button
+                >
+                <bar-flat-button
+                    class="pause-btn"
+                    [darkMode]="true"
+                    (clickHandler)="pauseDelivery()"
+                    >Пауза</bar-flat-button
+                >
+            </div>
+            <div class="tip-container caption">
+                Рецепт возможно сменить или поставить на паузу до
+                {{ value?.pauseTimeTo }} {{ value?.pauseWeekdayTo }}
+            </div>
+        </div>
+    </div>
+
+    <div class="paused-subscription" *ngIf="!subscriptionService.isActiveSubscription">
+        <bar-paused-subscription-tile></bar-paused-subscription-tile>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+.registration-main-info {
+    width: 100%;
+    margin: 0 auto 40px;
+
+    .img-container {
+        height: 60px;
+        margin-top: -10px;
+        margin-left: -10px;
+        background: url(~assets/images/heart.svg) no-repeat;
+    }
+
+    .name-container {
+        padding-bottom: 25px;
+    }
+
+    .breed-container {
+        .gender {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: flex-start;
+
+            .radio-group {
+                display: flex;
+                justify-content: space-between;
+                width: 65%;
+                padding-top: 3px;
+
+                .bar-radio-button {
+                    padding-right: 20px;
+                }
+            }
+
+            .label-text {
+                text-align: center;
+                width: 40%;
+                width: 35%;
+            }
+        }
+
+        ::ng-deep bar-select {
+            input {
+                padding: 7px 9px;
+                font-size: 1.13rem !important;
+            }
+
+            button {
+                margin: 0 !important;
+            }
+        }
+    }
+
+    .caption {
+        padding: 30px 0;
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .label-text {
+        font-size: 1.16rem;
+        display: block;
+        padding: 15px 0 10px;
+    }
+
+    @media (min-width: 1024px) {
+        padding-left: 100px;
+        margin: 0 auto;
+        width: 464px;
+
+        .img-container {
+            padding-bottom: 15px;
+        }
+
+        .name-container,
+        .breed-container {
+            display: flex;
+            padding-bottom: 20px;
+            justify-content: space-between;
+
+            .label-text {
+                width: 50%;
+            }
+
+            bar-input {
+                width: 65%;
+            }
+
+            bar-select {
+                width: 43%;
+            }
+        }
+
+        .breed-container {
+            .gender {
+                width: 57%;
+
+                .radio-group {
+                    display: flex;
+                    width: 60%;
+                }
+
+                .label-text {
+                    text-align: center;
+                    width: 35%;
+                }
+            }
+        }
+
+        .caption {
+            padding: 30px 0 50px;
+        }
+    }
+}

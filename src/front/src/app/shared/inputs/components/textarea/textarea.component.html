@@ -1,0 +1,10 @@
+<textarea
+    class="bar-textarea"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [cols]="columns"
+    [rows]="rows"
+    [(ngModel)]="value"
+></textarea>
+
+<mat-icon svgIcon="warning" class="error-icon" *ngIf="hasErrors"></mat-icon>

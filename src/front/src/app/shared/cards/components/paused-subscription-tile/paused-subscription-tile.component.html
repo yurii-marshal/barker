@@ -1,0 +1,15 @@
+<h2 class="title">Подписка остановлена</h2>
+
+<h4 class="description">
+    Оплата с карты {{ delivery.paymentCard }} не списывается.
+</h4>
+
+<h4 class="description">
+    Но у вас есть возможность возобновить подписку в любой момент
+</h4>
+
+<div class="controls">
+    <bar-flat-button [darkMode]="true" (clickHandler)="renewSubscription()"
+        >Возобновить подписку</bar-flat-button
+    >
+</div>

@@ -1,0 +1,182 @@
+::ng-deep .cdk-overlay-container .cdk-overlay-pane.login-dialog-container {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+
+    .mat-dialog-container {
+        border-radius: 0;
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            padding: 56px 64px;
+            border-radius: 0;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1024px) {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+
+    .close-wrapper {
+        cursor: pointer;
+
+        a {
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 24px;
+        }
+        mat-icon {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+
+            @media (min-width: 1024px) {
+                width: 16px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.login-container {
+    @media (min-width: 1024px) {
+        width: 58%;
+        margin: auto;
+        padding-top: 86px;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 35px;
+        width: 47%;
+    }
+
+    &.phone {
+        .img-container {
+            background: url("~assets/images/shape-heart.svg") no-repeat;
+        }
+
+        .bar-input-wrapper {
+            ::ng-deep bar-input.phone-number {
+                input {
+                    padding-left: 65px;
+
+                    @media (min-width: 1024px) {
+                        padding-left: 112px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.email {
+        .img-container {
+            background: url("~assets/images/shape-tomato.svg") no-repeat;
+        }
+    }
+
+    .img-container {
+        background-size: contain;
+        width: auto;
+        height: 81px;
+        margin: -20px 0 -10px -16px;
+
+        @media (min-width: 1024px) {
+            height: 116px;
+            margin: -40px 0 -20px -16px;
+        }
+    }
+
+    .title {
+        font-size: 22px;
+        line-height: 127%;
+        padding: 15px 0 20px;
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            font-size: 2rem;
+            line-height: 131%;
+        }
+    }
+
+    .sub-title {
+        font-size: 1rem;
+
+        @media (min-width: 1024px) {
+            font-size: 1.13rem;
+            line-height: 144%;
+            padding: 10px 0 20px;
+        }
+    }
+
+    .bar-input-wrapper {
+        position: relative;
+        padding: 30px 0;
+
+        .fixed-placeholder {
+            position: absolute;
+            top: 45px;
+            left: 30px;
+            font-size: 1.13rem;
+            line-height: 144%;
+
+            @media (min-width: 1024px) {
+                font-size: 2rem;
+                line-height: 169px;
+                top: -10px;
+                left: 50px;
+            }
+        }
+
+        ::ng-deep bar-input {
+            input {
+                @media (min-width: 1024px) {
+                    height: 88px;
+                    font-size: 2rem;
+                    line-height: 169px;
+                    padding: 15px 44px;
+                }
+            }
+        }
+    }
+
+    .controls {
+        @media (min-width: 1024px) {
+            padding-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .label {
+            padding-bottom: 3px;
+            font-size: 0.93rem;
+            line-height: 150%;
+            color: rgba(0, 0, 0, 0.5);
+
+            @media (min-width: 1024px) {
+                padding-right: 5px;
+                padding-bottom: 0;
+                font-size: 1.13rem;
+                line-height: 144%;
+            }
+        }
+
+        ::ng-deep .switch-button {
+            .content {
+                font-size: 0.93rem;
+                line-height: 150%;
+
+                @media (min-width: 1024px) {
+                    font-size: 1.13rem;
+                    line-height: 144%;
+                }
+            }
+        }
+    }
+}

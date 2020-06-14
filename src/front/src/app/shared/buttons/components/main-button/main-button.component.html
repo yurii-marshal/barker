@@ -1,0 +1,16 @@
+<button
+    class="btn main-button"
+    [disabled]="disabled"
+    [type]="type"
+    (click)="onClick($event)"
+>
+    <div class="content" [ngStyle]="contentStyle">
+        <ng-content></ng-content>
+    </div>
+    <img
+        class="cover-img"
+        src="../../../../../assets/images/main-button.svg"
+        alt="main-btn"
+        @baseThemeTransition
+    />
+</button>

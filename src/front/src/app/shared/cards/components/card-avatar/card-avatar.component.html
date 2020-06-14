@@ -1,0 +1,13 @@
+<div class="card-avatar" [class.small]="small">
+    <div
+        class="image-container"
+        [ngStyle]="{
+            background: 'url(' + image + ')',
+            'background-size': 'cover'
+        }"
+        @baseThemeTransition
+    ></div>
+    <div class="text-container">
+        {{ text }}
+    </div>
+</div>

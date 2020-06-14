@@ -1,0 +1,31 @@
+.registration-intro {
+    width: 100%;
+    margin: 0 auto 40px;
+
+    h2,
+    .plain-text {
+        padding-right: 10%;
+    }
+
+    .animation-container {
+        background: url(~assets/images/registration-intro.svg) no-repeat;
+        height: 124px;
+    }
+
+    .next-btn-container {
+        margin-top: 25px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 430px;
+        margin: 0 auto;
+
+        .plain-text {
+            font-size: 18px;
+        }
+
+        .next-btn-container {
+            margin-top: 60px;
+        }
+    }
+}

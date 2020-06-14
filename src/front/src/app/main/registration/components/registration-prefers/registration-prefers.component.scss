@@ -1,0 +1,63 @@
+:host {
+    width: 100%;
+}
+
+.registration-prefers {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    .name-container {
+        margin: 0 auto 22px;
+    }
+
+    .has-pathology {
+        display: flex;
+
+        .bar-radio-button {
+            &:first-child {
+                margin-right: 18px;
+            }
+
+            label {
+                font-size: 1.14rem;
+                line-height: 144%;
+            }
+        }
+    }
+
+    .prefers-list {
+        margin: 35px 0 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .list-item {
+            display: flex;
+            max-width: 140px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+    }
+
+    .control-container {
+        margin-top: 30px;
+
+        @media (min-width: 1024px) {
+            margin-top: 60px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        width: 430px;
+        padding-left: 100px;
+
+        .prefers-list {
+            .list-item {
+                margin-bottom: 10px;
+                min-width: 156px;
+                max-width: 217px;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.useEditorConfig": false,
+    "editor.formatOnSave": true,
+    "typescriptHero.imports.organizeOnSave": true
+}

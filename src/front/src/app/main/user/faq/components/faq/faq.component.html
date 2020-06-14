@@ -1,0 +1,20 @@
+<div class="faq-container">
+    <section *ngFor="let section of questionsList; let i = index">
+        <div class="title-container">
+            <div class="title">
+                {{ section?.title }}
+            </div>
+            <img class="title-img" [src]="section?.imgSrc" [alt]="section?.imgSrc">
+            <img *ngIf="i === 1" src="assets/images/registration-intro.svg" alt="" class="section-img" />
+        </div>
+        <div class="questions-container">
+            <div class="item" *ngFor="let item of section?.questions">
+                <bar-simple-expander [item]="item"></bar-simple-expander>
+            </div>
+        </div>
+    </section>
+
+    <img class="parallax-faq first" src="assets/images/parallax-faq-1.svg" alt="parallax-faq-1" />
+    <img class="parallax-faq second" src="assets/images/parallax-faq-2.svg" alt="parallax-faq-2" />
+    <img class="parallax-faq third" src="assets/images/parallax-faq-3.svg" alt="parallax-faq-3" />
+</div>

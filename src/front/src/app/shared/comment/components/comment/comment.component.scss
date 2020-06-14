@@ -1,0 +1,120 @@
+@import "~styles/mixins.scss";
+
+.comment-container {
+    margin-top: 30px;
+    border-radius: 12px;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 0;
+    }
+
+    @media (min-width: 1440px) {
+        margin-top: 0;
+        margin-right: 30px;
+    }
+
+    &.edit {
+        background-color: #ffffff;
+        margin: 30px -10px 0;
+
+        @media (min-width: 1024px) {
+            margin: 40px 0 0 0;
+            padding-top: 10px;
+        }
+
+        @media (min-width: 1440px) {
+            margin: 0;
+        }
+
+        bar-like-dislike {
+            margin-left: 5px;
+
+            @media (min-width: 1024px) {
+                position: absolute;
+                right: 30px;
+                top: 28px;
+                width: 64px;
+            }
+
+            @media (min-width: 1440px) {
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+
+    bar-like-dislike {
+        margin-left: -5px;
+    }
+
+    ::ng-deep bar-flat-button {
+        width: 66px;
+        margin: 0 20px;
+
+        @media (min-width: 1024px) {
+            margin: 0 0 0 50px;
+        }
+
+        &.cancel {
+            button {
+                background-color: transparent !important;
+            }
+        }
+
+        .flat-wrapper {
+            width: 66px;
+            min-width: auto;
+
+            button {
+                padding: 10px !important;
+
+                @media (min-width: 1024px) {
+                    padding: 10px 20px !important;
+                }
+            }
+        }
+    }
+
+    .edit-container {
+        width: 100%;
+
+        ::ng-deep bar-textarea {
+            textarea {
+                font-size: 0.93rem;
+                line-height: 150%;
+                padding: 15px 10px;
+                border-radius: 0;
+                background: transparent;
+
+                @media (min-width: 1024px) {
+                    padding: 15px 32px;
+                }
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0px;
+
+            @media (min-width: 1024px) {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .comment {
+        .text {
+            font-size: 0.93rem;
+            line-height: 150%;
+            color: rgba(0, 0, 0, 0.5);
+
+            &.short {
+                @include text-overflow-2();
+            }
+        }
+    }
+}

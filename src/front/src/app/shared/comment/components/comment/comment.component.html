@@ -1,0 +1,47 @@
+<div class="comment-container" [class.edit]="isEditMode">
+    <bar-like-dislike [(isLiked)]="item.isLiked"></bar-like-dislike>
+
+    <div class="edit-container" *ngIf="isEditMode">
+        <bar-textarea
+            [placeholder]="'Комментарий к заказу'"
+            [(ngModel)]="comment"
+            [columns]="textCols"
+        ></bar-textarea>
+
+        <div class="controls">
+            <bar-flat-button
+                [disabled]="comment === item?.comment"
+                class="save"
+                (clickHandler)="saveComment()"
+            >
+                Сохранить
+            </bar-flat-button>
+
+            <bar-flat-button
+                class="cancel"
+                [disabled]="!item?.comment"
+                (clickHandler)="cancelEditComment()"
+            >
+                Отменить
+            </bar-flat-button>
+        </div>
+    </div>
+
+    <div class="comment" *ngIf="!isEditMode">
+        <p
+            *ngIf="item?.comment && !isEditMode"
+            class="text"
+            [class.short]="!isOpened"
+        >
+            {{ item?.comment }}
+        </p>
+
+        <bar-modal-button
+            *ngIf="isOpened"
+            [secondary]="true"
+            (clickHandler)="editComment()"
+        >
+            {{ item?.comment ? "Изменить" : "Оставить комментарий" }}
+        </bar-modal-button>
+    </div>
+</div>

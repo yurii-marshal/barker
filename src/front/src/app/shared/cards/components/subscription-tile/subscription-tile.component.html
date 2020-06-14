@@ -1,0 +1,43 @@
+<div class="subscription-tile-container">
+    <div class="active-subscription" *ngIf="!isSubscriptionPaused">
+        <div class="subscribe-container">
+            <img class="subscribe-img" [src]="subscription.imgSrc" alt="" />
+
+            <div class="subscribe-text">
+                <h3 class="header mobile">{{ subscription.name }}</h3>
+                <h2 class="header desktop">{{ subscription.name }}</h2>
+
+                <h4 class="description">
+                    {{ subscription.description }}
+                </h4>
+
+                <h4 class="price mobile">{{ subscription.price }}</h4>
+                <h3 class="price desktop">{{ subscription.price }}</h3>
+
+                <div class="control-container main">
+                    <bar-flat-button [darkMode]="true" (clickHandler)="changeSubscription()">
+                        Изменить
+                    </bar-flat-button>
+
+                    <bar-flat-button class="pause" [darkMode]="true" (clickHandler)="pauseSubscription()">
+                        Пауза
+                    </bar-flat-button>
+                </div>
+
+                <div class="description caption">
+                    Подписку возможно изменить или поставить на паузу до {{subscription.durationTimeTo}} {{subscription.durationWeekdayTo}}
+                </div>
+
+                <div class="control-container cancel">
+                    <bar-modal-button [secondary]="true" (click)="cancelSubscription()">
+                        Отменить подписку
+                    </bar-modal-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="paused-subscription" *ngIf="isSubscriptionPaused">
+        <bar-paused-subscription-tile></bar-paused-subscription-tile>
+    </div>
+</div>

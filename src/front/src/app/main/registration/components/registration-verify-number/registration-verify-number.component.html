@@ -1,0 +1,73 @@
+<div class="registration-verify-number">
+    <div class="img-container"></div>
+    <form [formGroup]="verifyNumberForm">
+        <div class="title-container">
+            <div class="title">
+                Мы отправили пароль на номер
+
+                <div class="controls-container">
+                    <div class="phone">
+                        <h2 class="phone-text">+38</h2>
+                        <h2 *ngIf="!isChangeMode" class="phone-text">
+                            {{ phoneNumber }}
+                        </h2>
+    
+                        <input
+                            #phone
+                            id="phone"
+                            type="number"
+                            maxlength="10"
+                            [class.show]="isChangeMode"
+                            class="phone-input"
+                            type="text"
+                            formControlName="phone"
+                        />
+                    </div>
+    
+                    <div class="controls" [class.change-mode]="isChangeMode">
+                        <bar-modal-button
+                            *ngIf="!isChangeMode"
+                            (clickHandler)="changePhoneNumber()"
+                            >изменить</bar-modal-button
+                        >
+                        <bar-modal-button
+                            *ngIf="isChangeMode"
+                            [disabled]="verifyNumberForm.controls.phone.value.length < 10"
+                            (clickHandler)="sendToPhoneNumber()"
+                            >отправить</bar-modal-button
+                        >
+                        <bar-modal-button
+                            *ngIf="isChangeMode"
+                            (clickHandler)="cancelInput()"
+                            >отменить</bar-modal-button
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="caption">
+            Дальше этот номер будет использоваться для входа в личный кабинет
+        </div>
+
+        <bar-input
+            class="code-input"
+            formControlName="password"
+            placeholder="Пароль из sms"
+        ></bar-input>
+
+        <div class="resend-container">
+            <h4 class="resend-text">
+                Прошло 30 сек и пароль не пришел?
+            </h4>
+            <bar-ref-button
+                [arrow]="false"
+                class="resend-button"
+                (clickHandler)="resendRequestOnCode()"
+                >Нажми тут</bar-ref-button
+            >
+            <mat-icon *ngIf="isResent" class="checked-icon" svgIcon="verify-check"></mat-icon>
+            <mat-icon *ngIf="isResent" class="checked-icon" svgIcon="verify-check"></mat-icon>
+        </div>
+    </form>
+</div>

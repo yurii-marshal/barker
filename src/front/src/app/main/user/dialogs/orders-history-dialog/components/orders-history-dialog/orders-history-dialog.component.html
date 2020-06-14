@@ -1,0 +1,27 @@
+<div mat-dialog-content class="dialog-container">
+    <div class="close-wrapper">
+        <mat-icon
+            (click)="close()"
+            @baseThemeTransition
+            svgIcon="close"
+            class="close-icon"
+        ></mat-icon>
+    </div>
+
+    <bar-pets-switcher
+        [pets]="pets"
+        [(selected)]="selectedPet"
+        (selectedChange)="onSelectedChange($event)"
+    ></bar-pets-switcher>
+
+    <h2 class="title mobile">
+        История заказов
+    </h2>
+
+    <div class="history-items-container">
+        <bar-history-item
+            *ngFor="let item of orders$ | async"
+            [item]="item"
+        ></bar-history-item>
+    </div>
+</div>

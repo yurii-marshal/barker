@@ -1,0 +1,73 @@
+<ul>
+    <li>
+        <button (click)="close()">Close</button>
+    </li>
+    <li>
+        <button [routerLink]="'/ui-toolkit-demo'" (click)="close()">
+            UI Toolkit
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Intro)">Step 1 - Intro</button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.MainInfo)">
+            Step 2 - Main Info
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.DateOfBirth)">
+            Step 3 - Date of birth
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Weight)">
+            Step 4 - Weight
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Activity)">
+            Step 5 - Activity
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Pathologies)">
+            Step 6 - Pathologies
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Prefers)">
+            Step 7 - Prefers
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.CheckUp)">
+            Step 8 - CheckUp
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Recipe)">
+            Step 9 - Recipe
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.SubVariant)">
+            Step 10 - SubVariant
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Subscribe)">
+            Step 11 - Subscribe
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.VerifyNumber)">
+            Step 12 - VerifyNumber
+        </button>
+    </li>
+    <li>
+        <button (click)="openLink($event, steps.Payment)">
+            Step 13 - Payment
+        </button>
+    </li>
+</ul>

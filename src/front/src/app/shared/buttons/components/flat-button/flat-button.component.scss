@@ -1,0 +1,78 @@
+@import '~styles/mixins.scss';
+@import '~styles/colors.scss';
+
+.flat-wrapper {
+    position: relative;
+    width: auto;
+    min-height: 43px;
+    min-width: 150px;
+
+    &.rounded {
+        min-height: 128px;
+    }
+
+    .flat-btn {
+        position: absolute;
+        background-color: $GRAY-LIGHTER;
+        color: $primary;
+        border-radius: 11px;
+        padding: 10px 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:not(:disabled) {
+            &:hover {
+                background-color: $GRAY-LIGHT;
+            }
+
+            &:active {
+                margin-top: 4px;
+                background-color: $GRAY-LIGHTER;
+            }
+        }
+
+        &:disabled {
+            background-color: $GRAY-LIGHTER;
+            cursor: default;
+            opacity: 0.3;
+        }
+
+        &.dark {
+            background-color: #ffffff;
+
+            &:not(:disabled) {
+                &:hover {
+                    background-color: #f4f4f4;
+                }
+
+                &:active {
+                    background-color: $GRAY;
+                }
+            }
+
+            &:disabled {
+                background-color: #ffffff;
+                cursor: default;
+                opacity: 0.3;
+            }
+        }
+
+        &.rounded {
+            background-color: rgba(241, 241, 241, 0.6);
+            border-radius: 60px;
+            padding: 0 70px;
+            min-height: 128px;
+            min-width: 384px;
+
+            &:not(:disabled) {
+                &:hover {
+                    background-color: rgba(193, 193, 193, 0.6);
+                }
+            }
+        }
+
+        .content {
+            margin: 0;
+        }
+    }
+}

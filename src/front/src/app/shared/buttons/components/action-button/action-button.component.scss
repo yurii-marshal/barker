@@ -1,0 +1,70 @@
+@import '~styles/mixins.scss';
+
+.action-btn {
+    font-size: 32px;
+    line-height: 54px;
+    cursor: pointer;
+    display: flex;
+
+    @media (min-width: 1024px) {
+        font-size: 44px;
+    }
+
+    &:not(:disabled) {
+        &:hover {
+            color: #9d9d9d;
+        }
+        &:active {
+            color: #000000;
+        }
+    }
+
+    .arrow-right-container {
+        display: none;
+    }
+
+    &.with-arrow {
+        position: relative;
+
+        .arrow-right-container {
+            display: inline-block;
+            position: relative;
+            height: 34px;
+            width: 50px;
+            align-self: center;
+
+            .arrow-icon {
+                position: absolute;
+                left: 10px;
+                height: 26px;
+                width: 26px;
+                line-height: 0;
+                top: 60%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &:not(:disabled):hover .arrow-right-container {
+            .arrow-icon {
+                left: 15px;
+                opacity: 0.5;
+            }
+        }
+
+        &:not(:disabled):active .arrow-right-container {
+            .arrow-icon {
+                left: 10px;
+                opacity: 1;
+            }
+        }
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+
+    .content {
+        margin: 0;
+    }
+}

@@ -1,0 +1,10 @@
+<button
+    class="btn modal-btn"
+    [class.secondary]="secondary"
+    [type]="type"
+    [disabled]="disabled"
+    (click)="onClick($event)"
+>
+    <h4 class="content"><ng-content></ng-content></h4>
+    <div class="underline" @baseThemeTransition></div>
+</button>

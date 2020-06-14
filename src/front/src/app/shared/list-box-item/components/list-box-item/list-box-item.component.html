@@ -1,0 +1,34 @@
+<div class="list-box-item-layout">
+    <label class="list-box-item-label" [attr.for]="id">
+        <input
+            (change)="emitChangeEvent(value)"
+            type="checkbox"
+            [(ngModel)]="value"
+            [attr.name]="name"
+            [attr.id]="id"
+        />
+    </label>
+
+    <div class="list-box-item-inner">
+        <ng-template #content><ng-content></ng-content></ng-template>
+        <ng-container *ngIf="!value">
+            <button
+                class="btn unset-option-btn"
+                [disabled]="disabled"
+                [class.dark-mode]="darkMode"
+                (click)="setLabel(true)"
+            >
+                <ng-container *ngTemplateOutlet="content"></ng-container>
+            </button>
+        </ng-container>
+        <ng-container *ngIf="value">
+            <bar-main-button
+                [contentStyle]="{ 'font-size.px': 14 }"
+                [disabled]="disabled"
+                (clickHandler)="setLabel(false)"
+            >
+                <ng-container *ngTemplateOutlet="content"></ng-container>
+            </bar-main-button>
+        </ng-container>
+    </div>
+</div>

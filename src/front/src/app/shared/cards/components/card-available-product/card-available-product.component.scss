@@ -1,0 +1,65 @@
+@import "~styles/mixins.scss";
+
+.available-product-card {
+    background: rgba(241, 241, 241, 0.6);
+    border-radius: 40px;
+    padding: 48px;
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+        background: transparent;
+        padding: 32px 48px;
+
+        &:hover {
+            background: rgba(241, 241, 241, 0.6);
+
+            .controls {
+                display: block;
+            }
+        }
+    }
+
+    img {
+        width: 160px;
+        height: 173px;
+    }
+
+    .name {
+        overflow-wrap: break-word;
+        margin: 10px 0 0 0;
+
+        @media (min-width: 1024px) {
+            height: 50px;
+            @include text-overflow-2();
+        }
+    }
+
+    .additional {
+        margin: 12px 0 0;
+        font-size: 0.88rem;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .price {
+        margin: 8px 0 20px;
+    }
+
+    .controls {
+        display: block;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+
+        ::ng-deep bar-counter {
+            .counter {
+                width: 136px;
+            }
+        }
+
+        .action-control {
+            padding-top: 20px;
+        }
+    }
+}

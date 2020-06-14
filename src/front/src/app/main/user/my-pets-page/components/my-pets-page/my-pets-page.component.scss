@@ -1,0 +1,77 @@
+::ng-deep bar-pets-switcher {
+    display: block;
+    margin-top: 60px;
+}
+
+.pet-page-wrapper {
+    @media (min-width: 1024px) {
+        display: flex;
+    }
+
+    bar-card-current-recipe {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: block;
+            padding-right: 32px;
+            width: 38%;
+            margin-top: 16px;
+
+            ::ng-deep .recipe-container {
+                padding: 16px 45px;
+
+                .active-subscription {
+                    .title {
+                        display: block !important;
+                    }
+
+                    .img-container {
+                        width: 109px !important;
+                        height: 109px !important;
+                        margin: 40px 20px 20px !important;
+                    }
+
+                    .description-container {
+                        .tip-container {
+                            width: 100% !important;
+                        }
+                        .controls {
+                            bar-flat-button.change-btn .flat-wrapper {
+                                min-width: 128px !important;
+                                margin-right: 16px !important;
+
+                                button {
+                                    min-width: 130px !important;
+                                    padding: 10px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .paused-subscription {
+                    .controls bar-flat-button button {
+                        @media (min-width: 1024px) {
+                            width: 214px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1440px) {
+            width: 29%;
+
+            ::ng-deep .recipe-container {
+                padding: 45px 72px;
+            }
+        }
+    }
+
+    .sub-page-wrapper {
+        @media (min-width: 1024px) {
+            width: 68%;
+            margin-top: 18px;
+        }
+    }
+}

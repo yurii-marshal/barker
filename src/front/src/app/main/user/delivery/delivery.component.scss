@@ -1,0 +1,342 @@
+@import "~styles/variables.scss";
+
+.delivery-container {
+    position: relative;
+    padding: 15px 0;
+
+    .head-container {
+        @media (min-width: 1024px) {
+            margin-top: 65px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title-container {
+            .title {
+                @media (min-width: 1440px) {
+                    display: flex;
+                }
+
+                .history-control {
+                    @media (min-width: 1440px) {
+                        margin: 18px 0 0 30px;
+                    }
+                }
+            }
+
+            h1 {
+                margin: 0;
+            }
+
+            h2 {
+                margin: 12px 0 15px;
+            }
+
+            .address {
+                @media (min-width: 1440px) {
+                    display: flex;
+                }
+
+                .text {
+                    @media (min-width: 1024px) {
+                        font-size: 1.13rem;
+                        line-height: 144%;
+                        padding-top: 20px;
+                        width: 55%;
+                    }
+
+                    @media (min-width: 1440px) {
+                        padding-top: 30px;
+                    }
+                }
+
+                .edit-control {
+                    padding-top: 8px;
+
+                    @media (min-width: 1440px) {
+                        padding-top: 30px;
+                    }
+
+                    ::ng-deep bar-ref-button {
+                        .content {
+                            font-size: 0.9rem;
+                            line-height: 150%;
+
+                            color: rgba(0, 0, 0, 0.6);
+                        }
+                    }
+                }
+            }
+        }
+
+        .price-list {
+            @media (min-width: 1024px) {
+                width: 40%;
+            }
+
+            .general-price {
+                margin: 10px 0 5px;
+
+                @media (min-width: 1024px) {
+                    text-align: right;
+                }
+            }
+
+            h1.general-price {
+                margin: 0;
+            }
+
+            .disposal-date {
+                color: rgba(0, 0, 0, 0.5);
+
+                @media (min-width: 1024px) {
+                    font-size: 0.88rem;
+                    line-height: 150%;
+                    text-align: right;
+                }
+            }
+
+            .ration-container {
+                margin: 5px 0 25px;
+
+                @media (min-width: 1024px) {
+                    margin-top: 25px;
+                }
+
+                @media (min-width: 1440px) {
+                    margin-top: 10px;
+                }
+
+                .ration {
+                    display: flex;
+                    justify-content: space-between;
+
+                    @media (min-width: 1024px) {
+                        text-align: right;
+                        justify-content: flex-end;
+                    }
+
+                    h4 {
+                        margin: 0;
+
+                        @media (min-width: 1024px) {
+                            font-size: 1.13rem;
+                            line-height: 144%;
+                        }
+                    }
+
+                    .line {
+                        flex: auto;
+                        margin: 0 5px 7px;
+                        border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+
+                        @media (min-width: 1024px) {
+                            width: 50px;
+                            flex: none;
+                        }
+                    }
+
+                    .price {
+                        @media (min-width: 1024px) {
+                            min-width: 70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tiles-container {
+        @media (min-width: 1024px) {
+            display: flex;
+        }
+
+        bar-card-current-recipe {
+            @media (min-width: 1024px) {
+                margin-right: 32px;
+            }
+
+            @media (min-width: 1440px) {
+                width: 488px;
+            }
+        }
+
+        .additional-goods {
+            padding-bottom: 48px;
+
+            @media (min-width: 1024px) {
+                width: 53%;
+            }
+
+            @media (min-width: 1440px) {
+                display: flex;
+                flex-wrap: wrap;
+                width: 696px;
+                padding-bottom: 15px;
+            }
+
+            .item {
+                padding-top: 16px;
+
+                @media (min-width: 1024px) {
+                    padding-top: 0;
+                    padding-bottom: 32px;
+                }
+
+                @media (min-width: 1440px) {
+                    width: 332px;
+
+                    &:nth-child(odd) {
+                        padding-right: 32px;
+                    }
+                }
+            }
+        }
+    }
+
+    .suggestions-container {
+        .title {
+            margin: 12px 0;
+
+            @media (min-width: 1024px) {
+                font-size: 2rem;
+            }
+        }
+
+        .sub-title {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .suggestions-list {
+            padding-top: 15px;
+            position: relative;
+
+            @media (min-width: 1024px) {
+                height: 541px;
+            }
+
+            @media (min-width: 1440px) {
+                display: flex;
+                flex-wrap: wrap;
+                padding-bottom: 162px;
+            }
+
+            .item {
+                padding-top: 12px;
+
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+
+                @media (min-width: 1440px) {
+                    display: block;
+                    width: 280px;
+                }
+            }
+
+            .available-goods-slider {
+                display: none;
+
+                @media (min-width: 1024px) {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    left: -20px;
+                    height: 430px;
+
+                    ::ng-deep {
+                        .ngucarousel {
+                            height: 541px;
+                        }
+
+                        .ngu-touch-container {
+                            width: 32%;
+
+                            .slide {
+                                margin-right: 20px;
+
+                                .available-product-card {
+                                    width: 185px;
+                                    padding: 45px 48px;
+                                }
+                            }
+                        }
+                    }
+
+                    .slider-btn-left,
+                    .slider-btn-right {
+                        position: absolute;
+                        top: 22%;
+                        transform: translateY(-50%);
+
+                        mat-icon {
+                            height: 18px;
+                            width: 18px;
+                        }
+                    }
+
+                    .slider-btn-left {
+                        transform: rotate(90deg) scale(-1, 1);
+                        left: 0;
+                    }
+
+                    .slider-btn-right {
+                        transform: rotate(-90deg);
+                        right: 0;
+                    }
+                }
+
+                @media (min-width: 1440px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .paralax-delivery-1 {
+        position: absolute;
+        top: -72px;
+        left: 60px;
+        width: 256px;
+        height: 160px;
+        z-index: -1;
+
+        @media (min-width: 1024px) {
+            width: 459px;
+            height: 287px;
+            left: 55%;
+            top: -150px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 539px;
+            height: 337px;
+            left: 65%;
+            top: -160px;
+        }
+    }
+
+    .paralax-delivery-2 {
+        position: absolute;
+        bottom: -120px;
+        right: -100px;
+        z-index: -1;
+        width: 450px;
+        height: 330px;
+        transform: matrix(-0.87, -0.5, -0.5, 0.87, 0, 0);
+        transform: skewX(0);
+
+        @media (min-width: 1024px) {
+            width: 456px;
+            height: 350px;
+            left: -55px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 738px;
+            height: 550px;
+            left: -120px;
+        }
+    }
+}

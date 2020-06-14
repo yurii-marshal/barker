@@ -1,0 +1,209 @@
+@import "~styles/variables.scss";
+
+.recipes-container {
+    &.desktop {
+        @media (min-width: 1024px) {
+            height: 448px;
+            display: flex;
+            margin-left: -25px;
+        }
+
+        @media (min-width: 1440px) {
+            height: 470px;
+            justify-content: space-between;
+        }
+    }
+
+    .item {
+        @media (min-width: 1440px) {
+            width: 280px;
+            height: 500px;
+        }
+    }
+
+    .slide.desktop-view {
+        .recipe-container {
+            @media (min-width: 1440px) {
+                width: 186px;
+
+                .recipe-img {
+                    margin-top: 0;
+                }
+
+                &:hover {
+                    .recipe-text {
+                        .control-container {
+                            display: block;
+
+                            bar-action-button {
+                                padding-top: 20px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .recipe-text {
+                .control-container {
+                    @media (min-width: 1440px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep ngu-carousel {
+    .ngucarousel {
+        overflow: visible !important;
+    }
+}
+
+.slide {
+    height: 100%;
+    background: rgba(241, 241, 241, 0.6);
+    border-radius: 40px;
+    margin-right: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+        background: transparent;
+        height: 100%;
+    }
+
+    .slide-content {
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            width: 100%;
+        }
+
+        .bar-radio-button {
+            height: 100%;
+
+            label {
+                width: 100%;
+                display: flex;
+                position: relative;
+                padding-left: 0;
+
+                &:before {
+                    top: 25px;
+                    left: 52px;
+                }
+
+                &:after {
+                    top: 33px;
+                    left: 60px;
+                }
+            }
+
+            input:checked + label {
+                @media (min-width: 1024px) {
+                    border-radius: 60px;
+                    background: rgba(241, 241, 241, 0.6);
+                }
+            }
+        }
+    }
+}
+
+.recipe-container {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+
+    .recipe-img {
+        margin-top: 40px;
+        margin-left: 25px;
+        height: 150px;
+
+        @media (min-width: 1024px) {
+            margin-left: -50px;
+            height: 200px;
+        }
+    }
+
+    .recipe-text {
+        padding: 0 30px 0 55px;
+        margin-top: -40px;
+
+        @media (min-width: 1024px) {
+            margin-top: -55px;
+            padding: 0;
+        }
+
+        .header {
+            margin-bottom: 8px;
+
+            @media (min-width: 1024px) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .ingredients {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 1rem;
+            line-height: 150%;
+            max-height: 100px;
+            overflow: auto;
+
+            @media (min-width: 1024px) {
+                max-height: none;
+            }
+        }
+
+        .control-container {
+            padding-bottom: 15px;
+
+            bar-action-button {
+                display: none;
+            }
+
+            @media (min-width: 1024px) {
+                padding-top: 8px;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        width: 149px;
+        padding: 0 20px 0 52px;
+    }
+}
+
+.slide.desktop-view {
+    @media (min-width: 1440px) {
+        .slide-content {
+            .bar-radio-button {
+                border-radius: 60px;
+
+                label {
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    background: rgba(241, 241, 241, 0.6);
+                }
+
+                input:checked + label {
+                    background: transparent;
+
+                    &:hover {
+                        background: rgba(241, 241, 241, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}

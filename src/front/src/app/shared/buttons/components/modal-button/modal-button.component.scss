@@ -1,0 +1,39 @@
+@import '~styles/mixins.scss';
+
+.modal-btn {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+    max-width: 180px;
+    text-align: left;
+
+    .content {
+        margin: 0;
+        padding-bottom: 5px;
+    }
+
+    .underline {
+        position: absolute;
+        background: url('~assets/images/underline-dotted.svg') no-repeat;
+        height: 4px;
+        width: 150%;
+        bottom: 3px;
+    }
+
+    &:not(:disabled):hover .underline {
+        bottom: 0;
+    }
+
+    &:not(:disabled):active .underline {
+        bottom: 3px;
+    }
+
+    &.secondary {
+        opacity: 0.5;
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+}

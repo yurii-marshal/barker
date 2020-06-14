@@ -1,0 +1,8 @@
+<div class="merchandise-container">
+    <bar-card-available-product
+        (chooseItem)="addToSubscription($event)"
+        (clickOutsideControl)="openDetailsDialog($event)"
+        *ngFor="let item of merchandiseList"
+        [value]="item"
+    ></bar-card-available-product>
+</div>

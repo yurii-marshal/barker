@@ -1,0 +1,265 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/fonts.scss';
+@import './styles/colors.scss';
+@import './styles/mixins.scss';
+@import './styles/modal.scss';
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Twentytwelve';
+    font-size: 14px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 169%;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 127%;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 144%;
+}
+
+.h1_smaller {
+    font-size: 32px;
+    line-height: 131%;
+}
+
+h4 {
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.caption {
+    font-size: 11px;
+    line-height: 155%;
+}
+
+.error {
+    color: #eb4425;
+}
+
+.bar-input-wrapper {
+    position: relative;
+
+    .error {
+        margin-top: 2px;
+    }
+}
+
+.btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: block;
+}
+
+.close-icon {
+    // TODO: Use better way
+    // font-size: 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    &:hover {
+        width: 20px !important;
+        height: 20px !important;
+        // font-size: 20px;
+    }
+}
+
+.check-icon {
+    position: relative;
+    height: 10px !important;
+    width: 16px !important;
+    cursor: pointer;
+
+    svg {
+        position: absolute;
+        top: 0;
+
+        transition: 0.25s ease-out;
+
+        &:hover {
+            top: 4px;
+        }
+    }
+}
+
+.check-right-icon {
+    position: relative;
+    height: 16px !important;
+    width: 10px !important;
+    cursor: pointer;
+
+    svg {
+        position: absolute;
+        left: 0;
+
+        transition: 0.25s ease-out;
+
+        &:hover {
+            left: 4px;
+        }
+    }
+}
+
+.vote-icon {
+    width: 20px !important;
+}
+
+.note-icon {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.select-menu {
+    top: -17px !important;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background: #f3f3f3;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    max-height: 240px;
+    overflow: hidden;
+}
+
+.select-menu-inner {
+    margin-top: 22px;
+}
+
+.select-item {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+
+    &.active {
+        background-color: #e0e0e0;
+    }
+}
+
+.no-results-item {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.bar-radio-button {
+    height: auto;
+    display: flex;
+    cursor: pointer;
+
+    input {
+        display: none;
+
+        &:checked + label::after {
+            display: block;
+            position: absolute;
+            content: '';
+            top: 8px;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #000000;
+            border-radius: 50%;
+        }
+
+        &:disabled + label {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+
+    label {
+        font-size: 1.15rem;
+        cursor: pointer;
+        padding-left: 30px;
+        position: relative;
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background: url('~assets/icons/radio-round.svg') no-repeat;
+        }
+    }
+
+    &.content-above {
+        display: block;
+        padding-bottom: 30px;
+
+        label {
+            padding-left: 0;
+            padding-bottom: 30px;
+
+            &::before {
+                top: auto;
+                bottom: 0;
+                transform: translateX(-50%);
+                left: 50%;
+            }
+        }
+
+        input {
+            &:checked + label::after {
+                top: auto;
+                bottom: 8px;
+                transform: translateX(-50%);
+                left: 50%;
+            }
+        }
+    }
+}
+
+.mobile {
+    display: block;
+}
+
+.desktop {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 44px;
+        line-height: 123%;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+}
+
+.ngucarousel {
+    overflow-x: hidden !important;
+    overflow-y: initial !important;
+}

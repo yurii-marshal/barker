@@ -1,0 +1,167 @@
+::ng-deep
+    .cdk-overlay-container
+    .cdk-overlay-pane.pause-subscription-dialog-container {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+
+    .mat-dialog-container {
+        border-radius: 0;
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            padding: 56px 64px;
+            border-radius: 0;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 55px 113px;
+        }
+
+        .dialog-content {
+            @media (min-width: 1440px) {
+                display: flex;
+            }
+        }
+    }
+
+    .header-container {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .back-button-wrapper {
+            width: 70px;
+        }
+
+        .close-wrapper {
+            cursor: pointer;
+
+            a {
+                position: relative;
+                display: inline-block;
+                width: 20px;
+                height: 24px;
+            }
+            mat-icon {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+
+                @media (min-width: 1024px) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            @media (min-width: 1440px) {
+                display: none;
+            }
+        }
+    }
+
+    .pause-subscription-container {
+        padding-top: 5px;
+
+        @media (min-width: 1024px) {
+            width: 75%;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        @media (min-width: 1440px) {
+            padding-top: 0;
+            width: 60%;
+        }
+
+        .title {
+            font-size: 1.38rem;
+            line-height: 127%;
+            padding: 12px 0;
+            width: 80%;
+
+            @media (min-width: 1024px) {
+                width: 100%;
+                font-size: 2rem;
+                line-height: 87%;
+            }
+
+            @media (min-width: 1440px) {
+                padding-top: 0;
+            }
+        }
+
+        .sub-title {
+            padding-right: 10px;
+            padding-bottom: 18px;
+            font-size: 1rem;
+            line-height: 144%;
+
+            @media (min-width: 1024px) {
+                display: flex;
+                font-size: 1.13rem;
+                padding: 40px 0;
+            }
+
+            @media (min-width: 1440px) {
+                padding: 35px 0 40px;
+            }
+
+            .text {
+                padding-bottom: 20px;
+
+                @media (min-width: 1024px) {
+                    padding-bottom: 0;
+                    font-size: 1.38rem;
+                    line-height: 127%;
+                    width: 50%;
+                }
+            }
+
+            .controls {
+                ::ng-deep bar-date-selector {
+                    ::ng-deep bar-select {
+                        &:first-child {
+                            max-width: 100px;
+
+                            @media (min-width: 1024px) {
+                                max-width: 140px;
+                            }
+                        }
+
+                        .selector-container {
+                            @media (min-width: 1024px) {
+                                height: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .timepicker-slider-container {
+            position: relative;
+        }
+
+        .label-date-restart {
+            font-size: 1rem;
+            line-height: 144%;
+            padding: 15px 0;
+            width: 90%;
+
+            @media (min-width: 1024px) {
+                width: 100%;
+                font-size: 1.13rem;
+                line-height: 144%;
+                opacity: 0.2;
+                padding: 40px 0 15px;
+            }
+
+            @media (min-width: 1024px) {
+                opacity: 1;
+                padding: 35px 0 15px;
+            }
+        }
+    }
+}

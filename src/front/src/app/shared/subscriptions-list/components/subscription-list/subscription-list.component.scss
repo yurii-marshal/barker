@@ -1,0 +1,177 @@
+@import "~styles/variables.scss";
+
+.subscribes-container {
+    ngu-carousel {
+        height: 340px;
+
+        .ngucarousel {
+            overflow: visible !important;
+        }
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    .slide {
+        height: 100%;
+        background: rgba(241, 241, 241, 0.6);
+        border-radius: 40px;
+
+        @media (min-width: 1024px) {
+            background: transparent;
+            height: 100%;
+        }
+
+        .bar-radio-button {
+            height: 100%;
+
+            label {
+                cursor: default;
+                width: 100%;
+                display: flex;
+                position: relative;
+                padding-left: 0;
+
+                &:before {
+                    top: 25px;
+                    left: 52px;
+                }
+
+                &:after {
+                    top: 33px;
+                    left: 60px;
+                }
+
+                @media (min-width: 1024px) {
+                    &:before {
+                        top: 25px;
+                        left: 32px;
+                    }
+
+                    &:after {
+                        top: 33px;
+                        left: 40px;
+                    }
+                }
+
+                @media (min-width: 1440px) {
+                    &:before {
+                        top: 44px;
+                        left: 44px;
+                    }
+
+                    &:after {
+                        top: 52px;
+                        left: 52px;
+                    }
+                }
+            }
+
+            input:checked + label {
+                @media (min-width: 1024px) {
+                    background: rgba(241, 241, 241, 0.6);
+                }
+            }
+        }
+    }
+
+    .subscribe-container {
+        margin: 0;
+        padding: 0;
+
+        @media (min-width: 1024px) {
+            display: flex;
+
+            bar-simple-slider {
+                align-self: center;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            padding: 0;
+            flex-direction: column;
+
+            .subscribe-img {
+                display: block;
+                margin: 0 auto 0 32px;
+            }
+        }
+
+        .subscribe-img {
+            display: none;
+            margin-top: 40px;
+            margin-left: -45px;
+        }
+
+        .subscribe-text {
+            margin-top: 85px;
+
+            @media (min-width: 1024px) {
+                margin-top: 60px;
+            }
+
+            @media (min-width: 1440px) {
+                margin: 0;
+            }
+
+            .header {
+                margin-bottom: 8px;
+
+                @media (min-width: 1024px) {
+                    margin-bottom: 15px;
+                }
+            }
+
+            .description {
+                color: rgba(0, 0, 0, 0.5);
+
+                @media (min-width: 1024px) {
+                    font-size: 0.88rem;
+                }
+
+                @media (min-width: 1440px) {
+                    min-height: 110px;
+                }
+            }
+
+            .price {
+                @media (min-width: 1024px) {
+                    font-size: 1.13rem;
+                }
+            }
+
+            .control-container {
+                bar-action-button {
+                    display: none;
+                }
+
+                @media (min-width: 1024px) {
+                    padding-top: 8px;
+                }
+
+                @media (min-width: 1440px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .list-container {
+        height: 308px;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            height: 345px;
+            width: auto;
+            left: -30px;
+            transform: translateX(0%);
+        }
+
+        @media (min-width: 1440px) {
+            width: 100%;
+            height: 427px;
+            left: 0;
+        }
+    }
+}

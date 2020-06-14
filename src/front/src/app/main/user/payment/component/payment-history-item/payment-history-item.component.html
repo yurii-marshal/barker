@@ -1,0 +1,68 @@
+<div class="payment-history-item-container">
+    <div class="item">
+        <div class="status-icon">
+            <img
+                *ngIf="item?.success"
+                src="assets/images/success.png"
+                alt="success_img"
+            />
+            <img
+                *ngIf="!item?.success"
+                src="assets/images/warning.png"
+                alt="warning_img"
+            />
+        </div>
+        <div class="header">
+            <button (click)="isActive = !isActive">
+                <span class="date">
+                    {{ item?.paymentDate | date: "d MMMM" }}
+                </span>
+                <mat-icon
+                    class="arrow"
+                    [class.active]="isActive"
+                    svgIcon="fat-arrow-down"
+                ></mat-icon>
+            </button>
+            <div class="price">{{ item?.price?.total | currencyUA }}</div>
+        </div>
+
+        <div class="warning-block" *ngIf="!item?.success">
+            <div class="control">
+                <div class="label">Оплата не списана <span>-</span></div>
+                <bar-modal-button (click)="openFAQ()">
+                    что делать?
+                </bar-modal-button>
+            </div>
+            <div class="message desktop caption">
+                Мы не сможем доставить еду, если заказ не будет оплачен до 18:00
+                18 июля
+            </div>
+        </div>
+    </div>
+
+    <div class="details-block" *ngIf="isActive" @accordionEnterLeave>
+        <div class="info-block caption" *ngIf="item?.success">
+            списаны 20-го июля в 18:04
+        </div>
+        <div class="item main">
+            <div class="label">Основной рацион</div>
+            <div class="line"></div>
+            <div class="price">{{ item?.price?.prime | currencyUA }}</div>
+        </div>
+        <div class="item additional">
+            <div class="label">Дополнительно</div>
+            <div class="line"></div>
+            <div class="price">
+                {{ item?.price?.total - item?.price?.prime | currencyUA }}
+            </div>
+        </div>
+        <div
+            class="item secondary caption"
+            *ngFor="let product of item?.price?.items"
+        >
+            <div class="label">{{ product.label }}</div>
+            <div class="line"></div>
+            <div class="price">{{ product.value | currencyUA }}</div>
+        </div>
+    </div>
+</div>

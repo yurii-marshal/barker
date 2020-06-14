@@ -1,0 +1,196 @@
+@import "~styles/variables.scss";
+
+:host {
+    width: 100%;
+    position: relative;
+
+    @media (min-width: 1024px) {
+        width: 90%;
+        align-self: self-start;
+        margin-top: 55px;
+    }
+
+    @media (min-width: 1440px) {
+        width: 850px;
+    }
+}
+
+.registration-subscribe {
+    .notification {
+        display: none;
+        background: url("~assets/images/subscribe-notification.svg") no-repeat;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 280px;
+            height: 104px;
+
+            position: absolute;
+            top: -120px;
+            right: 0;
+
+            .text {
+                padding: 32px 16px 16px 32px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            right: -160px;
+        }
+    }
+
+    .title {
+        margin: 0;
+    }
+    .subtitle {
+        margin: 0;
+        color: rgba(0, 0, 0, 0.5);
+        padding: 5px 0 10px;
+
+        @media (min-width: 1024px) {
+            font-size: 1rem;
+            padding-bottom: 45px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 10px 0 37px;
+        }
+    }
+    .controls-container {
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: 1024px) {
+            padding-top: 20px;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (min-width: 1440px) {
+            padding-top: 32px;
+        }
+
+        bar-ref-button {
+            display: none;
+
+            @media (min-width: 1024px) {
+                display: block;
+                font-size: 1rem;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        bar-action-button {
+            @media (min-width: 1024px) {
+                display: block;
+                padding-bottom: 15px;
+            }
+
+            @media (min-width: 1440px) {
+                display: none;
+            }
+        }
+    }
+}
+
+::ng-deep .subscribes-container {
+    .list-container {
+        @media (min-width: 1440px) {
+            transform: translateX(-3%);
+        }
+    }
+}
+
+::ng-deep .slide {
+    margin-right: 8px;
+
+    .bar-radio-button {
+        input:checked + label {
+            @media (min-width: 1024px) {
+                border-radius: 40px;
+            }
+
+            @media (min-width: 1440px) {
+                &:before,
+                &:after {
+                    display: none;
+                }
+
+                background: transparent;
+
+                &:hover {
+                    background: rgba(241, 241, 241, 0.6);
+                }
+            }
+        }
+
+        label {
+            @media (min-width: 1440px) {
+                border-radius: 60px;
+
+                &:hover {
+                    background: rgba(241, 241, 241, 0.6);
+                }
+            }
+        }
+
+        .subscribe-container {
+            width: calc(100vw - 60px);
+
+            @media (min-width: 1024px) {
+                width: 280px;
+            }
+
+            @media (min-width: 1440px) {
+                width: 306px;
+
+                &:hover {
+                    .subscribe-text {
+                        .control-container {
+                            display: block;
+
+                            bar-action-button {
+                                padding-top: 0;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .subscribe-text {
+                padding: 0 52px;
+
+                @media (min-width: 1024px) {
+                    padding: 0 32px;
+                }
+
+                @media (min-width: 1440px) {
+                    padding: 0 45px;
+                }
+
+                .header {
+                    @media (min-width: 1440px) {
+                        margin-bottom: 38px;
+                    }
+                }
+
+                .price {
+                    margin-top: 25px;
+
+                    @media (min-width: 1024px) {
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            .description {
+                @media (min-width: 1024px) {
+                    min-height: 144px;
+                }
+            }
+        }
+    }
+}

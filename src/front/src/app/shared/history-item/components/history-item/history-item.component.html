@@ -1,0 +1,54 @@
+<div class="history-item-container">
+    <div class="expander">
+        <button (click)="isActive = !isActive">
+            <span class="period">
+                {{ item?.period?.start | date: "d MMMM" }} -
+                {{ item?.period?.end | date: "d MMMM" }}
+            </span>
+            <mat-icon
+                class="arrow"
+                [class.active]="isActive"
+                svgIcon="fat-arrow-down"
+            ></mat-icon>
+        </button>
+        <div class="items-block" *ngIf="isActive" @accordionEnterLeave>
+            <div class="item mobile" *ngFor="let product of item?.items">
+                <bar-short-card-product
+                    [item]="product"
+                ></bar-short-card-product>
+            </div>
+            <div class="items desktop">
+                <ngu-carousel
+                    class="slider"
+                    #historyDeliverySlider
+                    [inputs]="carouselConfig"
+                    [dataSource]="item.items"
+                >
+                    <div *nguCarouselDef="let item" class="item">
+                        <bar-short-card-product
+                            [isShort]="false"
+                            [item]="item"
+                        ></bar-short-card-product>
+                    </div>
+
+                    <button
+                        *ngIf="item.items.length > 2"
+                        NguCarouselNext
+                        class="slider-btn-right btn"
+                    >
+                        <mat-icon svgIcon="check"></mat-icon>
+                    </button>
+                    <button
+                        *ngIf="item.items.length > 2"
+                        NguCarouselPrev
+                        class="slider-btn-left btn"
+                    >
+                        <mat-icon svgIcon="check"></mat-icon>
+                    </button>
+                </ngu-carousel>
+            </div>
+        </div>
+    </div>
+
+    <bar-comment [isOpened]="isActive" [item]="item"></bar-comment>
+</div>

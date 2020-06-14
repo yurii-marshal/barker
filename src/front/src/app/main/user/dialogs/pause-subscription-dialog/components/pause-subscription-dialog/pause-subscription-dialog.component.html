@@ -1,0 +1,58 @@
+<div mat-dialog-content class="dialog-content">
+    <div class="header-container">
+        <div class="back-button-wrapper">
+            <bar-back-button @enterLeave (click)="close()"></bar-back-button>
+        </div>
+        <div class="close-wrapper">
+            <a (click)="close()">
+                <mat-icon
+                    @baseThemeTransition
+                    svgIcon="close"
+                    class="close-icon"
+                ></mat-icon>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="pause-subscription-container"
+        [formGroup]="pauseSubscriptionFormGroup"
+    >
+        <div class="title">
+            Доставка будет приостановлена
+        </div>
+        <div class="sub-title">
+            <div class="text">
+                С какого числа удобно возобновить доставку?
+            </div>
+            <div class="controls">
+                <bar-date-selector
+                    [format]="'dd/MM'"
+                    formControlName="dateRestart"
+                ></bar-date-selector>
+            </div>
+        </div>
+
+        <div class="timepicker-slider-container">
+            <bar-timepicker-list
+                [date]="currentDate"
+                (chooseInterval)="setTimeRestart($event)"
+                formControlName="day"
+            ></bar-timepicker-list>
+        </div>
+
+        <div class="label-date-restart">
+            Следующая доставка будет {{ userData.subscriptionDate | date: 'd MMMM' }} с
+            {{ subscription.timeFrom || "..." }} до
+            {{ subscription.timeTo || "..." }}
+        </div>
+
+        <bar-action-button
+            [disabled]="pauseSubscriptionFormGroup.invalid"
+            [arrow]="true"
+            (clickHandler)="pauseSubscription()"
+        >
+            Сохранить
+        </bar-action-button>
+    </div>
+</div>

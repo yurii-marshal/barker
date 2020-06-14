@@ -1,0 +1,53 @@
+::ng-deep .cdk-overlay-container .cdk-overlay-pane.faq-dialog-container {
+    width: 100%;
+    top: 32px;
+
+    @media (min-width: 1024px) {
+        width: 80%;
+        top: 50%;
+        transform: translateY(-50%);
+        min-height: 80%;
+    }
+
+    .mat-dialog-container {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        height: 100%;
+
+        @media (min-width: 1024px) {
+            height: 78vh;
+            padding: 64px 160px;
+            border-radius: 60px;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 96px 288px;
+        }
+    }
+}
+
+.close-wrapper {
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: 40px;
+        right: 70px;
+    }
+
+    mat-icon {
+        width: 10px;
+        height: 10px;
+
+        @media (min-width: 1024px) {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.question-item {
+    position: relative;
+}

@@ -1,0 +1,70 @@
+<bar-registration-header
+    [state]="progressState$ | async"
+></bar-registration-header>
+<!-- [@swipeAnimations]="animationManager?.state" -->
+<div
+    class="registration-page-container"
+    [ngSwitch]="(progressState$ | async)?.step"
+>
+    <div class="flex-shell">
+        <bar-registration-intro
+            *ngSwitchCase="steps.Intro"
+        ></bar-registration-intro>
+
+        <bar-registration-main-info
+            *ngSwitchCase="steps.MainInfo"
+        ></bar-registration-main-info>
+
+        <bar-registration-birth-date *ngSwitchCase="steps.DateOfBirth">
+        </bar-registration-birth-date>
+
+        <bar-registration-weight
+            *ngSwitchCase="steps.Weight"
+        ></bar-registration-weight>
+
+        <bar-registration-activity
+            *ngSwitchCase="steps.Activity"
+        ></bar-registration-activity>
+
+        <bar-registration-pathologies
+            *ngSwitchCase="steps.Pathologies"
+        ></bar-registration-pathologies>
+
+        <bar-registration-prefers
+            *ngSwitchCase="steps.Prefers"
+        ></bar-registration-prefers>
+
+        <bar-registration-check-up
+            *ngSwitchCase="steps.CheckUp"
+        ></bar-registration-check-up>
+
+        <bar-registration-recipe
+            *ngSwitchCase="steps.Recipe"
+        ></bar-registration-recipe>
+
+        <bar-registration-subscribe
+            *ngSwitchCase="steps.SubVariant"
+        ></bar-registration-subscribe>
+        
+        <bar-registration-subscription-details
+            *ngSwitchCase="steps.Subscribe"
+        ></bar-registration-subscription-details>
+
+        <bar-registration-verify-number
+            *ngSwitchCase="steps.VerifyNumber"
+        ></bar-registration-verify-number>
+
+        <bar-registration-payment
+            *ngSwitchCase="steps.Payment"
+        ></bar-registration-payment>
+
+        <h1 *ngSwitchDefault>Opps!</h1>
+    </div>
+</div>
+<button
+    (click)="openDevMenu()"
+    *ngIf="isDev"
+    style="position: fixed; right: 0; top: 0;"
+>
+    dev
+</button>

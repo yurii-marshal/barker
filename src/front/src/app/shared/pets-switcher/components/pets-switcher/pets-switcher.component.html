@@ -1,0 +1,15 @@
+<div class="pet-switcher-container">
+    <div
+        class="pet"
+        *ngFor="let pet of pets"
+        [class.selected]="pet.id === selected?.id"
+        (click)="select(pet)"
+    >
+        <div class="avatar-container">
+            <img [src]="pet.image" />
+        </div>
+        <span class="pet-name">
+            {{ pet.name }}
+        </span>
+    </div>
+</div>

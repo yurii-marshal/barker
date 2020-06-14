@@ -1,0 +1,212 @@
+@import "~styles/colors.scss";
+@import "~styles/mixins.scss";
+
+.payment-history-item-container {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: rgba(241, 241, 241, 0.6);
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: 1024px) {
+        padding: 20px 56px 20px 32px;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 32px;
+    }
+
+    .item {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: 1024px) {
+            flex: auto;
+            width: 86%;
+        }
+
+        .status-icon {
+            padding-right: 15px;
+
+            @media (min-width: 1440px) {
+                padding-right: 22px;
+            }
+
+            img {
+                width: 32px;
+                height: 32px;
+
+                @media (min-width: 1024px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        .header {
+            padding-top: 3px;
+            font-size: 1.13rem;
+
+            @media (min-width: 1024px) {
+                font-size: 1.38rem;
+                line-height: 127%;
+                display: flex;
+                flex: auto;
+                justify-content: space-between;
+                padding-top: 0;
+                align-items: center;
+            }
+
+            button {
+                cursor: pointer;
+                border: none;
+                background: none;
+                font-family: "Twentytwelve";
+                font-size: 18px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                padding: 0;
+
+                .date {
+                    margin-right: 18px;
+                    white-space: nowrap;
+                }
+
+                .arrow {
+                    width: 12px;
+                    height: auto;
+                    line-height: 12px;
+
+                    &.active {
+                        transform: rotate(180deg);
+                        padding-bottom: 7px;
+                    }
+                }
+            }
+        }
+
+        .warning-block {
+            padding-left: 46px;
+
+            @media (min-width: 1024px) {
+                padding-left: 0;
+                display: flex;
+                justify-content: space-between;
+                padding-top: 10px;
+                width: 86%;
+                margin: 0 0 0 auto;
+            }
+
+            @media (min-width: 1440px) {
+                width: 90%;
+            }
+
+            .control {
+                padding-top: 15px;
+
+                @media (min-width: 1024px) {
+                    padding-top: 0;
+                }
+
+                @media (min-width: 1440px) {
+                    display: flex;
+                }
+
+                .label {
+                    @media (min-width: 1440px) {
+                        padding-right: 15px;
+                    }
+
+                    span {
+                        display: none;
+
+                        @media (min-width: 1440px) {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+
+            .message {
+                color: #e0632b;
+
+                @media (min-width: 1024px) {
+                    width: 55%;
+                    text-align: right;
+                }
+
+                @media (min-width: 1440px) {
+                    width: 35%;
+                }
+            }
+        }
+    }
+
+    .details-block {
+        width: 100%;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .info-block {
+            color: rgba(0, 0, 0, 0.5);
+            padding: 0 0 0 47px;
+
+            @media (min-width: 1024px) {
+                text-align: right;
+            }
+        }
+
+        .item {
+            display: flex;
+
+            @media (min-width: 1024px) {
+                font-size: 1.13rem;
+            }
+
+            @media (min-width: 1440px) {
+                width: 90%;
+            }
+
+            &.main {
+                padding-top: 15px;
+            }
+
+            &.additional {
+                padding-bottom: 10px;
+
+                @media (min-width: 1024px) {
+                    padding-bottom: 0;
+                }
+            }
+
+            &.secondary {
+                color: rgba(0, 0, 0, 0.4);
+
+                @media (min-width: 1024px) {
+                    font-size: 0.88rem;
+                }
+            }
+
+            .label {
+                max-width: 135px;
+                @include text-overflow();
+
+                @media (min-width: 1024px) {
+                    max-width: 70%;
+                }
+            }
+
+            .line {
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+                flex: auto;
+                margin: 0 3px 6px;
+            }
+        }
+    }
+}

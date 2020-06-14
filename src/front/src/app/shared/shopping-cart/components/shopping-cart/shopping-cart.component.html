@@ -1,0 +1,9 @@
+<div class="shopping-cart">
+    <div class="count" *ngIf="count > 0">
+        {{ count }}
+    </div>
+    <div class="content">
+        <mat-icon class="plate-icon" svgIcon="plate"></mat-icon>
+        <div class="price" *ngIf="price > 0">{{ price | currencyUA }}</div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+@import '~styles/mixins.scss';
+
+.ref-button {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+
+    .content {
+        margin: 0;
+    }
+
+    .underline {
+        position: absolute;
+        background: url('~assets/images/underline-grey.svg') no-repeat;
+        height: 2px;
+        width: 100%;
+        margin-top: -4px;
+        left: 3px;
+    }
+
+    &:not(:disabled) {
+        &:hover .arrow-right {
+            position: absolute;
+            right: -28px;
+            content: ' ';
+            background: url('~assets/icons/arrow-grey.svg') no-repeat;
+            background-size: 18px;
+            height: 18px;
+            width: 18px;
+            transform: rotateX(180deg);
+        }
+
+        &:active .arrow-right {
+            display: none;
+        }
+
+        &:hover .underline {
+            margin-top: 0px;
+        }
+
+        &:active .underline {
+            margin-top: -4px;
+        }
+    }
+
+    &.primary {
+        .underline {
+            background: url('~assets/images/underline.svg') no-repeat;
+        }
+
+        &:not(:disabled) {
+            &:hover .arrow-right {
+                background: url('~assets/icons/arrow.svg') no-repeat;
+            }
+        }
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+}

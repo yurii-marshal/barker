@@ -1,0 +1,18 @@
+@import "~styles/variables.scss";
+
+.user-component {
+    padding: 0 $user-page-side-offset-mobile;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 1024px) {
+        padding: 0 $user-page-side-offset-ipad;
+    };
+
+    @media (min-width: 1440px) {
+        padding: 0 $user-page-side-offset-desktop;
+    };
+}

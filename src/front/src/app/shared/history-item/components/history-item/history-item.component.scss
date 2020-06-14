@@ -1,0 +1,143 @@
+@import "~styles/colors.scss";
+
+.history-item-container {
+    position: relative;
+    background: rgba(241, 241, 241, 0.6);
+    border-radius: 24px;
+    min-height: 100px;
+    padding: 28px 32px 25px 32px;
+
+    @media (min-width: 1024px) {
+        display: flex;
+    }
+
+    .expander {
+        @media (min-width: 1024px) {
+            width: 50%;
+        }
+
+        @media (min-width: 1440px) {
+            width: 45%;
+        }
+    }
+
+    ::ng-deep bar-comment {
+        @media (min-width: 1024px) {
+            width: 50%;
+        }
+
+        @media (min-width: 1440px) {
+            width: 55%;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-family: "Twentytwelve";
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+
+    .period {
+        margin-right: 10px;
+    }
+
+    .arrow {
+        width: 12px;
+        height: auto;
+        line-height: 12px;
+
+        &.active {
+            transform: rotate(180deg);
+        }
+    }
+
+    .items-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 12px;
+
+        .item {
+            margin-top: 15px;
+        }
+
+        .items {
+            width: 100%;
+            margin-left: -20px;
+
+            ::ng-deep ngu-carousel {
+                .ngucarousel-items {
+                    width: 43%;
+
+                    @media (min-width: 1024px) {
+                        width: 47%;
+                    }
+
+                    @media (min-width: 1440px) {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .slider {
+                .item {
+                    justify-content: flex-end;
+                    align-items: center;
+                    display: flex;
+
+                    @media (min-width: 1024px) {
+                        justify-content: center;
+                        margin-left: 10%;
+                    }
+
+                    @media (min-width: 1440px) {
+                        margin-left: 0;
+                    }
+                }
+    
+                .slider-btn-left,
+                .slider-btn-right {
+                    position: absolute;
+                    top: 40%;
+                    transform: translateY(-50%);
+    
+                    mat-icon {
+                        width: 11px;
+                        height: 11px;
+                    }
+                }
+    
+                .slider-btn-left {
+                    transform: rotate(90deg) scale(-1, 1);
+                    left: 20px;
+
+                    @media (min-width: 1024px) {
+                        left: 15px;
+                    }
+                }
+    
+                .slider-btn-right {
+                    transform: rotate(-90deg);
+                    right: 20px;
+
+                    @media (min-width: 1024px) {
+                        right: 15px;
+                    }
+                }
+            }
+        }        
+    }
+
+    ::ng-deep bar-short-card-product {
+        .count,
+        .price {
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
